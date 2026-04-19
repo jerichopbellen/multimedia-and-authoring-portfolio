@@ -1,0 +1,82 @@
+.spacer
+{
+    height: 70px; /* Adjust as needed */
+}
+
+
+/* Glass Navigation Style */
+.glass-nav {
+    background: rgba(9, 10, 15, 0.7); /* Dark, semi-transparent */
+    backdrop-filter: blur(15px); /* This creates the frosted glass look */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Make nav links stand out slightly more */
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #a29bfe !important; /* Soft purple glow on hover */
+}
+
+
+/* Dark Galaxy Background */
+body {
+    background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    padding-top: 150px; /* To prevent content from being hidden behind the fixed navbar */
+}
+
+/* Glass-morphism Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(162, 155, 254, 0.5);
+}
+
+/* Typography Glow */
+.text-glow {
+    text-shadow: 0 0 20px rgba(162, 155, 254, 0.5);
+    color: #fff;
+}
+
+
+/* Animation: Floating effect */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.floating-orbit {
+    animation: float 4s ease-in-out infinite;
+    position: relative;
+    display: inline-block;
+}
+
+/* Orbital Ring Effect */
+.orbital-ring {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 140px;
+    height: 140px;
+    border: 2px dashed rgba(162, 155, 254, 0.3);
+    border-radius: 50%;
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
