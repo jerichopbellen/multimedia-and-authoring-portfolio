@@ -14,30 +14,186 @@
     <div id="header-placeholder"></div>
     <main>
         <div class="container my-5">
-            <div class="row align-items-center vh-75">
-                <div class="col-md-6">
-                    <h1 class="display-3 fw-bold text-glow mb-3">Jericho Bellen</h1>
-                    <p class="lead text-white-50">Multimedia and Authoring</p>
-                    <div class="mt-4">
-                        <a href="#projects" class="btn btn-outline-light px-4">View Developer Details</a>
+            <div class="row align-items-center min-vh-50 min-vh-md-75 gy-5">                
+                <div class="col-12 col-md-6 text-center text-md-start">                    
+                    <div class="mb-4">
+                        <span class="text-primary text-uppercase tracking-widest fw-bold">Student Developer</span>
+                        <h1 class="display-3 fw-bold text-glow mt-2 mb-3">Jericho Bellen</h1>
+                        <p class="lead text-white-50">Blending logic-driven web systems with high-fidelity 3D and motion design.</p>
+                    </div>
+
+                    <p class="text-white-50 mb-5 pe-lg-5">
+                        I am currently refining my expertise in <strong>TUP-Taguig</strong>, creating digital experiences that leverage scalable backend architecture while maintaining a premium aesthetic. From database modeling to frame-by-frame rotoscoping, I build projects that function as well as they look.
+                    </p>
+
+                    <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start gap-3 mt-4">                        <a href="#projects" class="btn btn-primary btn-purple px-4">Explore Projects</a>
+                        <a href="#about" class="btn btn-link text-white opacity-50 text-decoration-none">Learn More About Me</a>
                     </div>
                 </div>
-                <div class="col-md-6 text-center">
-                    <div class="floating-orbit">
-                        <div class="orbital-ring"></div>
-                        <i class="fas fa-rocket text-primary fa-8x"></i>
+
+                
+                <div class="col-md-6 text-center position-relative">
+                    <div class="constellation-container">
+                        
+                        <div class="constellation-core">
+                            <i class="fas fa-code fa-2x text-primary"></i>
+                            <div class="core-halo"></div>
+                        </div>
+                        
+                        <div class="skill-pillar pillar-1" data-tooltip="3D Render">
+                            <i class="fas fa-cube text-secondary"></i>
+                        </div>
+                        <div class="skill-pillar pillar-2" data-tooltip="UI/UX">
+                            <i class="fas fa-palette text-secondary"></i>
+                        </div>
+                        <div class="skill-pillar pillar-3" data-tooltip="Database">
+                            <i class="fas fa-database text-secondary"></i>
+                        </div>
+                        <div class="skill-pillar pillar-4" data-tooltip="Motion">
+                            <i class="fas fa-film text-secondary"></i>
+                        </div>
+                        
+                        <svg class="constellation-svg" viewBox="0 0 100 100">
+                            <path id="path1" d="M50 50 L20 20" />
+                            <path id="path2" d="M50 50 L80 20" />
+                            <path id="path3" d="M50 50 L20 80" />
+                            <path id="path4" d="M50 50 L80 80" />
+                            
+                            <circle class="data-pulse pulse-1" r="1">
+                                <animateMotion dur="4s" repeatCount="indefinite">
+                                    <mpath href="#path1"/>
+                                </animateMotion>
+                            </circle>
+                            <circle class="data-pulse pulse-2" r="1" begin="1s">
+                                <animateMotion dur="4s" repeatCount="indefinite">
+                                    <mpath href="#path2"/>
+                                </animateMotion>
+                            </circle>
+                            <circle class="data-pulse pulse-3" r="1" begin="2s">
+                                <animateMotion dur="4s" repeatCount="indefinite">
+                                    <mpath href="#path3"/>
+                                </animateMotion>
+                            </circle>
+                            <circle class="data-pulse pulse-4" r="1" begin="3s">
+                                <animateMotion dur="4s" repeatCount="indefinite">
+                                    <mpath href="#path4"/>
+                                </animateMotion>
+                            </circle>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="spacer"></div>
+            <div id="projects" class="spacer"></div>
+
+            <h2 class="text-center mt-5 mb-5 fw-light">Featured Projects</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-5">
+                    <div class="glass-card p-4 h-100">
+                        <div class="img-placeholder mb-3">
+                            <i class="fas fa-cube fa-2x opacity-25"></i>
+                            <span class="small opacity-50">3D Render Preview</span>
+                        </div>
+                        
+                        <h4 class="text-white mb-3">3D Solar System</h4>
+                        <p class="text-white opacity-75">
+                            A study in <strong>Blender-based 3D rendering</strong>, focusing on the synthesis of realistic celestial textures, complex lighting, and atmospheric effects to create scientifically accurate and visually compelling planetary models.
+                        </p>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">View Project</a>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="glass-card p-4 h-100">
+                        <div class="img-placeholder mb-3">
+                            <i class="fas fa-mask fa-2x opacity-25"></i>
+                            <span class="small opacity-50">Rotoscope Preview</span>
+                        </div>
+                        
+                        <h4 class="text-white mb-3">1-Minute Video Rotoscope</h4>
+                        <p class="text-white opacity-75">
+                            A technical deep-dive into <strong>frame-by-frame rotoscoping</strong>. This project demonstrates precision masking and subject isolation techniques to achieve clean, stylized animation outputs from raw live-action footage.
+                        </p>
+                        <a href="#" class="btn btn-outline-primary btn-sm mt-2">View Project</a>
                     </div>
                 </div>
             </div>
 
             <div class="spacer"></div>
 
-            <h2 id="projects" class="text-center mt-5 mb-5 fw-light">Featured Projects</h2>
-            <div class="row g-4">
-                <div class="col-md-4"><div class="glass-card">...</div></div>
-                <div class="col-md-4"><div class="glass-card">...</div></div>
-                <div class="col-md-4"><div class="glass-card">...</div></div>
-            </div>
+            <section id="about" class="container my-5 py-5 text-white">
+                <div class="row">
+                    <div class="col-lg-2 d-none d-lg-block">
+                        <h2 class="text-white opacity-25 vertical-text" style="writing-mode: vertical-rl; transform: rotate(180deg);">DEVELOPER PROFILE</h2>
+                    </div>
+
+                    <div class="col-lg-10">
+                        <div class="mb-5">
+                           <span class="text-primary text-uppercase small tracking-widest fw-bold">Jericho Bellen</span>
+    
+                            <h3 class="display-6 fw-bold mt-2 mb-4">
+                                Student Developer <span class="text-white opacity-25">|</span> <span class="fw-light text-white opacity-75">TUP-Taguig</span>
+                            </h3>
+
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <p class="lead text-white opacity-75" style="line-height: 1.8;">
+                                        Bridging the gap between rigorous <strong>backend architecture</strong> and <strong>immersive visual storytelling</strong>. 
+                                        <br>
+                                        <span class="opacity-50">I am constantly evolving my workflow, pushing the limits of what a student project can achieve through technical precision and design intent.</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row g-4">
+                            
+                            <div class="col-md-6 d-flex gap-3 skill-block">
+                                <div class="text-primary mt-1"><i class="fas fa-globe fa-lg"></i></div>
+                                <div>
+                                    <h6 class="text-white mb-1">Web Development</h6>
+                                    <p class="small opacity-50">Focused on building scalable full-stack applications. I utilize Laravel for robust backend logic and Node.js for efficient event-driven environments, ensuring every system is performant and secure.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 d-flex gap-3 skill-block">
+                                <div class="text-primary mt-1"><i class="fas fa-palette fa-lg"></i></div>
+                                <div>
+                                    <h6 class="text-white mb-1">UI/UX Design</h6>
+                                    <p class="small opacity-50">Designing intuitive user interfaces where form meets function. My approach centers on user-centric research, wireframing, and creating seamless interaction flows that minimize friction.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 d-flex gap-3 skill-block">
+                                <div class="text-primary mt-1"><i class="fas fa-database fa-lg"></i></div>
+                                <div>
+                                    <h6 class="text-white mb-1">Database Management</h6>
+                                    <p class="small opacity-50">Expertise in developing complex relational database schemas. I prioritize data integrity, normalization, and optimized query performance to ensure backends can handle heavy traffic.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 d-flex gap-3 skill-block">
+                                <div class="text-primary mt-1"><i class="fas fa-cube fa-lg"></i></div>
+                                <div>
+                                    <h6 class="text-white mb-1">3D Rendering</h6>
+                                    <p class="small opacity-50">Harnessing Blender to create immersive 3D assets. From modeling and texturing to complex lighting setups, I focus on realistic material properties and cinematic rendering techniques.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 d-flex gap-3 skill-block">
+                                <div class="text-primary mt-1"><i class="fas fa-mask fa-lg"></i></div>
+                                <div>
+                                    <h6 class="text-white mb-1">Rotoscoping</h6>
+                                    <p class="small opacity-50">Specializing in precise, frame-by-frame masking and motion tracking. This skill allows me to integrate digital elements seamlessly into live-action footage for professional-grade compositing.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 

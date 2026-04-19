@@ -1,36 +1,104 @@
-.spacer
-{
-    height: 70px; /* Adjust as needed */
+/* ==========================================================================
+   1. BASE STYLES & GLOBALS
+   ========================================================================== */
+body {
+    background-color: #090a0f;
+    background-image: 
+        radial-gradient(at 10% 10%, rgba(52, 152, 219, 0.15) 0px, transparent 50%),
+        radial-gradient(at 90% 80%, rgba(162, 155, 254, 0.15) 0px, transparent 50%),
+        radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    padding-top: 150px;
+    min-height: 100vh;
 }
 
+.spacer { height: 70px; }
 
-/* Glass Navigation Style */
+.display-1 {
+    font-weight: 800;
+    line-height: 1;
+}
+
+/* ==========================================================================
+   2. NAVIGATION
+   ========================================================================== */
 .glass-nav {
-    background: rgba(9, 10, 15, 0.7); /* Dark, semi-transparent */
-    backdrop-filter: blur(15px); /* This creates the frosted glass look */
+    background: rgba(9, 10, 15, 0.7);
+    backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
 }
 
-/* Make nav links stand out slightly more */
 .nav-link {
+    position: relative;
     transition: color 0.3s ease;
 }
 
-.nav-link:hover {
-    color: #a29bfe !important; /* Soft purple glow on hover */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 5px;
+    left: 50%;
+    background-color: #a29bfe;
+    transition: all 0.3s ease;
 }
 
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
 
-/* Dark Galaxy Background */
-body {
-    background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+.nav-link:hover { color: #a29bfe !important; }
+
+/* ==========================================================================
+   3. COMPONENTS
+   ========================================================================== */
+/* Buttons */
+.btn-purple {
+    background: linear-gradient(135deg, #6c5ce7, #3498db);
+    border: none;
     color: #ffffff;
-    font-family: 'Inter', sans-serif;
-    padding-top: 150px; /* To prevent content from being hidden behind the fixed navbar */
+    transition: all 0.4s ease;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
 }
 
-/* Glass-morphism Effect */
+.btn-purple::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: linear-gradient(135deg, #6c5ce7, #3498db);
+    border-radius: 9px;
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0.4;
+    animation: glow-pulse 3s infinite alternate;
+}
+
+.btn-purple:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(108, 92, 231, 0.6);
+    background: linear-gradient(135deg, #8173f5, #4ca6e4);
+}
+
+.btn-link {
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-link:hover {
+    color: #fff !important;
+    transform: translateX(5px);
+}
+
+/* Cards */
 .glass-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
@@ -45,38 +113,154 @@ body {
     border-color: rgba(162, 155, 254, 0.5);
 }
 
-/* Typography Glow */
-.text-glow {
-    text-shadow: 0 0 20px rgba(162, 155, 254, 0.5);
-    color: #fff;
+.img-placeholder {
+    width: 100%;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 20px;
 }
 
+/* ==========================================================================
+   4. SKILLS & ABOUT SECTION
+   ========================================================================== */
+section#about { border-top: 1px solid rgba(255, 255, 255, 0.05); }
 
-/* Animation: Floating effect */
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
+.vertical-text {
+    letter-spacing: 5px;
+    font-size: 2rem;
+    font-weight: 800;
 }
 
-.floating-orbit {
-    animation: float 4s ease-in-out infinite;
+.skill-block {
+    padding: 15px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.skill-block:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(162, 155, 254, 0.3);
+    transform: translateX(10px);
+}
+
+.skill-block:hover .text-primary { color: #fff !important; }
+
+.skill-pillar i {
+    color: #a29bfe !important;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.skill-pillar:hover i {
+    color: #ffffff !important;
+    text-shadow: 0 0 8px #a29bfe;
+}
+
+/* ==========================================================================
+   5. ANIMATIONS
+   ========================================================================== */
+@keyframes glow-pulse {
+    0% { opacity: 0.2; }
+    100% { opacity: 0.5; }
+}
+
+@keyframes corePulse {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes pillarGlow {
+    0%, 90%, 100% { 
+        background: rgba(255, 255, 255, 0.03);
+        border-color: rgba(162, 155, 254, 0.2);
+        box-shadow: none;
+    }
+    95% { 
+        background: rgba(162, 155, 254, 0.1);
+        border-color: rgba(162, 155, 254, 0.8);
+        box-shadow: 0 0 15px rgba(162, 155, 254, 0.6);
+        transform: scale(1.1);
+    }
+}
+
+/* Constellation Container */
+.constellation-container {
     position: relative;
-    display: inline-block;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Orbital Ring Effect */
-.orbital-ring {
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    width: 140px;
-    height: 140px;
-    border: 2px dashed rgba(162, 155, 254, 0.3);
+.constellation-core {
+    position: relative;
+    z-index: 10;
+    width: 60px;
+    height: 60px;
+    background: rgba(9, 10, 15, 0.8);
+    border: 2px solid #3498db;
     border-radius: 50%;
-    animation: spin 10s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.5);
 }
 
-@keyframes spin {
-    100% { transform: rotate(360deg); }
+.core-halo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(52, 152, 219, 0.2);
+    animation: corePulse 4s ease-out infinite;
+    z-index: -1;
+}
+
+.skill-pillar {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(162, 155, 254, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #a29bfe;
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.pillar-1 { top: 10%; left: 10%; animation: pillarGlow 4s infinite 0s; }
+.pillar-2 { top: 10%; right: 10%; animation: pillarGlow 4s infinite 1s; }
+.pillar-3 { bottom: 10%; left: 10%; animation: pillarGlow 4s infinite 2s; }
+.pillar-4 { bottom: 10%; right: 10%; animation: pillarGlow 4s infinite 3s; }
+
+.constellation-svg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+}
+
+.constellation-svg path {
+    stroke: rgba(255, 255, 255, 0.05);
+    stroke-width: 0.5;
+    fill: none;
+}
+
+.data-pulse {
+    fill: #3498db;
+    filter: drop-shadow(0 0 3px #3498db);
 }
