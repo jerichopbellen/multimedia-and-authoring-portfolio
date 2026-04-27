@@ -20,21 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="carousel-item">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                <div class="ratio ratio-16x9 bg-dark rounded overflow-hidden">
-                    <video
-                    class="w-100 h-100 object-fit-cover"
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                    onerror="this.classList.add('d-none'); this.nextElementSibling.classList.remove('d-none'); this.nextElementSibling.classList.add('d-flex');"
-                    >
-                    <source src="${videoPath}" type="video/mp4">
-                    </video>
-                    <div class="w-100 h-100 d-none align-items-center justify-content-center text-white-50">
-                    Video Placeholder: ${p.name}
-                    </div>
-                </div>
+                <video src="${videoPath}" autoplay loop muted playsinline class="rounded w-100"></video>
                 </div>
                 <div class="col-lg-6">
                 <h2 class="text-primary">${p.name}</h2>
