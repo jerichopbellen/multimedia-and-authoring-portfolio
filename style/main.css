@@ -287,3 +287,8 @@ section#about { border-top: 1px solid rgba(255, 255, 255, 0.05); }
     fill: #3498db;
     filter: drop-shadow(0 0 3px #3498db);
 }
+
+.pulse-1 { animation-delay: 0s; }
+.pulse-2 { animation-delay: 1s; }
+.pulse-3 { animation-delay: 2s; }
+.pulse-4 { animation-delay: 3s; }
