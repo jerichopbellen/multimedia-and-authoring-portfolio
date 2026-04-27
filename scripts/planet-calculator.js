@@ -14,24 +14,38 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Inject the planets dynamically
     planets.forEach(p => {
+        const videoPath = `../assets/videos/${p.name.toLowerCase()}.mp4`;
+
         container.insertAdjacentHTML('beforeend', `
             <div class="carousel-item">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="ratio ratio-16x9 bg-dark rounded d-flex align-items-center justify-content-center">
-                            <span class="text-white-50">Video Placeholder: ${p.name}</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <h2 class="text-primary">${p.name}</h2>
-                        <ul class="list-unstyled text-white-50 mt-3">
-                            <li><strong>Age on Planet:</strong> <span class="planet-age" data-period="${p.period}">--</span> years</li>
-                            <li><strong>Total Revolutions:</strong> <span class="planet-revs" data-period="${p.period}">--</span> orbits</li>
-                            <li><strong>Orbital Period:</strong> ${p.period} Earth Years</li>
-                        </ul>
-                        <p class="text-white-75">${p.desc}</p>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                <div class="ratio ratio-16x9 bg-dark rounded overflow-hidden">
+                    <video
+                    class="w-100 h-100 object-fit-cover"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    onerror="this.classList.add('d-none'); this.nextElementSibling.classList.remove('d-none'); this.nextElementSibling.classList.add('d-flex');"
+                    >
+                    <source src="${videoPath}" type="video/mp4">
+                    </video>
+                    <div class="w-100 h-100 d-none align-items-center justify-content-center text-white-50">
+                    Video Placeholder: ${p.name}
                     </div>
                 </div>
+                </div>
+                <div class="col-lg-6">
+                <h2 class="text-primary">${p.name}</h2>
+                <ul class="list-unstyled text-white-50 mt-3">
+                    <li><strong>Age on Planet:</strong> <span class="planet-age" data-period="${p.period}">--</span> years</li>
+                    <li><strong>Total Revolutions:</strong> <span class="planet-revs" data-period="${p.period}">--</span> orbits</li>
+                    <li><strong>Orbital Period:</strong> ${p.period} Earth Years</li>
+                </ul>
+                <p class="text-white-75">${p.desc}</p>
+                </div>
+            </div>
             </div>
         `);
     });
