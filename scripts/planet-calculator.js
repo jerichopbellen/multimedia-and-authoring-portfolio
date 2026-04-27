@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Inject the planets dynamically
     planets.forEach(p => {
-        const videoPath = `../assets/videos/${p.name.toLowerCase()}.mp4`;
+        const videoPath = `assets/videos/${p.name.toLowerCase()}.mp4`;
 
         container.insertAdjacentHTML('beforeend', `
             <div class="carousel-item">
