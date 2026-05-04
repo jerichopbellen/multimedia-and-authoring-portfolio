@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 document.addEventListener('DOMContentLoaded', () => {
     // Helper to load HTML snippets
     const loadComponent = (id, file) => {

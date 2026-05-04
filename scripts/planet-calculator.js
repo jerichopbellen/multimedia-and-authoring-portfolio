@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 document.addEventListener("DOMContentLoaded", function() {
     const planets = [
         {name: "Mercury", period: 0.24, desc: "The closest planet to the Sun and the smallest in the system. Extreme temperatures range from scorching heat to freezing cold."},
