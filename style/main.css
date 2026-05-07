@@ -3,14 +3,16 @@
    ========================================================================== */
 body {
     background-color: #090a0f;
-    background-image: 
+    background-image:
         radial-gradient(at 10% 10%, rgba(52, 152, 219, 0.15) 0px, transparent 50%),
         radial-gradient(at 90% 80%, rgba(162, 155, 254, 0.15) 0px, transparent 50%),
         radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
     background-attachment: fixed;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
-    padding-top: 150px;
+
+    /* Hero now handles its own spacing. */
+    padding-top: 0;
     min-height: 100vh;
 }
 
@@ -37,7 +39,8 @@ body {
 .footer-nav {
     background: rgba(9, 10, 15, 0.7);
     backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);}
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 
 .nav-link {
     position: relative;
@@ -62,8 +65,6 @@ body {
 
 .nav-link:hover { color: #a29bfe !important; }
 
-
-/* ==========================================================================
 /* ==========================================================================
    3. FOOTER STYLES
    ========================================================================== */
@@ -184,119 +185,158 @@ section#about { border-top: 1px solid rgba(255, 255, 255, 0.05); }
 
 .skill-block:hover .text-primary { color: #fff !important; }
 
-.skill-pillar i {
-    color: #a29bfe !important;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
+/* ==========================================================================
+   6. HERO (VIDEO BACKGROUND)
+   ========================================================================== */
+.hero-video {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 150px 0 80px; /* keeps space for fixed nav */
 }
 
-.skill-pillar:hover i {
-    color: #ffffff !important;
-    text-shadow: 0 0 8px #a29bfe;
+.hero-video__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.05); /* helps avoid edge gaps */
+    filter: saturate(1.05) contrast(1.05);
+}
+
+.hero-video__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(108, 92, 231, 0.35), transparent 55%),
+        radial-gradient(circle at 70% 70%, rgba(52, 152, 219, 0.25), transparent 55%),
+        linear-gradient(to bottom, rgba(9, 10, 15, 0.65), rgba(9, 10, 15, 0.85));
+}
+
+.hero-video__content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-video__stat {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.hero-video__badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(162, 155, 254, 0.12);
+    border: 1px solid rgba(162, 155, 254, 0.28);
+    color: #a29bfe;
+}
+
+.hero-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 /* ==========================================================================
-   6. ANIMATIONS
+   7. TECH STACK
+   ========================================================================== */
+.tech-card {
+    display: grid;
+    place-items: center;
+    gap: 10px;
+}
+
+.tech-icon {
+    font-size: 2.25rem;
+    line-height: 1;
+}
+
+/* ==========================================================================
+   8. CONTACT CARDS
+   ========================================================================== */
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 16px;
+    border-radius: 14px;
+    text-decoration: none;
+
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(162, 155, 254, 0.45);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.contact-card--static:hover {
+    transform: none;
+    border-color: rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.contact-card__icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(108, 92, 231, 0.14);
+    border: 1px solid rgba(108, 92, 231, 0.25);
+    color: #c7c2ff;
+    flex: 0 0 auto;
+}
+
+.contact-card__icon i {
+    font-size: 1.2rem;
+}
+
+.contact-card__text {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.contact-card__title {
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.contact-card__value {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contact-card__arrow {
+    color: rgba(255, 255, 255, 0.35);
+    flex: 0 0 auto;
+}
+
+/* ==========================================================================
+   9. ANIMATIONS (kept only what is still used)
    ========================================================================== */
 @keyframes glow-pulse {
     0% { opacity: 0.2; }
     100% { opacity: 0.5; }
 }
 
-@keyframes corePulse {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(2.5); opacity: 0; }
-}
-
-@keyframes pillarGlow {
-    0%, 90%, 100% { 
-        background: rgba(255, 255, 255, 0.03);
-        border-color: rgba(162, 155, 254, 0.2);
-        box-shadow: none;
-    }
-    95% { 
-        background: rgba(162, 155, 254, 0.1);
-        border-color: rgba(162, 155, 254, 0.8);
-        box-shadow: 0 0 15px rgba(162, 155, 254, 0.6);
-        transform: scale(1.1);
-    }
-}
-
-/* Constellation Container */
-.constellation-container {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.constellation-core {
-    position: relative;
-    z-index: 10;
-    width: 60px;
-    height: 60px;
-    background: rgba(9, 10, 15, 0.8);
-    border: 2px solid #3498db;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 20px rgba(52, 152, 219, 0.5);
-}
-
-.core-halo {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: rgba(52, 152, 219, 0.2);
-    animation: corePulse 4s ease-out infinite;
-    z-index: -1;
-}
-
-.skill-pillar {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(162, 155, 254, 0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    color: #a29bfe;
-    transition: all 0.3s ease;
-    z-index: 5;
-}
-
-.pillar-1 { top: 10%; left: 10%; animation: pillarGlow 4s infinite 0s; }
-.pillar-2 { top: 10%; right: 10%; animation: pillarGlow 4s infinite 1s; }
-.pillar-3 { bottom: 10%; left: 10%; animation: pillarGlow 4s infinite 2s; }
-.pillar-4 { bottom: 10%; right: 10%; animation: pillarGlow 4s infinite 3s; }
-
-.constellation-svg {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: 1;
-}
-
-.constellation-svg path {
-    stroke: rgba(255, 255, 255, 0.05);
-    stroke-width: 0.5;
-    fill: none;
-}
-
-.data-pulse {
-    fill: #3498db;
-    filter: drop-shadow(0 0 3px #3498db);
-}
-
-.pulse-1 { animation-delay: 0s; }
-.pulse-2 { animation-delay: 1s; }
-.pulse-3 { animation-delay: 2s; }
-.pulse-4 { animation-delay: 3s; }
