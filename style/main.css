@@ -682,3 +682,103 @@ footer a:hover .fab { transform: translateY(-3px); }
 @media (prefers-reduced-motion: reduce){
     .tech-track{ animation: none !important; transform: none !important; }
 }
+
+/* ==========================================================================
+   ABOUT - Purple animated full gradient card (safe: affects ONLY #about)
+   ========================================================================== */
+
+/* The "profile card" class comes from the new About markup.
+   If you haven't updated HTML yet, this won't affect anything. */
+#about .profile-card{
+    position: relative;
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: calc(var(--radius) + 8px);
+
+    background: transparent !important;
+
+    padding: 34px;
+
+    box-shadow:
+        0 24px 80px rgba(0,0,0,.55),
+        0 0 0 1px rgba(167,139,250,.12);
+
+    transform: translateY(0);
+    transition: transform .35s ease, border-color .35s ease;
+}
+
+#about .profile-card:hover{
+    transform: translateY(-4px);
+    border-color: rgba(167,139,250,.35);
+}
+
+/* Base gradient: subtle at top, stronger at bottom */
+#about .profile-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+
+    background: linear-gradient(
+        180deg,
+        rgba(167, 139, 250, 0.18) 0%,
+        rgba(167, 139, 250, 0.28) 35%,
+        rgba(109, 40, 217, 0.55) 70%,
+        rgba(88, 28, 135, 0.82) 100%
+    );
+}
+
+/* Animated overlay: drifting purple glow */
+#about .profile-card::after{
+    content:"";
+    position:absolute;
+    inset:-40%;
+    z-index:0;
+    pointer-events:none;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(192, 132, 252, 0.35), transparent 55%),
+        radial-gradient(circle at 80% 70%, rgba(167, 139, 250, 0.30), transparent 60%),
+        radial-gradient(circle at 30% 90%, rgba(139, 92, 246, 0.28), transparent 55%);
+
+    filter: blur(18px);
+    opacity: 0.9;
+
+    animation: aboutPurpleDrift 10s ease-in-out infinite;
+}
+
+@keyframes aboutPurpleDrift{
+    0%   { transform: translate3d(-2%, -2%, 0) scale(1.02); }
+    50%  { transform: translate3d(3%, 2%, 0) scale(1.06); }
+    100% { transform: translate3d(-2%, -2%, 0) scale(1.02); }
+}
+
+/* Keep all card content above gradients */
+#about .profile-card > *{
+    position: relative;
+    z-index: 1;
+}
+
+/* If you still have an older background layer in the markup, hide it */
+#about .profile-card__bg{
+    display: none !important;
+}
+
+/* Avatar: keep readable on purple */
+#about .profile-avatar{
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(0,0,0,.18);
+    box-shadow:
+        0 18px 70px rgba(0,0,0,.45),
+        0 0 40px rgba(167,139,250,.14);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce){
+    #about .profile-card::after{
+        animation: none !important;
+        transform: none !important;
+    }
+}
