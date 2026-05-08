@@ -376,7 +376,7 @@ footer a:hover .fab { transform: translateY(-3px); }
 }
 
 /* ==========================================================================
-   7. ABOUT: PURPLE FIRE (highly visible animation)
+   7. ABOUT: STATIC PURPLE GRADIENT + SHINY ICON (NO FIRE)
    ========================================================================== */
 #about .profile-card--purplefire{
     position: relative;
@@ -387,7 +387,6 @@ footer a:hover .fab { transform: translateY(-3px); }
     border-radius: 30px;
     border: 1px solid rgba(255,255,255,.16);
 
-    /* slight glass */
     background: rgba(255,255,255,.06);
     backdrop-filter: blur(10px);
 
@@ -396,7 +395,7 @@ footer a:hover .fab { transform: translateY(-3px); }
         0 0 0 1px rgba(167,139,250,.12);
 
     padding: clamp(22px, 3vw, 34px);
-    isolation: isolate; /* isolates blend modes inside */
+    isolation: isolate;
 }
 
 /* TOP dark fade so text stays crisp */
@@ -416,7 +415,7 @@ footer a:hover .fab { transform: translateY(-3px); }
     opacity: .92;
 }
 
-/* STATIC purple fill (always purple even if animation fails) */
+/* STATIC purple fill */
 #about .profile-card--purplefire .profile-card__bg{
     position:absolute;
     inset:0;
@@ -430,93 +429,7 @@ footer a:hover .fab { transform: translateY(-3px); }
     opacity: 1;
 }
 
-/* FIRE LAYER A (big tongues) */
-#about .profile-card--purplefire::after{
-    content:"";
-    position:absolute;
-    left:-45%;
-    right:-45%;
-    bottom:-65%;
-    height: 135%;
-    z-index:0;
-    pointer-events:none;
-
-    background:
-        radial-gradient(closest-side at 15% 70%, rgba(192,132,252,.78), transparent 70%),
-        radial-gradient(closest-side at 40% 82%, rgba(167,139,250,.92), transparent 72%),
-        radial-gradient(closest-side at 65% 78%, rgba(109,40,217,.66), transparent 74%),
-        radial-gradient(closest-side at 86% 68%, rgba(192,132,252,.72), transparent 74%),
-        radial-gradient(closest-side at 55% 98%, rgba(167,139,250,.95), transparent 76%);
-
-    filter: blur(16px) saturate(1.25);
-    opacity: .95;
-    mix-blend-mode: screen;
-
-    animation: purpleFireA 3.2s ease-in-out infinite;
-}
-
-/* FIRE LAYER B (fast flicker) */
-#about .profile-card--purplefire .profile-fire-flicker{
-    position:absolute;
-    left:-50%;
-    right:-50%;
-    bottom:-70%;
-    height: 150%;
-    z-index:0;
-    pointer-events:none;
-
-    background:
-        radial-gradient(closest-side at 28% 86%, rgba(192,132,252,.55), transparent 70%),
-        radial-gradient(closest-side at 52% 92%, rgba(167,139,250,.62), transparent 72%),
-        radial-gradient(closest-side at 78% 84%, rgba(109,40,217,.48), transparent 74%),
-        radial-gradient(closest-side at 46% 74%, rgba(192,132,252,.40), transparent 76%);
-
-    filter: blur(22px) saturate(1.3);
-    opacity: .85;
-    mix-blend-mode: screen;
-
-    animation: purpleFireB 1.35s ease-in-out infinite;
-}
-
-/* wavy “tongue edge” using a mask (supported browsers get the fire edge) */
-@supports ((-webkit-mask: radial-gradient(#000,#000)) or (mask: radial-gradient(#000,#000))) {
-    #about .profile-card--purplefire::after,
-    #about .profile-card--purplefire .profile-fire-flicker{
-        -webkit-mask:
-            radial-gradient(34px 20px at 8% 68%,  #000 62%, transparent 66%),
-            radial-gradient(40px 22px at 22% 74%, #000 62%, transparent 66%),
-            radial-gradient(30px 18px at 36% 70%, #000 62%, transparent 66%),
-            radial-gradient(46px 26px at 50% 78%, #000 62%, transparent 66%),
-            radial-gradient(30px 18px at 64% 70%, #000 62%, transparent 66%),
-            radial-gradient(40px 22px at 78% 74%, #000 62%, transparent 66%),
-            radial-gradient(34px 20px at 92% 68%, #000 62%, transparent 66%),
-            linear-gradient(#000,#000);
-        mask:
-            radial-gradient(34px 20px at 8% 68%,  #000 62%, transparent 66%),
-            radial-gradient(40px 22px at 22% 74%, #000 62%, transparent 66%),
-            radial-gradient(30px 18px at 36% 70%, #000 62%, transparent 66%),
-            radial-gradient(46px 26px at 50% 78%, #000 62%, transparent 66%),
-            radial-gradient(30px 18px at 64% 70%, #000 62%, transparent 66%),
-            radial-gradient(40px 22px at 78% 74%, #000 62%, transparent 66%),
-            radial-gradient(34px 20px at 92% 68%, #000 62%, transparent 66%),
-            linear-gradient(#000,#000);
-    }
-}
-
-/* Animations: noticeable movement */
-@keyframes purpleFireA{
-    0%   { transform: translate3d(-3%, 12%, 0) scale(1.02) rotate(-1.3deg); }
-    40%  { transform: translate3d( 4%, -6%, 0) scale(1.10) rotate( 1.2deg); }
-    70%  { transform: translate3d(-2%,  5%, 0) scale(1.06) rotate(-0.8deg); }
-    100% { transform: translate3d(-3%, 12%, 0) scale(1.02) rotate(-1.3deg); }
-}
-@keyframes purpleFireB{
-    0%   { transform: translate3d( 2%, 10%, 0) scale(1.06); opacity: .78; }
-    50%  { transform: translate3d(-3%, -4%, 0) scale(1.14); opacity: .95; }
-    100% { transform: translate3d( 2%, 10%, 0) scale(1.06); opacity: .78; }
-}
-
-/* Content above effects */
+/* Content above background layers */
 #about .profile-card--purplefire > *{
     position: relative;
     z-index: 1;
@@ -531,22 +444,97 @@ footer a:hover .fab { transform: translateY(-3px); }
     margin-bottom: 14px;
 }
 
+#about .profile-meta{ min-width: 0; }
+
+#about .profile-title{ font-weight: 950; letter-spacing: -0.02em; margin: 0; }
+
+/* SHINY icon container */
 #about .profile-avatar{
     width: 76px;
     height: 76px;
     border-radius: 22px;
     display: grid;
     place-items: center;
+    position: relative;
+    overflow: hidden;
 
     background: rgba(255,255,255,.08);
     border: 1px solid rgba(255,255,255,.16);
     box-shadow:
         0 18px 70px rgba(0,0,0,.45),
         0 0 55px rgba(167, 139, 250, .18);
-}
-#about .profile-avatar i{ font-size: 1.35rem; color: rgba(255,255,255,.92); }
 
-#about .profile-title{ font-weight: 950; letter-spacing: -0.02em; margin: 0; }
+    animation: icon-sheen-pulse 2.2s ease-in-out infinite;
+    will-change: transform, box-shadow;
+}
+
+/* moving light sweep */
+#about .profile-avatar::after{
+    content:"";
+    position:absolute;
+    inset:-40%;
+    pointer-events:none;
+
+    background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(255,255,255,.0) 35%,
+        rgba(255,255,255,.55) 50%,
+        rgba(255,255,255,.0) 65%,
+        transparent 100%
+    );
+    transform: translateX(-80%) rotate(12deg);
+    opacity: .55;
+    mix-blend-mode: overlay;
+    filter: blur(0.5px);
+
+    animation: icon-sheen-sweep 2.6s ease-in-out infinite;
+    will-change: transform, opacity;
+}
+
+#about .profile-avatar i{
+    font-size: 1.35rem;
+    color: rgba(255,255,255,.94);
+    filter: drop-shadow(0 10px 22px rgba(167,139,250,.28));
+    animation: icon-sparkle 2.6s ease-in-out infinite;
+    will-change: transform, filter, opacity;
+}
+
+@keyframes icon-sheen-sweep{
+    0%   { transform: translateX(-90%) rotate(12deg); opacity: 0; }
+    15%  { opacity: .55; }
+    45%  { opacity: .75; }
+    70%  { opacity: .35; }
+    100% { transform: translateX(90%) rotate(12deg); opacity: 0; }
+}
+
+@keyframes icon-sheen-pulse{
+    0%, 100% {
+        transform: translateY(0);
+        box-shadow:
+            0 18px 70px rgba(0,0,0,.45),
+            0 0 55px rgba(167, 139, 250, .18);
+    }
+    50% {
+        transform: translateY(-3px);
+        box-shadow:
+            0 22px 80px rgba(0,0,0,.50),
+            0 0 80px rgba(192,132,252,.26);
+    }
+}
+
+@keyframes icon-sparkle{
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 10px 22px rgba(167,139,250,.26));
+        opacity: .95;
+    }
+    50% {
+        transform: scale(1.035);
+        filter: drop-shadow(0 16px 34px rgba(192,132,252,.46));
+        opacity: 1;
+    }
+}
 
 #about .profile-pills{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 8px; }
 #about .profile-pill{
@@ -769,10 +757,12 @@ footer a:hover .fab { transform: translateY(-3px); }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce){
-    #about .profile-card--purplefire::after,
-    #about .profile-fire-flicker{
+    #about .profile-avatar,
+    #about .profile-avatar::after,
+    #about .profile-avatar i{
         animation: none !important;
         transform: none !important;
+        filter: none !important;
     }
     .tech-track{ animation: none !important; transform: none !important; }
     * { scroll-behavior: auto !important; }
