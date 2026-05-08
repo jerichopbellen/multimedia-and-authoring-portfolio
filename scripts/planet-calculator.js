@@ -13,62 +13,81 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const container = document.getElementById('carouselInner');
     
-    // Inject the planets dynamically
+    // 1. Inject the planets dynamically
+    // Note: The Sun is already in the HTML as the first 'active' item
     planets.forEach(p => {
-        const videoPath = `assets/videos/${p.name.toLowerCase()}.mp4`;
+        const webmPath = `assets/videos/${p.name.toLowerCase()}.webm`;
+        const mp4Path = `assets/videos/${p.name.toLowerCase()}.mp4`;
 
         container.insertAdjacentHTML('beforeend', `
             <div class="carousel-item">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                <video src="${videoPath}" autoplay loop muted playsinline class="rounded w-100"></video>
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="ratio ratio-16x9 bg-dark rounded">
+                            <video autoplay loop muted playsinline class="rounded w-100">
+                                <source src="${webmPath}" type="video/webm">
+                                <source src="${mp4Path}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="text-primary">${p.name}</h2>
+                        <ul class="list-unstyled text-white-50 mt-3">
+                            <li><strong>Age on Planet:</strong> <span class="planet-age" data-period="${p.period}">--</span> years</li>
+                            <li><strong>Total Revolutions:</strong> <span class="planet-revs" data-period="${p.period}">--</span> orbits</li>
+                            <li><strong>Orbital Period:</strong> ${p.period} Earth Years</li>
+                        </ul>
+                        <p class="text-white-75">${p.desc}</p>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                <h2 class="text-primary">${p.name}</h2>
-                <ul class="list-unstyled text-white-50 mt-3">
-                    <li><strong>Age on Planet:</strong> <span class="planet-age" data-period="${p.period}">--</span> years</li>
-                    <li><strong>Total Revolutions:</strong> <span class="planet-revs" data-period="${p.period}">--</span> orbits</li>
-                    <li><strong>Orbital Period:</strong> ${p.period} Earth Years</li>
-                </ul>
-                <p class="text-white-75">${p.desc}</p>
-                </div>
-            </div>
             </div>
         `);
     });
 
-    // Run the calculation once on load to populate the initial "20"
+    // 2. Initialize the Bootstrap Carousel instance
+    const myCarouselElement = document.querySelector('#planetCarousel');
+    new bootstrap.Carousel(myCarouselElement, {
+        interval: false, // Prevents auto-sliding so users can read the data
+        wrap: true
+    });
+
+    // 3. Run the calculation once on load to populate the initial value
     updateAllAges();
 });
 
+/**
+ * Updates all age and revolution spans based on the input value
+ */
 function updateAllAges() {
     const inputVal = document.getElementById('userAgeInput').value;
     const age = parseFloat(inputVal) || 0;
     
-    // Update Sun
+    // Update Sun (Reference point)
     const sun = document.getElementById('sunAge');
     if(sun) sun.innerText = age;
     
-    // Update Planets
+    // Update dynamic planet ages
     document.querySelectorAll('.planet-age').forEach(el => {
         const period = parseFloat(el.getAttribute('data-period'));
         el.innerText = (age / period).toFixed(2);
     });
     
+    // Update dynamic planet total revolutions
     document.querySelectorAll('.planet-revs').forEach(el => {
         const period = parseFloat(el.getAttribute('data-period'));
         el.innerText = Math.floor(age / period);
     });
 }
 
-// Function to handle the navigation click
+/**
+ * Handles the navigation button clicks
+ * @param {number} index - The slide index (0 for Sun, 1 for Mercury, etc.)
+ */
 function jumpToSlide(index) {
     const myCarousel = document.querySelector('#planetCarousel');
     const carousel = bootstrap.Carousel.getInstance(myCarousel);
-    carousel.to(index);
+    if (carousel) {
+        carousel.to(index);
+    }
 }
-
-// Ensure the Carousel instance is ready for the jump function
-document.addEventListener("DOMContentLoaded", function() {
-    new bootstrap.Carousel(document.querySelector('#planetCarousel'));
-});
