@@ -10,9 +10,8 @@
     --muted2:rgba(255,255,255,.56);
     --line:rgba(255,255,255,.10);
 
-    /* Theme accents (USED ON UI ONLY, not page background) */
-    --accent:#4da3ff;         /* blue */
-    --accent2:#a78bfa;        /* purple */
+    --accent:#4da3ff;
+    --accent2:#a78bfa;
 
     --radius:18px;
     --shadow: 0 22px 70px rgba(0,0,0,.55);
@@ -22,8 +21,6 @@ html { scroll-behavior: smooth; }
 
 body {
     background-color: var(--bg0);
-
-    /* Neutral background only (no accent gradients) */
     background-image:
         radial-gradient(circle at 20% 10%, rgba(255,255,255,.030) 0px, transparent 55%),
         radial-gradient(circle at 85% 80%, rgba(255,255,255,.018) 0px, transparent 55%),
@@ -68,11 +65,7 @@ body {
     border: none;
 }
 
-.nav-link {
-    position: relative;
-    transition: color 0.25s ease;
-}
-
+.nav-link { position: relative; transition: color 0.25s ease; }
 .nav-link::after {
     content: '';
     position: absolute;
@@ -83,7 +76,6 @@ body {
     background: linear-gradient(90deg, var(--accent), var(--accent2));
     transition: all 0.25s ease;
 }
-
 .nav-link:hover::after { width: 100%; left: 0; }
 .nav-link:hover { color: var(--accent) !important; }
 
@@ -96,7 +88,7 @@ footer .fab { transition: transform 0.25s ease; }
 footer a:hover .fab { transform: translateY(-3px); }
 
 /* ==========================================================================
-   4. CREATIVE COMPONENTS (No glass)
+   4. COMPONENTS
    ========================================================================== */
 .panel {
     background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.03));
@@ -104,10 +96,7 @@ footer a:hover .fab { transform: translateY(-3px); }
     border-radius: var(--radius);
     box-shadow: var(--shadow);
 }
-.panel--soft { box-shadow: none; background: rgba(255,255,255,.035); }
-.panel-pad { padding: 28px; }
 
-/* Primary CTA button (accented, not white) */
 .btn-hero{
     border: 1px solid rgba(255,255,255,.14);
     border-radius: 12px;
@@ -132,7 +121,6 @@ footer a:hover .fab { transform: translateY(-3px); }
     color: #06101f;
 }
 
-/* Secondary link */
 .hero-ghost-link {
     color: rgba(255, 255, 255, 0.72);
     text-decoration: none;
@@ -143,7 +131,6 @@ footer a:hover .fab { transform: translateY(-3px); }
 }
 .hero-ghost-link:hover { color: #fff; transform: translateX(3px); }
 
-/* Pills + tags */
 .pill {
     display: inline-flex;
     align-items: center;
@@ -188,7 +175,6 @@ footer a:hover .fab { transform: translateY(-3px); }
     padding: clamp(120px, 12vh, 170px) 0 clamp(70px, 9vh, 110px);
     isolation: isolate;
 }
-
 .hero-video__bg {
     position: absolute;
     inset: 0;
@@ -198,18 +184,14 @@ footer a:hover .fab { transform: translateY(-3px); }
     transform: scale(1.08);
     filter: saturate(1.0) contrast(1.12) brightness(0.68);
 }
-
 .hero-video__overlay {
     position: absolute;
     inset: 0;
     z-index: 0;
-
-    /* no big accent wash; just readable cinematic overlay */
     background:
         radial-gradient(circle at 50% 40%, rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.84)),
         linear-gradient(to bottom, rgba(7, 7, 10, 0.18), rgba(7, 7, 10, 0.97));
 }
-
 .hero-video::after {
     content: "";
     position: absolute;
@@ -227,16 +209,13 @@ footer a:hover .fab { transform: translateY(-3px); }
         );
     mix-blend-mode: overlay;
 }
-
 .hero-video__content { position: relative; z-index: 2; }
-
 .hero-title {
     font-size: clamp(2.9rem, 5.5vw, 5rem);
     line-height: 1.02;
     letter-spacing: -0.035em;
     text-shadow: 0 18px 70px rgba(0, 0, 0, 0.55);
 }
-
 .hero-subtitle {
     max-width: 62ch;
     margin-left: auto;
@@ -275,7 +254,7 @@ footer a:hover .fab { transform: translateY(-3px); }
 }
 
 /* ==========================================================================
-   6. STORY SECTIONS
+   6. STORY + FEATURED PROJECTS (keep layout)
    ========================================================================== */
 .story-divider{
     display:flex;
@@ -296,7 +275,7 @@ footer a:hover .fab { transform: translateY(-3px); }
     text-transform: uppercase;
 }
 
-/* PROJECT FEATURES */
+/* FEATURE */
 .feature {
     position: relative;
     border-radius: var(--radius);
@@ -305,7 +284,6 @@ footer a:hover .fab { transform: translateY(-3px); }
     overflow: hidden;
     padding: 28px;
 }
-
 .feature::before{
     content:"";
     position:absolute;
@@ -315,7 +293,6 @@ footer a:hover .fab { transform: translateY(-3px); }
     opacity: .55;
     pointer-events:none;
 }
-
 .feature::after{
     content:"";
     position:absolute;
@@ -325,7 +302,6 @@ footer a:hover .fab { transform: translateY(-3px); }
 }
 
 .feature__meta{ position: relative; z-index: 1; display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
-
 .feature__badge{
     font-size:.78rem;
     letter-spacing:.18em;
@@ -341,7 +317,6 @@ footer a:hover .fab { transform: translateY(-3px); }
 
 .feature__title{ position: relative; z-index: 1; font-size: clamp(1.35rem, 2.3vw, 1.9rem); margin: 12px 0 10px; }
 .feature__desc{ position: relative; z-index: 1; color: rgba(255,255,255,.68); line-height: 1.9; max-width: 70ch; }
-
 .feature__actions{ position: relative; z-index: 1; display:flex; gap:12px; flex-wrap:wrap; margin-top: 18px; }
 
 .btn-outline-ink{
@@ -362,138 +337,13 @@ footer a:hover .fab { transform: translateY(-3px); }
     color: #fff;
 }
 
-/* ABOUT */
-.about-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 28px; }
-@media (max-width: 992px){ .about-grid { grid-template-columns: 1fr; } }
-
-.about-card{
-    border: 1px solid rgba(255,255,255,.10);
-    border-radius: var(--radius);
-    background: rgba(255,255,255,.03);
-    padding: 28px;
-}
-
-.about-highlights{ display:grid; gap:12px; }
-.highlight{
-    display:flex;
-    gap:12px;
-    align-items:flex-start;
-    padding: 14px 14px;
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,.10);
-    background: rgba(0,0,0,.16);
-    transition: transform .2s ease, border-color .2s ease;
-}
-.highlight:hover{ transform: translateY(-3px); border-color: rgba(167,139,250,.28); }
-
-.highlight__icon{
-    width: 42px; height: 42px;
-    border-radius: 14px;
-    display:grid;
-    place-items:center;
-    background: rgba(77,163,255,.10);
-    border: 1px solid rgba(77,163,255,.22);
-    color: rgba(255,255,255,.92);
-    flex: 0 0 auto;
-    box-shadow: 0 0 24px rgba(77,163,255,.10);
-}
-
-/* SKILLS */
-.skill-tile{
-    border: 1px solid rgba(255,255,255,.10);
-    border-radius: var(--radius);
-    padding: 18px 18px;
-    background: rgba(255,255,255,.03);
-    transition: transform .2s ease, border-color .2s ease, background .2s ease;
-}
-.skill-tile:hover{ transform: translateY(-4px); border-color: rgba(77,163,255,.30); background: rgba(255,255,255,.04); }
-
-.skill-tile__icon{
-    width: 46px; height: 46px;
-    border-radius: 14px;
-    display:grid;
-    place-items:center;
-    background: rgba(167,139,250,.10);
-    border: 1px solid rgba(167,139,250,.22);
-    color: rgba(255,255,255,.92);
-    box-shadow: 0 0 26px rgba(167,139,250,.10);
-}
-
-.skill-tile__title{ font-weight: 900; margin: 0; }
-.skill-tile__desc{ color: rgba(255,255,255,.62); margin:0; line-height:1.7; }
-
-/* TECH GRID */
-.tech-grid .tech-item{
-    border: 1px solid rgba(255,255,255,.10);
-    border-radius: 16px;
-    background: rgba(255,255,255,.03);
-    padding: 16px 12px;
-    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
-}
-.tech-grid .tech-item:hover{
-    transform: translateY(-3px);
-    border-color: rgba(77,163,255,.28);
-    box-shadow: 0 0 34px rgba(77,163,255,.08);
-}
-.tech-icon { font-size: 2.1rem; line-height: 1; }
-
-/* CONTACT */
-.contact-strip{
-    border: 1px solid rgba(255,255,255,.10);
-    border-radius: var(--radius);
-    background: rgba(255,255,255,.03);
-    padding: 28px;
-}
-
-.contact-card {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 16px 16px;
-    border-radius: 16px;
-    text-decoration: none;
-
-    background: rgba(0,0,0,.18);
-    border: 1px solid rgba(255,255,255,.10);
-    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow .25s ease;
-}
-.contact-card:hover{
-    transform: translateY(-4px);
-    border-color: rgba(167,139,250, 0.28);
-    background: rgba(0,0,0,.26);
-    box-shadow: 0 0 34px rgba(167,139,250,.08);
-}
-.contact-card--static:hover{ transform:none; box-shadow:none; }
-
-.contact-card__icon{
-    width: 46px; height: 46px;
-    border-radius: 14px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(77, 163, 255, 0.10);
-    border: 1px solid rgba(77, 163, 255, 0.22);
-    color: rgba(255,255,255,.92);
-    flex: 0 0 auto;
-}
-.contact-card__icon i { font-size: 1.2rem; }
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-    * { scroll-behavior: auto !important; }
-    .skill-tile, .tech-item, .contact-card, .btn-hero, .btn-outline-ink, .hero-ghost-link, .tag, .highlight { transition: none !important; }
-    .skill-tile:hover, .tech-item:hover, .contact-card:hover, .btn-outline-ink:hover, .btn-hero:hover, .hero-ghost-link:hover, .tag:hover, .highlight:hover { transform: none !important; }
-    .hero-scroll__dot { animation: none !important; }
-}
-
-/* ===== Featured project media (preview image) ===== */
+/* Featured media layout */
 .feature--with-media{
     display: grid;
     grid-template-columns: minmax(240px, 360px) 1fr;
     gap: 22px;
     align-items: stretch;
 }
-
 .feature__media{
     position: relative;
     border-radius: 16px;
@@ -502,7 +352,6 @@ footer a:hover .fab { transform: translateY(-3px); }
     background: rgba(0,0,0,.20);
     min-height: 200px;
 }
-
 .feature__media img{
     width: 100%;
     height: 100%;
@@ -511,7 +360,6 @@ footer a:hover .fab { transform: translateY(-3px); }
     transform: scale(1.02);
     filter: contrast(1.05) saturate(1.03) brightness(0.95);
 }
-
 .feature__media::after{
     content:"";
     position:absolute;
@@ -521,50 +369,282 @@ footer a:hover .fab { transform: translateY(-3px); }
                 linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.35));
     pointer-events:none;
 }
+.feature__body{ position: relative; z-index: 1; }
+@media (max-width: 992px){
+    .feature--with-media{ grid-template-columns: 1fr; }
+    .feature__media{ min-height: 220px; }
+}
 
-.feature__body{
+/* ==========================================================================
+   7. ABOUT: PURPLE FIRE (highly visible animation)
+   ========================================================================== */
+#about .profile-card--purplefire{
+    position: relative;
+    overflow: hidden;
+    max-width: 1020px;
+    margin: 0 auto;
+
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,.16);
+
+    /* slight glass */
+    background: rgba(255,255,255,.06);
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 45px 140px rgba(0,0,0,.62),
+        0 0 0 1px rgba(167,139,250,.12);
+
+    padding: clamp(22px, 3vw, 34px);
+    isolation: isolate; /* isolates blend modes inside */
+}
+
+/* TOP dark fade so text stays crisp */
+#about .profile-card--purplefire::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    background: linear-gradient(
+        180deg,
+        rgba(0,0,0,.72) 0%,
+        rgba(0,0,0,.42) 28%,
+        rgba(0,0,0,.18) 55%,
+        rgba(0,0,0,0) 78%
+    );
+    opacity: .92;
+}
+
+/* STATIC purple fill (always purple even if animation fails) */
+#about .profile-card--purplefire .profile-card__bg{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    background:
+        linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.12) 45%, rgba(0,0,0,.25) 100%),
+        radial-gradient(1150px 560px at 50% 112%, rgba(167,139,250,.92), transparent 70%),
+        radial-gradient(900px 520px at 18% 116%, rgba(139,92,246,.66), transparent 72%),
+        radial-gradient(900px 520px at 82% 116%, rgba(192,132,252,.50), transparent 74%);
+    opacity: 1;
+}
+
+/* FIRE LAYER A (big tongues) */
+#about .profile-card--purplefire::after{
+    content:"";
+    position:absolute;
+    left:-45%;
+    right:-45%;
+    bottom:-65%;
+    height: 135%;
+    z-index:0;
+    pointer-events:none;
+
+    background:
+        radial-gradient(closest-side at 15% 70%, rgba(192,132,252,.78), transparent 70%),
+        radial-gradient(closest-side at 40% 82%, rgba(167,139,250,.92), transparent 72%),
+        radial-gradient(closest-side at 65% 78%, rgba(109,40,217,.66), transparent 74%),
+        radial-gradient(closest-side at 86% 68%, rgba(192,132,252,.72), transparent 74%),
+        radial-gradient(closest-side at 55% 98%, rgba(167,139,250,.95), transparent 76%);
+
+    filter: blur(16px) saturate(1.25);
+    opacity: .95;
+    mix-blend-mode: screen;
+
+    animation: purpleFireA 3.2s ease-in-out infinite;
+}
+
+/* FIRE LAYER B (fast flicker) */
+#about .profile-card--purplefire .profile-fire-flicker{
+    position:absolute;
+    left:-50%;
+    right:-50%;
+    bottom:-70%;
+    height: 150%;
+    z-index:0;
+    pointer-events:none;
+
+    background:
+        radial-gradient(closest-side at 28% 86%, rgba(192,132,252,.55), transparent 70%),
+        radial-gradient(closest-side at 52% 92%, rgba(167,139,250,.62), transparent 72%),
+        radial-gradient(closest-side at 78% 84%, rgba(109,40,217,.48), transparent 74%),
+        radial-gradient(closest-side at 46% 74%, rgba(192,132,252,.40), transparent 76%);
+
+    filter: blur(22px) saturate(1.3);
+    opacity: .85;
+    mix-blend-mode: screen;
+
+    animation: purpleFireB 1.35s ease-in-out infinite;
+}
+
+/* wavy “tongue edge” using a mask (supported browsers get the fire edge) */
+@supports ((-webkit-mask: radial-gradient(#000,#000)) or (mask: radial-gradient(#000,#000))) {
+    #about .profile-card--purplefire::after,
+    #about .profile-card--purplefire .profile-fire-flicker{
+        -webkit-mask:
+            radial-gradient(34px 20px at 8% 68%,  #000 62%, transparent 66%),
+            radial-gradient(40px 22px at 22% 74%, #000 62%, transparent 66%),
+            radial-gradient(30px 18px at 36% 70%, #000 62%, transparent 66%),
+            radial-gradient(46px 26px at 50% 78%, #000 62%, transparent 66%),
+            radial-gradient(30px 18px at 64% 70%, #000 62%, transparent 66%),
+            radial-gradient(40px 22px at 78% 74%, #000 62%, transparent 66%),
+            radial-gradient(34px 20px at 92% 68%, #000 62%, transparent 66%),
+            linear-gradient(#000,#000);
+        mask:
+            radial-gradient(34px 20px at 8% 68%,  #000 62%, transparent 66%),
+            radial-gradient(40px 22px at 22% 74%, #000 62%, transparent 66%),
+            radial-gradient(30px 18px at 36% 70%, #000 62%, transparent 66%),
+            radial-gradient(46px 26px at 50% 78%, #000 62%, transparent 66%),
+            radial-gradient(30px 18px at 64% 70%, #000 62%, transparent 66%),
+            radial-gradient(40px 22px at 78% 74%, #000 62%, transparent 66%),
+            radial-gradient(34px 20px at 92% 68%, #000 62%, transparent 66%),
+            linear-gradient(#000,#000);
+    }
+}
+
+/* Animations: noticeable movement */
+@keyframes purpleFireA{
+    0%   { transform: translate3d(-3%, 12%, 0) scale(1.02) rotate(-1.3deg); }
+    40%  { transform: translate3d( 4%, -6%, 0) scale(1.10) rotate( 1.2deg); }
+    70%  { transform: translate3d(-2%,  5%, 0) scale(1.06) rotate(-0.8deg); }
+    100% { transform: translate3d(-3%, 12%, 0) scale(1.02) rotate(-1.3deg); }
+}
+@keyframes purpleFireB{
+    0%   { transform: translate3d( 2%, 10%, 0) scale(1.06); opacity: .78; }
+    50%  { transform: translate3d(-3%, -4%, 0) scale(1.14); opacity: .95; }
+    100% { transform: translate3d( 2%, 10%, 0) scale(1.06); opacity: .78; }
+}
+
+/* Content above effects */
+#about .profile-card--purplefire > *{
     position: relative;
     z-index: 1;
 }
 
-/* Responsive: stack image above text */
-@media (max-width: 992px){
-    .feature--with-media{
+/* layout */
+#about .profile-card__top{
+    display: grid;
+    grid-template-columns: 76px 1fr;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+#about .profile-avatar{
+    width: 76px;
+    height: 76px;
+    border-radius: 22px;
+    display: grid;
+    place-items: center;
+
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.16);
+    box-shadow:
+        0 18px 70px rgba(0,0,0,.45),
+        0 0 55px rgba(167, 139, 250, .18);
+}
+#about .profile-avatar i{ font-size: 1.35rem; color: rgba(255,255,255,.92); }
+
+#about .profile-title{ font-weight: 950; letter-spacing: -0.02em; margin: 0; }
+
+#about .profile-pills{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 8px; }
+#about .profile-pill{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:8px 12px; border-radius:999px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.14);
+    color: rgba(255,255,255,.86);
+    font-weight: 800;
+    font-size: .86rem;
+}
+#about .profile-pill__dot{
+    width:8px; height:8px; border-radius:999px;
+    background: linear-gradient(180deg, rgba(192,132,252,1), rgba(109,40,217,1));
+    box-shadow: 0 0 0 6px rgba(167,139,250,.14);
+}
+
+#about .profile-bio{
+    color: rgba(255,255,255,.86);
+    line-height: 1.85;
+    max-width: 70ch;
+    margin-top: 8px;
+}
+
+#about .profile-tags{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 16px; }
+#about .profile-tag{
+    padding: 8px 12px; border-radius: 999px;
+    font-size: 0.85rem; font-weight: 900;
+    color: rgba(255,255,255,.92);
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.14);
+    transition: transform .2s ease, border-color .2s ease;
+}
+#about .profile-tag:hover{ transform: translateY(-2px); border-color: rgba(192, 132, 252, .42); }
+
+#about .profile-skills{
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+#about .profile-skill{
+    border-radius: 18px;
+    padding: 14px 14px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.14);
+}
+#about .profile-skill__label{
+    color: rgba(255,255,255,.95);
+    font-weight: 950;
+    letter-spacing: -0.01em;
+}
+#about .profile-skill__desc{
+    margin-top: 6px;
+    color: rgba(255,255,255,.78);
+    line-height: 1.6;
+    font-size: .95rem;
+}
+
+#about .profile-stats{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+}
+#about .profile-stat{
+    border-radius: 18px;
+    padding: 14px 14px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.14);
+}
+#about .profile-stat__label{
+    color: rgba(255,255,255,.70);
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    font-weight: 900;
+    font-size: .72rem;
+}
+#about .profile-stat__value{
+    margin-top: 6px;
+    font-weight: 950;
+    color: rgba(255,255,255,.96);
+}
+
+@media (max-width: 576px){
+    #about .profile-card__top{
         grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
     }
-    .feature__media{
-        min-height: 220px;
-    }
-}
-
-/* ===== Contact: remove “blue text” look ===== */
-/* In your screenshot, the value line looks like a link color.
-   Force the value to stay neutral, even inside <a>. */
-.contact-card__value{
-    color: rgba(255,255,255,.65) !important;
-}
-
-/* Keep title white (not blue) */
-.contact-card__title{
-    color: #fff !important;
-}
-
-/* Only icons / border glow show accent on hover (not the text) */
-.contact-card:hover .contact-card__title,
-.contact-card:hover .contact-card__value{
-    color: rgba(255,255,255,.88) !important;
+    #about .profile-pills{ justify-content: center; }
+    #about .profile-skills{ grid-template-columns: 1fr; }
+    #about .profile-stats{ grid-template-columns: 1fr; }
 }
 
 /* ==========================================================================
-   TECH STACK: Infinite scroll marquee (logo bigger, label below)
+   8. TECH STACK
    ========================================================================== */
-
-/* spacing between rows (only when stacked) */
-.tech-marquee--stack{
-    display: grid;
-    gap: 12px;
-}
-
 .tech-marquee{
     position: relative;
     margin-top: 18px;
@@ -574,8 +654,6 @@ footer a:hover .fab { transform: translateY(-3px); }
     overflow: hidden;
     padding: 18px 0;
 }
-
-/* fade edges so the loop feels premium */
 .tech-marquee::before,
 .tech-marquee::after{
     content:"";
@@ -593,28 +671,15 @@ footer a:hover .fab { transform: translateY(-3px); }
     right:0;
     background: linear-gradient(270deg, rgba(7,7,10,0.95), rgba(7,7,10,0));
 }
-
 .tech-track{
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    width: max-content;
-    padding: 0 18px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    width:max-content;
+    padding:0 18px;
     will-change: transform;
     animation: tech-marquee-scroll 26s linear infinite;
 }
-
-/* row variations */
-.tech-track--b{
-    animation-direction: reverse;
-    animation-duration: 30s;
-}
-.tech-track--c{
-    animation-duration: 22s;
-    opacity: 0.95;
-}
-
-/* card becomes a vertical stack */
 .tech-logo{
     width: 92px;
     height: 96px;
@@ -634,7 +699,6 @@ footer a:hover .fab { transform: translateY(-3px); }
     border-color: rgba(77,163,255,.28);
     background: rgba(0,0,0,.24);
 }
-
 .tech-logo img{
     width: 46px;
     height: 46px;
@@ -644,10 +708,7 @@ footer a:hover .fab { transform: translateY(-3px); }
     opacity: 0.98;
     transition: transform .2s ease;
 }
-.tech-logo:hover img{
-    transform: scale(1.06);
-}
-
+.tech-logo:hover img{ transform: scale(1.06); }
 .tech-label{
     font-size: 0.78rem;
     color: rgba(255,255,255,.72);
@@ -657,128 +718,62 @@ footer a:hover .fab { transform: translateY(-3px); }
     text-align: center;
     white-space: nowrap;
 }
-
-/* keyframes: JS duplicates the list so -50% becomes seamless */
 @keyframes tech-marquee-scroll{
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
 }
 
-@media (max-width: 576px){
-    .tech-logo{
-        width: 84px;
-        height: 92px;
-        border-radius: 14px;
-    }
-    .tech-logo img{
-        width: 42px;
-        height: 42px;
-    }
-    .tech-label{
-        font-size: 0.74rem;
-    }
-}
-
-@media (prefers-reduced-motion: reduce){
-    .tech-track{ animation: none !important; transform: none !important; }
-}
-
 /* ==========================================================================
-   ABOUT - Purple animated full gradient card (safe: affects ONLY #about)
+   9. CONTACT
    ========================================================================== */
-
-/* The "profile card" class comes from the new About markup.
-   If you haven't updated HTML yet, this won't affect anything. */
-#about .profile-card{
-    position: relative;
-    overflow: hidden;
-
-    border: 1px solid rgba(255,255,255,.14);
-    border-radius: calc(var(--radius) + 8px);
-
-    background: transparent !important;
-
-    padding: 34px;
-
-    box-shadow:
-        0 24px 80px rgba(0,0,0,.55),
-        0 0 0 1px rgba(167,139,250,.12);
-
-    transform: translateY(0);
-    transition: transform .35s ease, border-color .35s ease;
+.contact-strip{
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: var(--radius);
+    background: rgba(255,255,255,.03);
+    padding: 28px;
 }
-
-#about .profile-card:hover{
-    transform: translateY(-4px);
-    border-color: rgba(167,139,250,.35);
-}
-
-/* Base gradient: subtle at top, stronger at bottom */
-#about .profile-card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    z-index:0;
-    pointer-events:none;
-
-    background: linear-gradient(
-        180deg,
-        rgba(167, 139, 250, 0.18) 0%,
-        rgba(167, 139, 250, 0.28) 35%,
-        rgba(109, 40, 217, 0.55) 70%,
-        rgba(88, 28, 135, 0.82) 100%
-    );
-}
-
-/* Animated overlay: drifting purple glow */
-#about .profile-card::after{
-    content:"";
-    position:absolute;
-    inset:-40%;
-    z-index:0;
-    pointer-events:none;
-
-    background:
-        radial-gradient(circle at 20% 20%, rgba(192, 132, 252, 0.35), transparent 55%),
-        radial-gradient(circle at 80% 70%, rgba(167, 139, 250, 0.30), transparent 60%),
-        radial-gradient(circle at 30% 90%, rgba(139, 92, 246, 0.28), transparent 55%);
-
-    filter: blur(18px);
-    opacity: 0.9;
-
-    animation: aboutPurpleDrift 10s ease-in-out infinite;
-}
-
-@keyframes aboutPurpleDrift{
-    0%   { transform: translate3d(-2%, -2%, 0) scale(1.02); }
-    50%  { transform: translate3d(3%, 2%, 0) scale(1.06); }
-    100% { transform: translate3d(-2%, -2%, 0) scale(1.02); }
-}
-
-/* Keep all card content above gradients */
-#about .profile-card > *{
-    position: relative;
-    z-index: 1;
-}
-
-/* If you still have an older background layer in the markup, hide it */
-#about .profile-card__bg{
-    display: none !important;
-}
-
-/* Avatar: keep readable on purple */
-#about .profile-avatar{
-    border: 1px solid rgba(255,255,255,.18);
+.contact-card{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:16px 16px;
+    border-radius:16px;
+    text-decoration:none;
     background: rgba(0,0,0,.18);
-    box-shadow:
-        0 18px 70px rgba(0,0,0,.45),
-        0 0 40px rgba(167,139,250,.14);
+    border:1px solid rgba(255,255,255,.10);
+    transition: transform .25s ease, border-color .25s ease, background .25s ease, box-shadow .25s ease;
 }
+.contact-card:hover{
+    transform: translateY(-4px);
+    border-color: rgba(167,139,250,.28);
+    background: rgba(0,0,0,.26);
+    box-shadow: 0 0 34px rgba(167,139,250,.08);
+}
+.contact-card--static:hover{ transform:none; box-shadow:none; }
+.contact-card__icon{
+    width:46px; height:46px;
+    border-radius:14px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background: rgba(77,163,255,.10);
+    border:1px solid rgba(77,163,255,.22);
+    color: rgba(255,255,255,.92);
+    flex: 0 0 auto;
+}
+.contact-card__icon i{ font-size: 1.2rem; }
+.contact-card__value{ color: rgba(255,255,255,.65) !important; }
+.contact-card__title{ color: #fff !important; }
+.contact-card:hover .contact-card__title,
+.contact-card:hover .contact-card__value{ color: rgba(255,255,255,.88) !important; }
 
-/* Reduced motion support */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce){
-    #about .profile-card::after{
+    #about .profile-card--purplefire::after,
+    #about .profile-fire-flicker{
         animation: none !important;
         transform: none !important;
     }
+    .tech-track{ animation: none !important; transform: none !important; }
+    * { scroll-behavior: auto !important; }
 }
