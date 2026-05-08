@@ -64,4 +64,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     typeLoop();
+
+    const selectors = [
+        '.hero-video__content',
+        '.feature',
+        '.profile-card--purplefire',
+        '.tech-marquee',
+        '.contact-transparent-card',
+        '.text-center',
+        // Any other key container for animated float-in
+    ];
+    // Gather all elements matching those selectors
+    const floatupEls = document.querySelectorAll(selectors.join(','));
+
+    floatupEls.forEach(el => el.classList.add('floatup'));
+
+    // Intersection Observer to toggle animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.4
+    });
+
+    floatupEls.forEach(el => observer.observe(el));
 });

@@ -821,3 +821,16 @@ footer a:hover .fab { transform: translateY(-3px); }
   46%,64%{ opacity: 0;}
 }
 
+
+
+/* ==== FloatUp Multi-Use Animation ==== */
+.floatup {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.8s cubic-bezier(0.41,0.71,0.38,1), transform 0.76s cubic-bezier(0.41,0.71,0.38,1);
+    will-change: opacity, transform;
+}
+.floatup.visible {
+    opacity: 1;
+    transform: none;
+}
