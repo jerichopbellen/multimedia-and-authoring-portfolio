@@ -463,9 +463,6 @@ footer a:hover .fab { transform: translateY(-3px); }
     box-shadow:
         0 18px 70px rgba(0,0,0,.45),
         0 0 55px rgba(167, 139, 250, .18);
-
-    animation: icon-sheen-pulse 2.2s ease-in-out infinite;
-    will-change: transform, box-shadow;
 }
 
 /* moving light sweep */
@@ -496,8 +493,6 @@ footer a:hover .fab { transform: translateY(-3px); }
     font-size: 1.35rem;
     color: rgba(255,255,255,.94);
     filter: drop-shadow(0 10px 22px rgba(167,139,250,.28));
-    animation: icon-sparkle 2.6s ease-in-out infinite;
-    will-change: transform, filter, opacity;
 }
 
 @keyframes icon-sheen-sweep{
@@ -506,34 +501,6 @@ footer a:hover .fab { transform: translateY(-3px); }
     45%  { opacity: .75; }
     70%  { opacity: .35; }
     100% { transform: translateX(90%) rotate(12deg); opacity: 0; }
-}
-
-@keyframes icon-sheen-pulse{
-    0%, 100% {
-        transform: translateY(0);
-        box-shadow:
-            0 18px 70px rgba(0,0,0,.45),
-            0 0 55px rgba(167, 139, 250, .18);
-    }
-    50% {
-        transform: translateY(-3px);
-        box-shadow:
-            0 22px 80px rgba(0,0,0,.50),
-            0 0 80px rgba(192,132,252,.26);
-    }
-}
-
-@keyframes icon-sparkle{
-    0%, 100% {
-        transform: scale(1);
-        filter: drop-shadow(0 10px 22px rgba(167,139,250,.26));
-        opacity: .95;
-    }
-    50% {
-        transform: scale(1.035);
-        filter: drop-shadow(0 16px 34px rgba(192,132,252,.46));
-        opacity: 1;
-    }
 }
 
 #about .profile-pills{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 8px; }
