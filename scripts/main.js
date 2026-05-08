@@ -25,4 +25,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
         track.dataset.cloned = "true";
     });
+
+    // Typewriter effect for "Connect" in the contact section
+
+    const str = "Connect";
+    const typingSpeed = 120;   // ms per character
+    const eraseSpeed = 75;     // ms per character erase
+    const delayAfterType = 1600; // ms wait after typing
+    const delayAfterErase = 700;  // ms wait after erasing
+    let i = 0;
+    let isErasing = false;
+    const target = document.getElementById("typewrite-connect");
+    if (!target) return;
+
+    function typeLoop() {
+        if (!isErasing) {
+        // Typing
+        target.textContent = str.slice(0, i+1);
+        if (i < str.length - 1) {
+            i++;
+            setTimeout(typeLoop, typingSpeed);
+        } else {
+            setTimeout(() => {
+            isErasing = true;
+            setTimeout(typeLoop, eraseSpeed);
+            }, delayAfterType);
+        }
+        } else {
+        // Erasing
+        target.textContent = str.slice(0, i);
+        if (i > 0) {
+            i--;
+            setTimeout(typeLoop, eraseSpeed);
+        } else {
+            isErasing = false;
+            setTimeout(typeLoop, delayAfterErase);
+        }
+        }
+    }
+    typeLoop();
 });
