@@ -189,8 +189,8 @@ footer a:hover .fab { transform: translateY(-3px); }
     inset: 0;
     z-index: 0;
     background:
-        radial-gradient(circle at 50% 40%, rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.84)),
-        linear-gradient(to bottom, rgba(7, 7, 10, 0.18), rgba(7, 7, 10, 0.97));
+    radial-gradient(circle at 50% 40%, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.68)),
+    linear-gradient(to bottom, rgba(7, 7, 10, 0.12), rgba(7, 7, 10, 0.88));
 }
 .hero-video::after {
     content: "";
