@@ -586,6 +586,36 @@ footer a:hover .fab { transform: translateY(-3px); }
     color: rgba(255,255,255,.96);
 }
 
+.profile-card{
+    position: relative;
+}
+/* THE ID LANYARD HOLE - RIGHT EDGE PUNCH */
+.profile-card__hole {
+    position: absolute !important;
+    top: 30px !important;
+    
+    /* Move to the right edge and "punch" halfway through the border */
+    right: 25px !important; 
+    
+    /* KILL the left positioning and the transform */
+    left: auto !important;
+    transform: none !important;
+
+    width: 20px; 
+    height: 20px; 
+    border-radius: 50%;
+    z-index: 10;
+    
+    /* Matching your dark section background */
+    background: #000000; 
+    
+    /* Your requested external purple glow */
+    box-shadow: 0 0 10px 1px var(--accent2); 
+    
+    /* Matching your card background color */
+    border: 3px solid #1a1a1a; 
+}
+
 @media (max-width: 576px){
     #about .profile-card__top{
         grid-template-columns: 1fr;
@@ -893,10 +923,6 @@ footer a:hover .fab { transform: translateY(-3px); }
     height: 38px;
     font-size: 1.1rem;
     border-radius: 10px;
-  }
-
-  .contact-info-title {
-    font-size: 1rem;
   }
 
   .contact-info-sub {
