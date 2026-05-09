@@ -681,30 +681,38 @@ footer a:hover .fab { transform: translateY(-3px); }
 /* ==========================================================================
    9. CONTACT
    ========================================================================== */
+
+/* The main section wrapper provides consistent vertical spacing */
+#contact.section {
+  padding: clamp(60px, 10vh, 100px) 0;
+}
+
 /* TRANSPARENT CARD with "blue sun" profile-style accent */
 .contact-transparent-card {
   position: relative;
   border-radius: 30px;
-  border: 1.2px solid rgba(77,163,255,0.13);
-  /* Transparent! */
+  border: 1.2px solid rgba(77, 163, 255, 0.13);
   background: transparent;
-  box-shadow: 0 28px 100px rgba(0,0,0,0.16), 0 0 0 1px rgba(77,163,255,0.05);
-  padding: clamp(24px, 3vw, 34px) clamp(14px,2vw,26px);
+  box-shadow: 0 28px 100px rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(77, 163, 255, 0.05);
+  
+  /* Fluid internal padding: scales from 30px on mobile to 60px on desktop */
+  padding: clamp(30px, 5vw, 60px) clamp(20px, 4vw, 45px);
   overflow: hidden;
   margin-bottom: 0;
 }
 
+/* Base Gradient (Desktop Size) */
 .contact-transparent-bg {
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
+  transition: all 0.4s ease; /* Smooth transition when resizing window */
   background:
-    /* Same layering logic as About, but blue, and top right */
-    linear-gradient(160deg, rgba(0,0,0,0) 0%, rgba(0,0,20,0.08) 26%, rgba(0,0,0,0.19) 100%),
-    radial-gradient(1000px 420px at 95% 0%, rgba(77,163,255,0.78), transparent 80%),
-    radial-gradient(550px 200px at 93% 10%, rgba(77,163,255,0.14), transparent 77%),
-    radial-gradient(600px 250px at 72% -13%, rgba(78,200,255,0.13), transparent 83%);
+    linear-gradient(160deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 20, 0.08) 26%, rgba(0, 0, 0, 0.19) 100%),
+    radial-gradient(1000px 420px at 95% 0%, rgba(77, 163, 255, 0.78), transparent 80%),
+    radial-gradient(550px 200px at 93% 10%, rgba(77, 163, 255, 0.14), transparent 77%),
+    radial-gradient(600px 250px at 72% -13%, rgba(78, 200, 255, 0.13), transparent 83%);
 }
 
 .contact-transparent-card > *:not(.contact-transparent-bg) {
@@ -712,70 +720,91 @@ footer a:hover .fab { transform: translateY(-3px); }
   z-index: 2;
 }
 
-/* Contact cards and icons, unchanged from previous good styles */
+/* Contact cards and icons */
 .contact-info-card {
   display: flex;
   align-items: center;
   gap: 14px;
   padding: 16px 18px;
   border-radius: 18px;
-  border: 1.2px solid rgba(77,163,255,0.12);
-  background: rgba(27,34,48,0.88);
+  border: 1.2px solid rgba(77, 163, 255, 0.12);
+  background: rgba(27, 34, 48, 0.88);
   color: #fff;
   text-decoration: none !important;
-  box-shadow: 0 1.5px 10px 0 rgba(77,163,255,0.028);
+  box-shadow: 0 1.5px 10px 0 rgba(77, 163, 255, 0.028);
   font-weight: 600;
   transition: border-color 0.16s, background 0.17s, color 0.15s, box-shadow 0.18s;
+  min-width: 0; 
+  overflow: hidden;
 }
+
+.contact-info-card > div:last-child {
+  min-width: 0;
+  flex: 1;
+}
+
 .contact-info-card:hover:not(.contact-info-static),
 .contact-info-card:focus:not(.contact-info-static) {
   border-color: #4da3ff;
-  background: rgba(77,163,255,0.14);
+  background: rgba(77, 163, 255, 0.14);
   color: #fff;
-  box-shadow: 0 6px 22px 0 rgba(77,163,255,0.08);
+  box-shadow: 0 6px 22px 0 rgba(77, 163, 255, 0.08);
 }
+
 .contact-info-static {
   opacity: 0.92;
-  background: rgba(110,132,170,0.13) !important;
-  border-color: rgba(77,163,255,0.08) !important;
+  background: rgba(110, 132, 170, 0.13) !important;
+  border-color: rgba(77, 163, 255, 0.08) !important;
   pointer-events: none;
 }
+
 .contact-info-icon {
-  width: 45px; height: 45px;
+  width: 45px;
+  height: 45px;
   border-radius: 13px;
-  background: rgba(77,163,255,0.16);
+  background: rgba(77, 163, 255, 0.16);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #4da3ff;
   font-size: 1.41rem;
-  border: 1.3px solid rgba(77,163,255,0.17);
+  border: 1.3px solid rgba(77, 163, 255, 0.17);
   flex-shrink: 0;
   transition: border-color 0.13s, color 0.14s, background 0.15s;
 }
+
 .contact-info-card:hover:not(.contact-info-static) .contact-info-icon {
   color: #fff;
   background: #4da3ff33;
   border-color: #4da3ff;
 }
+
 .contact-info-title {
   font-weight: 800;
   font-size: 1.09rem;
   color: #fff;
   margin-bottom: 1px;
   line-height: 1.13;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 .contact-info-sub {
-  color: rgba(230,240,255,0.75);
+  color: rgba(230, 240, 255, 0.75);
   font-size: 0.97rem;
   line-height: 1.23;
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }
 
 /* Tag for heading */
 .profile-tag.profile-tag--blue {
-  background: rgba(77,163,255,0.13);
-  border: 1.5px solid rgba(77,163,255,0.23);
+  background: rgba(77, 163, 255, 0.13);
+  border: 1.5px solid rgba(77, 163, 255, 0.23);
   color: #def0ff;
   border-radius: 999px;
   padding: 8px 16px;
@@ -785,18 +814,7 @@ footer a:hover .fab { transform: translateY(-3px); }
   margin-top: 4px;
 }
 
-/* Responsive tweaks */
-@media (max-width: 992px) {
-  .contact-transparent-card { padding: 14px 6px; }
-  .contact-info-card { padding: 12px 8px; gap: 8px;}
-}
-@media (max-width:576px) {
-  .contact-transparent-card { padding: 6px 2px; border-radius:17px;}
-  .contact-info-card { padding: 8px 4px; }
-  .contact-info-icon { width: 36px; height: 36px; font-size: 1.03rem; }
-}
-
-/* Blue color for Connect with typewriter animation */
+/* Typewriter animation styles */
 .contact-typewrite {
   color: var(--accent);
   font-family: inherit;
@@ -817,11 +835,75 @@ footer a:hover .fab { transform: translateY(-3px); }
 }
 
 @keyframes blink-cursor {
-  0%,100%{ opacity: 1;}
-  46%,64%{ opacity: 0;}
+  0%, 100% { opacity: 1; }
+  46%, 64% { opacity: 0; }
 }
 
+/* ==========================================================================
+   RESPONSIVE TWEAKS
+   ========================================================================== */
 
+@media (max-width: 992px) {
+  .contact-transparent-card {
+    padding: 40px 30px;
+  }
+  
+  /* Shrink the gradients for Tablets */
+  .contact-transparent-bg {
+    background:
+      linear-gradient(160deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 20, 0.08) 26%, rgba(0, 0, 0, 0.19) 100%),
+      radial-gradient(600px 300px at 95% 0%, rgba(77, 163, 255, 0.6), transparent 80%),
+      radial-gradient(400px 150px at 93% 10%, rgba(77, 163, 255, 0.12), transparent 77%);
+  }
+
+  .contact-info-card {
+    padding: 14px 12px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  #contact.section {
+    padding: 40px 0;
+  }
+
+  /* Shrink the gradients significantly for Mobile */
+  .contact-transparent-bg {
+    background:
+      linear-gradient(160deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 20, 0.05) 40%, rgba(0, 0, 0, 0.15) 100%),
+      radial-gradient(450px 280px at 100% 0%, rgba(77, 163, 255, 0.5), transparent 85%),
+      radial-gradient(350px 150px at 90% 5%, rgba(77, 163, 255, 0.1), transparent 80%);
+  }
+
+  .contact-transparent-card {
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+
+  .contact-info-card {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .contact-info-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+  }
+
+  .contact-info-title {
+    font-size: 1rem;
+  }
+
+  .contact-info-sub {
+    font-size: 0.85rem;
+  }
+  
+  .profile-title {
+    font-size: 1.8rem !important;
+  }
+}
 
 /* ==== FloatUp Multi-Use Animation ==== */
 .floatup {
