@@ -628,41 +628,37 @@ footer a:hover .fab { transform: translateY(-3px); }
 }
 
 /* ==========================================================================
-   8. TECH STACK - CLEAN & BORDERLESS
+   8. TECH STACK - ORIGINAL SPECS + GLOW
    ========================================================================== */
 .tech-marquee {
     position: relative;
     margin-top: 40px;
     overflow: hidden;
-    padding: 20px 0;
-}
-
-/* Edge fades to make logos appear/disappear smoothly */
-.tech-marquee::before,
-.tech-marquee::after {
-    content: "";
-    position: absolute;
-    top: 0; bottom: 0;
-    width: 150px;
-    z-index: 2;
-    pointer-events: none;
-}
-.tech-marquee::before {
-    left: 0;
-    background: linear-gradient(90deg, var(--bg0) 0%, transparent 100%);
-}
-.tech-marquee::after {
-    right: 0;
-    background: linear-gradient(270deg, var(--bg0) 0%, transparent 100%);
+    padding: 20px 0; /* Back to original */
+    /* smoother, more gradual fade on both edges */
+    mask-image: linear-gradient(to right,
+        transparent 0%,
+        rgba(0,0,0,0.6) 6%,
+        rgba(0,0,0,0.95) 12%,
+        rgba(0,0,0,0.95) 88%,
+        rgba(0,0,0,0.6) 94%,
+        transparent 100%);
+    -webkit-mask-image: linear-gradient(to right,
+        transparent 0%,
+        rgba(0,0,0,0.6) 6%,
+        rgba(0,0,0,0.95) 12%,
+        rgba(0,0,0,0.95) 88%,
+        rgba(0,0,0,0.6) 94%,
+        transparent 100%);
 }
 
 .tech-track {
     display: flex;
     align-items: center;
-    gap: 60px; /* Increased gap for a more premium, airy feel */
+    gap: 60px; /* Back to original */
     width: max-content;
     will-change: transform;
-    animation: tech-marquee-scroll 35s linear infinite; /* Slower for readability */
+    animation: tech-marquee-scroll 50s linear infinite;
 }
 
 .tech-item {
@@ -674,44 +670,42 @@ footer a:hover .fab { transform: translateY(-3px); }
     transition: transform 0.3s ease;
 }
 
-/* Float effect on hover */
-.tech-item:hover {
-    transform: translateY(-8px);
-}
+.tech-item:hover { transform: translateY(-8px); }
 
 .tech-item img {
-    width: 52px;
+    width: 52px; /* Back to original */
     height: 52px;
     object-fit: contain;
-    /* Clean shadow without a container box */
-    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4)); 
     opacity: 0.85;
     transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
-.tech-item:hover img {
-    opacity: 1;
-    filter: drop-shadow(0 12px 24px rgba(77, 163, 255, 0.2));
-}
+/* INDIVIDUAL GLOWS (ALWAYS ON) */
+.tech-item[data-tech="blender"] img { filter: drop-shadow(0 0 15px rgba(255, 169, 83, 0.652)); }
+.tech-item[data-tech="ae"] img { filter: drop-shadow(0 0 12px rgba(154, 154, 255, 0.4)); }
+.tech-item[data-tech="java"] img { filter: drop-shadow(0 0 18px rgba(231, 49, 49, 0.75)); }
+.tech-item[data-tech="python"] img { filter: drop-shadow(0 0 15px rgba(55, 115, 166, 0.5)); }
+.tech-item[data-tech="cpp"] img { filter: drop-shadow(0 0 10px rgba(0, 140, 255, 0.4)); }
+.tech-item[data-tech="php"] img { filter: drop-shadow(0 0 10px rgba(179, 149, 255, 0.45)); }
+.tech-item[data-tech="laravel"] img { filter: drop-shadow(0 0 12px rgba(255, 45, 32, 1)); }
+.tech-item[data-tech="js"] img { filter: drop-shadow(0 0 16px rgba(247, 223, 30, 0.5)); }
+.tech-item[data-tech="node"] img { filter: drop-shadow(0 0 18px rgba(131, 205, 41, 0.7)); }
+.tech-item[data-tech="mysql"] img { filter: drop-shadow(0 0 22px rgba(1, 129, 158, 1)); }
+.tech-item[data-tech="react"] img { filter: drop-shadow(0 0 18px rgba(97, 218, 251, 0.5)); }
+.tech-item[data-tech="figma"] img { filter: drop-shadow(0 0 12px rgba(162, 89, 255, 0.4)); }
 
 .tech-label {
     font-size: 0.75rem;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.5); /* Back to original color */
     font-weight: 700;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    transition: color 0.3s ease;
-}
-
-.tech-item:hover .tech-label {
-    color: var(--accent);
 }
 
 @keyframes tech-marquee-scroll {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
 }
-
 /* ==========================================================================
    9. CONTACT
    ========================================================================== */

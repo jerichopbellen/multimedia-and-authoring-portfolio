@@ -14,17 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
     loadComponent('header-placeholder', 'header.html');
     loadComponent('footer-placeholder', 'footer.html');
 
+    // tech stack marquee duplication for seamless scrolling
+    
     const tracks = document.querySelectorAll('[data-marquee]');
     tracks.forEach(track => {
         if (track.dataset.cloned === "true") return;
-
-        const originalItems = Array.from(track.children);
-        originalItems.forEach(item => {
-            track.appendChild(item.cloneNode(true));
-        });
-
+        track.innerHTML += track.innerHTML + track.innerHTML;
         track.dataset.cloned = "true";
     });
+
 
     // Typewriter effect for "Connect" in the contact section
 
