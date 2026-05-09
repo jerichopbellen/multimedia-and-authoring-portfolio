@@ -63,6 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     typeLoop();
 
+    // Float-in animations
+
     const selectors = [
         '.hero-video__content',
         '.feature',
@@ -88,8 +90,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.4
+        threshold: 0.12
     });
 
-    floatupEls.forEach(el => observer.observe(el));
+    const profileCardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.07
+    });
+
+    floatupEls.forEach(el => {
+        if (el.matches('.profile-card--purplefire')) {
+            profileCardObserver.observe(el);
+        } else {
+            observer.observe(el);
+        }
+    });
+
 });
