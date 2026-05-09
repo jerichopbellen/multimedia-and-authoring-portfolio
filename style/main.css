@@ -686,7 +686,9 @@ footer a:hover .fab { transform: translateY(-3px); }
 #contact.section {
   padding: clamp(60px, 10vh, 100px) 0;
 }
-
+#contact {
+  scroll-margin-top: 70px; /* Adjust based on your navbar height */
+}
 /* TRANSPARENT CARD with "blue sun" profile-style accent */
 .contact-transparent-card {
   position: relative;
