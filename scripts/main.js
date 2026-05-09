@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '.tech-marquee',
         '.contact-transparent-card',
         '.text-center',
+        '.story-divider'
         // Any other key container for animated float-in
     ];
     // Gather all elements matching those selectors
