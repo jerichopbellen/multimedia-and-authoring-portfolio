@@ -780,8 +780,9 @@ footer a:hover .fab { transform: translateY(-3px); }
 }
 
 .contact-info-title {
+  font-weight: 950;
+  letter-spacing: -0.01em;
   font-weight: 800;
-  font-size: 1.09rem;
   color: #fff;
   margin-bottom: 1px;
   line-height: 1.13;
