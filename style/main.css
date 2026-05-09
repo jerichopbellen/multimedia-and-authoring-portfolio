@@ -628,82 +628,86 @@ footer a:hover .fab { transform: translateY(-3px); }
 }
 
 /* ==========================================================================
-   8. TECH STACK
+   8. TECH STACK - CLEAN & BORDERLESS
    ========================================================================== */
-.tech-marquee{
+.tech-marquee {
     position: relative;
-    margin-top: 18px;
-    border: 1px solid rgba(255,255,255,.10);
-    border-radius: var(--radius);
-    background: rgba(255,255,255,.03);
+    margin-top: 40px;
     overflow: hidden;
-    padding: 18px 0;
+    padding: 20px 0;
 }
+
+/* Edge fades to make logos appear/disappear smoothly */
 .tech-marquee::before,
-.tech-marquee::after{
-    content:"";
-    position:absolute;
-    top:0; bottom:0;
-    width: 90px;
+.tech-marquee::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 150px;
     z-index: 2;
     pointer-events: none;
 }
-.tech-marquee::before{
-    left:0;
-    background: linear-gradient(90deg, rgba(7,7,10,0.95), rgba(7,7,10,0));
+.tech-marquee::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--bg0) 0%, transparent 100%);
 }
-.tech-marquee::after{
-    right:0;
-    background: linear-gradient(270deg, rgba(7,7,10,0.95), rgba(7,7,10,0));
+.tech-marquee::after {
+    right: 0;
+    background: linear-gradient(270deg, var(--bg0) 0%, transparent 100%);
 }
-.tech-track{
-    display:flex;
-    align-items:center;
-    gap:16px;
-    width:max-content;
-    padding:0 18px;
+
+.tech-track {
+    display: flex;
+    align-items: center;
+    gap: 60px; /* Increased gap for a more premium, airy feel */
+    width: max-content;
     will-change: transform;
-    animation: tech-marquee-scroll 26s linear infinite;
+    animation: tech-marquee-scroll 35s linear infinite; /* Slower for readability */
 }
-.tech-logo{
-    width: 92px;
-    height: 96px;
-    display: inline-flex;
+
+.tech-item {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 12px;
+    transition: transform 0.3s ease;
+}
 
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,.10);
-    background: rgba(0,0,0,.16);
-    transition: transform .2s ease, border-color .2s ease, background .2s ease;
+/* Float effect on hover */
+.tech-item:hover {
+    transform: translateY(-8px);
 }
-.tech-logo:hover{
-    transform: translateY(-3px);
-    border-color: rgba(77,163,255,.28);
-    background: rgba(0,0,0,.24);
-}
-.tech-logo img{
-    width: 46px;
-    height: 46px;
+
+.tech-item img {
+    width: 52px;
+    height: 52px;
     object-fit: contain;
-    display: block;
-    filter: drop-shadow(0 10px 26px rgba(0,0,0,.35));
-    opacity: 0.98;
-    transition: transform .2s ease;
+    /* Clean shadow without a container box */
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4)); 
+    opacity: 0.85;
+    transition: opacity 0.3s ease, filter 0.3s ease;
 }
-.tech-logo:hover img{ transform: scale(1.06); }
-.tech-label{
-    font-size: 0.78rem;
-    color: rgba(255,255,255,.72);
-    font-weight: 800;
-    letter-spacing: 0.01em;
-    line-height: 1.1;
-    text-align: center;
-    white-space: nowrap;
+
+.tech-item:hover img {
+    opacity: 1;
+    filter: drop-shadow(0 12px 24px rgba(77, 163, 255, 0.2));
 }
-@keyframes tech-marquee-scroll{
+
+.tech-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.tech-item:hover .tech-label {
+    color: var(--accent);
+}
+
+@keyframes tech-marquee-scroll {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
 }
