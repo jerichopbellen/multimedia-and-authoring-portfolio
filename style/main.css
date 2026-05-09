@@ -639,15 +639,15 @@ footer a:hover .fab { transform: translateY(-3px); }
     mask-image: linear-gradient(to right,
         transparent 0%,
         rgba(0,0,0,0.6) 6%,
-        rgba(0,0,0,0.95) 12%,
-        rgba(0,0,0,0.95) 88%,
+        rgba(0,0,0,1) 12%,
+        rgba(0,0,0,1) 88%,
         rgba(0,0,0,0.6) 94%,
         transparent 100%);
     -webkit-mask-image: linear-gradient(to right,
         transparent 0%,
         rgba(0,0,0,0.6) 6%,
-        rgba(0,0,0,0.95) 12%,
-        rgba(0,0,0,0.95) 88%,
+        rgba(0,0,0,1) 12%,
+        rgba(0,0,0,1) 88%,
         rgba(0,0,0,0.6) 94%,
         transparent 100%);
 }
