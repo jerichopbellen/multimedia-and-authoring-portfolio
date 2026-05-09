@@ -812,10 +812,9 @@ footer a:hover .fab { transform: translateY(-3px); }
 }
 
 .contact-info-title {
+  color: rgba(255,255,255,.95);
   font-weight: 950;
   letter-spacing: -0.01em;
-  font-weight: 800;
-  color: #fff;
   margin-bottom: 1px;
   line-height: 1.13;
   white-space: nowrap;
