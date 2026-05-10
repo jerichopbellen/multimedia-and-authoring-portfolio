@@ -890,8 +890,6 @@ footer a:hover .fab { transform: translateY(-3px); }
 
 .contact-info-card:hover:not(.contact-info-static) .contact-info-icon {
   color: #fff;
-  background: #4da3ff33;
-  border-color: var(--accent);
 }
 
 .contact-info-title {
