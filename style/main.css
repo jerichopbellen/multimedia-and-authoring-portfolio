@@ -290,9 +290,12 @@ footer a:hover .fab { transform: translateY(-3px); }
     transform: translateY(-5px);
     box-shadow: 0 0 20px rgba(77,163,255,.25);
 }
+.feature__media img {
+    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
 .feature:hover .feature__media img {
     transform: scale(1.05);
-    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .feature__meta {
