@@ -67,7 +67,7 @@ body {
     height: 2px;
     bottom: 5px;
     left: 50%;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    background: var(--accent);
     transition: all 0.25s ease;
 }
 .nav-link:hover::after { width: 100%; left: 0; }
