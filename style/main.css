@@ -274,15 +274,14 @@ footer a:hover .fab { transform: translateY(-3px); }
 .feature {
     position: relative;
     border-radius: var(--radius);
-    border: 1px solid rgba(255,255,255,.10);
-    background: rgba(255,255,255,.03);
+    border: none;
+    background: transparent;
     overflow: hidden;
     padding: 0px;
     transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1), border-color 0.3s ease;
 }
 .feature:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(77,163,255,.25);
 }
 .feature__media img {
     transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
@@ -342,7 +341,7 @@ footer a:hover .fab { transform: translateY(-3px); }
 }
 .btn-outline-ink:hover {
     transform: translateY(-2px);
-    border-color: rgba(77,163,255,.40);
+    border-color: rgba(77, 163, 255, 0.518);
     background: rgba(0,0,0,.28);
     box-shadow: 0 0 36px rgba(77,163,255,.10);
     color: #fff;
@@ -350,7 +349,7 @@ footer a:hover .fab { transform: translateY(-3px); }
 
 .feature--with-media {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 55% 45%;
     gap: 0;
     align-items: stretch;
 }
@@ -393,12 +392,14 @@ footer a:hover .fab { transform: translateY(-3px); }
     position: relative;
     z-index: 1;
     padding: 28px;
+    padding-right: 0;
+    padding-left: 0;
     text-align: right;
 }
 
 @media (min-width: 993px) {
     .col-12:nth-child(even) .feature--with-media {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 45% 55%;
     }
     .col-12:nth-child(even) .feature__media {
         grid-column: 2;
@@ -835,7 +836,7 @@ footer a:hover .fab { transform: translateY(-3px); }
   display: block;
 }
 .profile-tag.profile-tag--blue {
-  background: rgba(77, 163, 255, 0.13);
+  background: rgba(77, 163, 255, 0.13); 
   border: 1.5px solid rgba(77, 163, 255, 0.23);
   color: #def0ff;
   border-radius: 999px;
