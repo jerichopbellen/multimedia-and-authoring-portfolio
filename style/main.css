@@ -740,9 +740,8 @@ footer a:hover .fab { transform: translateY(-3px); }
 .contact-transparent-card {
   position: relative;
   border-radius: 30px;
-  border: 1.2px solid rgba(77, 163, 255, 0.13);
+  border: none;
   background: transparent;
-  box-shadow: 0 28px 100px rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(77, 163, 255, 0.05);
   padding: clamp(30px, 5vw, 60px) clamp(20px, 4vw, 45px);
   overflow: hidden;
   margin-bottom: 0;
