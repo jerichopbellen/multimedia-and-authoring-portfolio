@@ -183,7 +183,7 @@ footer a:hover .fab { transform: translateY(-3px); }
     z-index: 0;
     background:
     radial-gradient(circle at 50% 40%, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.48)),
-    linear-gradient(to bottom, rgba(7, 7, 10, 0.08), rgba(7, 7, 10, 0.68));
+    linear-gradient(to bottom, rgba(7, 7, 10, 0.08), rgba(7, 7, 10, 0.88));
 }
 .hero-video::after {
     content: "";
@@ -361,7 +361,7 @@ footer a:hover .fab { transform: translateY(-3px); }
         transparent 100%
     );
 }
-.feature__media img {
+.feature__media video {
     width: 100%;
     height: 100%;
     object-fit: cover;
