@@ -38,7 +38,7 @@ body {
    3. SECTION LAYOUTS & HEADINGS
    ========================================================================== */
 .section { position: relative; padding: clamp(64px, 7vw, 110px) 0; }
-.section-title { font-size: clamp(1.8rem, 3.5vw, 2.6rem); letter-spacing: -0.02em; }
+.section-title { font-size: clamp(1.8rem, 3.5vw, 2.6rem); letter-spacing: -0.02em; color: white; }
 .section-kicker {
     color: rgba(255,255,255,.55);
     text-transform: uppercase;
@@ -93,11 +93,12 @@ footer a:hover .fab { transform: translateY(-3px); }
 
 .btn-hero {
     border: 1px solid rgba(255,255,255,.14);
-    border-radius: 12px;
-    padding: 12px 26px;
+    border-radius: var(--radius) !important;
+    padding: 16px 24px;
     font-weight: 900;
     letter-spacing: 0.02em;
     color: #000000;
+    font-weight: bold !important;
     background: linear-gradient(90deg, var(--accent), var(--accent2));
     box-shadow:
         0 18px 60px rgba(0,0,0,.55),
@@ -302,7 +303,7 @@ footer a:hover .fab { transform: translateY(-3px); }
     box-shadow: 0 0 0 1px rgba(77,163,255,.10), 0 0 22px rgba(167,139,250,.10);
 }
 
-.feature__title { position: relative; z-index: 1; font-size: clamp(1.35rem, 2.3vw, 1.9rem); margin: 12px 0 10px; }
+.feature__title { position: relative; z-index: 1; font-size: clamp(1.35rem, 2.3vw, 1.9rem); margin: 12px 0 10px;color: white; }
 
 .feature__desc {
     position: relative;
@@ -773,19 +774,6 @@ footer a:hover .fab { transform: translateY(-3px); }
   min-width: 0;
   flex: 1;
 }
-.contact-info-card:hover:not(.contact-info-static),
-.contact-info-card:focus:not(.contact-info-static) {
-  border-color: #4da3ff;
-  background: rgba(77, 163, 255, 0.14);
-  color: #fff;
-  box-shadow: 0 6px 22px 0 rgba(77, 163, 255, 0.08);
-}
-.contact-info-static {
-  opacity: 0.92;
-  background: rgba(110, 132, 170, 0.13) !important;
-  border-color: rgba(77, 163, 255, 0.08) !important;
-  pointer-events: none;
-}
 .contact-info-icon {
   width: 45px;
   height: 45px;
@@ -799,9 +787,6 @@ footer a:hover .fab { transform: translateY(-3px); }
   border: 1.3px solid rgba(77, 163, 255, 0.17);
   flex-shrink: 0;
   transition: border-color 0.13s, color 0.14s, background 0.15s;
-}
-.contact-info-card:hover:not(.contact-info-static) .contact-info-icon {
-  color: #fff;
 }
 .contact-info-title {
   color: rgba(255,255,255,.95);

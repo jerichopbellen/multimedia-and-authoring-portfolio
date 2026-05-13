@@ -6,7 +6,6 @@
     <title>Multimedia and Authoring</title>
     <link rel="icon" type="image/x-icon" href="favicon.svg">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables.net-bs5/2.2.1/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
@@ -36,14 +35,14 @@
                             <span class="text-white-50">Taguig, PH</span>
                         </div>
 
-                        <h1 class="hero-title fw-bold mb-3">Jericho Bellen</h1>
+                        <h1 class="hero-title fw-bold mb-3" style="color: white;">Jericho Bellen</h1>
 
                         <p class="hero-subtitle mb-4">
                             I build modern web experiences and complement them with motion design and 3D visuals—clean systems, premium presentation.
                         </p>
 
                         <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-3">
-                            <a href="#projects" class="btn btn-hero px-4">View Work</a>
+                            <a href="#projects" class="btn btn-hero px-4" >View Work</a>
                             <a href="#about" class="hero-ghost-link">About me <span aria-hidden="true">→</span></a>
                         </div>
 
@@ -156,7 +155,7 @@
 
                         <div class="profile-meta">
                             <div class="section-kicker mb-1">Jericho Bellen</div>
-                            <h3 class="profile-title mb-2">Student Developer</h3>
+                            <h3 class="profile-title mb-2" style="color: white;">Student Developer</h3>
 
                             <div class="profile-pills">
                                 <span class="profile-pill"><span class="profile-pill__dot" aria-hidden="true"></span> Taguig, PH</span>
@@ -298,11 +297,11 @@
                     <div class="row gy-5 gx-4 align-items-center">
                         <div class="col-lg-5">
                             <div class="section-kicker mb-2">Let's build something</div>
-                            <h2 class="profile-title mb-2 contact-typewrite" aria-label="Connect" style="font-size:2.3rem;font-weight:900;">
+                            <div class="profile-title mb-2 contact-typewrite" aria-label="Connect" style="font-size:2.3rem;font-weight:900;">
                                 <span id="typewrite-connect"></span>
                                 <span class="contact-typewrite-cursor" aria-hidden="true"></span>
-                            </h2>
-                            <p class="profile-bio mb-2">
+                            </div>
+                            <p class="profile-bio mb-2" style="color: white;">
                                 Want to collaborate, ask a question, or just say hi? Choose a platform below.
                             </p>
                             <span class="profile-tag profile-tag--blue">Available for web, design & collabs</span>
@@ -310,43 +309,43 @@
                         <div class="col-lg-7">
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <a class="contact-info-card" href="https://github.com/jerichopbellen" target="_blank" rel="noopener">
+                                    <div class="contact-info-card">
                                         <div class="contact-info-icon"><i class="fab fa-github"></i></div>
                                         <div>
                                             <div class="contact-info-title">GitHub</div>
                                             <div class="contact-info-sub">github.com/jerichopbellen</div>
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <a class="contact-info-card" href="https://www.linkedin.com/in/jerichopbellen" target="_blank" rel="noopener">
+                                    <div class="contact-info-card">
                                         <div class="contact-info-icon"><i class="fab fa-linkedin"></i></div>
                                         <div>
                                             <div class="contact-info-title">LinkedIn</div>
                                             <div class="contact-info-sub">linkedin.com/in/jerichopbellen</div>
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <a class="contact-info-card" href="mailto:jerichopbellen@gmail.com">
+                                    <div class="contact-info-card">
                                         <div class="contact-info-icon"><i class="fa-solid fa-envelope"></i></div>
                                         <div>
                                             <div class="contact-info-title">Email</div>
                                             <div class="contact-info-sub">jerichopbellen@gmail.com</div>
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <a class="contact-info-card" href="tel:+639202558774">
+                                    <div class="contact-info-card">
                                         <div class="contact-info-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
                                         <div>
                                             <div class="contact-info-title">Mobile</div>
                                             <div class="contact-info-sub">+63 920 255 8774</div>
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="contact-info-card contact-info-static">
+                                    <div class="contact-info-card">
                                         <div class="contact-info-icon"><i class="fa-solid fa-location-dot"></i></div>
                                         <div>
                                             <div class="contact-info-title">Location</div>
@@ -355,7 +354,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="contact-info-card contact-info-static">
+                                    <div class="contact-info-card">
                                         <div class="contact-info-icon"><i class="fa-solid fa-graduation-cap"></i></div>
                                         <div>
                                             <div class="contact-info-title">Currently</div>
@@ -372,7 +371,12 @@
         </section>
         </main>
     <div id="footer-placeholder"></div>
-
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css';
+        document.head.appendChild(link);
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/main.js"></script>
 </body>
