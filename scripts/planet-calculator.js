@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", function() {
         {name: "Jupiter", period: 11.86, desc: "A massive gas giant composed of hydrogen and helium, famous for its Great Red Spot—a storm larger than Earth."},
         {name: "Saturn", period: 29.45, desc: "Famous for its spectacular, complex ring system made of ice and dust. It has a vast array of moons, including Titan."},
         {name: "Uranus", period: 84.00, desc: "An ice giant that rotates on its side. Its blue-green color comes from methane in its atmosphere."},
-        {name: "Neptune", period: 164.8, desc: "The most distant planet, cold, dark, and whipped by supersonic winds. It was discovered via mathematical prediction."}
+        {name: "Neptune", period: 164.8, desc: "The most distant planet, cold, dark, and whipped by supersonic winds. It was discovered via mathematical prediction."},
+        {name: "Pluto", period: 248.0, desc: "A dwarf planet in the Kuiper Belt with a highly elliptical orbit and a thin atmosphere that can freeze and collapse as it moves away from the Sun."},
+        {name: "Moon", period: 0.07, desc: "Earth's natural satellite, orbiting our planet roughly every 27.3 days and influencing ocean tides."}
     ];
 
     const container = document.getElementById('carouselInner');
@@ -34,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <div class="col-lg-6">
                         <h2 class="text-primary">${p.name}</h2>
                         <ul class="list-unstyled text-white-50 mt-3">
-                            <li><strong>Age on Planet:</strong> <span class="planet-age" data-period="${p.period}">--</span> years</li>
+                            <li><strong>Age on Celestial Body:</strong> <span class="planet-age" data-period="${p.period}">--</span> years</li>
                             <li><strong>Total Revolutions:</strong> <span class="planet-revs" data-period="${p.period}">--</span> orbits</li>
                             <li><strong>Orbital Period:</strong> ${p.period} Earth Years</li>
                         </ul>
