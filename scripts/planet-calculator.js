@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 function calculateCosmicAge() {
     const ageInput = document.getElementById('user-age').value;
     if (!ageInput || ageInput <= 0) return;

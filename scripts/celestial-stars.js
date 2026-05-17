@@ -1,7 +1,4 @@
-/**
- * Cinematic Celestial Showcase - Dynamic Twinkle Engine (High Visibility)
- * Generates high-performance star field DOM fragments using hardware-accelerated CSS scales.
- */
+/* jshint esversion: 6 */
 document.addEventListener("DOMContentLoaded", function () {
     const starsContainer = document.getElementById("stars-canvas-container");
     if (!starsContainer) return;
