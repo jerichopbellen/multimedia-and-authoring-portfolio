@@ -387,106 +387,271 @@
 }
 
 /* ==========================================================================
-   TECHNICAL PROCESS DISPLAY STYLES
+   TECHNICAL PROCESS PIPELINE (CARDLESS ASYMMETRICAL TIMELINE)
    ========================================================================== */
 
-/* Process Card Layout Architecture */
-.process-step-card {
-    position: relative;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 20px;
-    padding: 35px 25px 25px 25px;
-    height: 100%;
-    backdrop-filter: blur(8px);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.process-step-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(77, 163, 255, 0.25);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.06) 100%);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
-
-/* Numeric Absolute Badge Positioning */
-.step-badge {
+/* Ambient Vector Lighting Highlights behind track layout fields */
+.pipeline-glow-core-left {
     position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.04);
-    font-family: 'Inter', sans-serif;
-    letter-spacing: -0.05em;
-    user-select: none;
-    transition: color 0.4s ease;
+    top: 20%;
+    left: -15%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(77, 163, 255, 0.06) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 1;
 }
 
-.process-step-card:hover .step-badge {
-    color: rgba(77, 163, 255, 0.12);
+.pipeline-glow-core-right {
+    position: absolute;
+    bottom: 15%;
+    right: -15%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(167, 139, 250, 0.05) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 1;
 }
 
-/* Icon Container Boxes */
-.step-icon-box {
-    width: 48px;
-    height: 48px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    font-size: 1.3rem;
+/* Base Master Line Container setup */
+.pipeline-flow-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
 }
 
-/* Gradient Utility to match Hero Text */
+/* Strict Boundary Box to hide animation spillover past the final step */
+.pipeline-rail-wrap {
+    position: absolute;
+    top: 28px;     /* Starts directly at the center of node 01 */
+    bottom: 28px;  /* Ends directly at the center of node 03 */
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    overflow: hidden;
+    z-index: 2;
+}
+
+/* Central Continuous Timeline Track Line */
+.pipeline-rail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, 
+        rgba(77, 163, 255, 0.1) 0%, 
+        rgba(77, 163, 255, 0.4) 20%, 
+        rgba(167, 139, 250, 0.4) 80%, 
+        rgba(167, 139, 250, 0.1) 100%
+    );
+}
+
+/* Restrained Comet Animation (Strictly locked inside the rail wrap) */
+.pipeline-rail-pulse {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, #4da3ff, #a78bfa, transparent);
+    animation: pipeline-comet-travel 5s linear infinite;
+}
+
+@keyframes pipeline-comet-travel {
+    0% { 
+        top: -100px;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% { 
+        top: 100%; 
+        opacity: 0;
+    }
+}
+
+/* Step Title Meta Typography Gradients */
+.pipeline-meta {
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+}
 .text-gradient-blue {
-    background: linear-gradient(135deg, #4da3ff, #a78bfa);
-    background-clip: text;
+    background: linear-gradient(135deg, #4da3ff, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.text-gradient-purple {
+    background: linear-gradient(135deg, #a78bfa, #c084fc);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* Code Panel Presentation Display */
-.code-preview-deck {
-    background: #040508;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
+/* Floating Orbit Anchors */
+.pipeline-orbit-anchor {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    background: #0b0f19;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 3;
+}
+
+.pipeline-orbit-anchor[data-step="01"] { border-color: rgba(77, 163, 255, 0.4); box-shadow: 0 0 15px rgba(77, 163, 255, 0.1); }
+.pipeline-orbit-anchor[data-step="02"] { border-color: rgba(167, 139, 250, 0.4); box-shadow: 0 0 15px rgba(167, 139, 250, 0.1); }
+.pipeline-orbit-anchor[data-step="03"] { border-color: rgba(77, 163, 255, 0.4); box-shadow: 0 0 15px rgba(77, 163, 255, 0.1); }
+
+.anchor-icon {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.anchor-pulse-core {
+    position: absolute;
+    inset: -1px;
+    border-radius: 50%;
+    background: transparent;
+    z-index: 1;
+    transition: all 0.4s ease;
+}
+
+/* Interactive Hover States */
+.pipeline-node-row:hover .pipeline-orbit-anchor {
+    transform: scale(1.12) rotate(360deg);
+    background: #0f172a;
+}
+.pipeline-node-row:hover .pipeline-orbit-anchor[data-step="01"] { border-color: #4da3ff; box-shadow: 0 0 25px rgba(77, 163, 255, 0.35); }
+.pipeline-node-row:hover .pipeline-orbit-anchor[data-step="02"] { border-color: #a78bfa; box-shadow: 0 0 25px rgba(167, 139, 250, 0.35); }
+.pipeline-node-row:hover .pipeline-orbit-anchor[data-step="03"] { border-color: #4da3ff; box-shadow: 0 0 25px rgba(77, 163, 255, 0.35); }
+
+.pipeline-node-row:hover .anchor-icon {
+    color: #ffffff;
+}
+
+.step-content-pane {
+    transition: transform 0.4s ease;
+}
+.pipeline-node-row:hover .step-content-pane {
+    transform: translateY(-2px);
+}
+
+.pipeline-decorative-spec {
+    font-size: 0.72rem;
+    line-height: 1.8;
+    color: rgba(77, 163, 255, 0.35);
+    transition: all 0.4s ease;
+}
+.pipeline-node-row:hover .pipeline-decorative-spec {
+    color: rgba(255, 255, 255, 0.5);
+    opacity: 0.5 !important;
+}
+
+/* Darkened Original Card-Style Container for Code block */
+.code-container {
+    background: #0d111a;
+    border: 1px solid rgba(77, 163, 255, 0.08);
+    border-radius: 12px;
     padding: 0;
     overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 40px rgba(77, 163, 255, 0.02);
 }
 
 .code-header {
-    background: rgba(255, 255, 255, 0.02);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.01);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    padding: 14px 24px;
 }
 
-.code-preview-deck pre {
-    padding: 24px 20px;
+.code-container pre {
+    padding: 24px;
     margin: 0;
     overflow-x: auto;
-    font-size: 0.9rem;
-    line-height: 1.6;
+    max-height: 500px;
+    background: transparent;
+    
+    /* IE and Edge scrollbar hiding rules */
+    -ms-overflow-style: auto;
+    /* Firefox scrollbar styling rules */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
 }
 
-/* Fast Code Highlighter Utilities */
-.text-comment { color: #6a737d; font-style: italic; }
-.text-info { color: #79c0ff; }
+/* --- Blended Scrollbar Customizations (Chrome, Safari, Brave, Opera) --- */
 
-/* Mobile Adjustments */
-@media (max-width: 767px) {
-    .process-step-card {
-        padding: 25px 20px 20px 20px;
-    }
-    .code-preview-deck pre {
-        font-size: 0.8rem;
-    }
+/* 1. Track space matches the exact dark background color of the box */
+.code-container pre::-webkit-scrollbar {
+    height: 6px; /* Horizontal scrollbar thickness */
+    width: 6px;  /* Vertical scrollbar thickness */
+    background-color: #0d111a;
 }
 
+/* 2. The sliding thumb indicator is invisible by default */
+.code-container pre::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* 3. Thumb smoothly reveals itself slightly when user hovers over the code window */
+.code-container pre:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(77, 163, 255, 0.2);
+}
+
+.code-container pre::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(77, 163, 255, 0.4);
+}
+
+.code-container pre code {
+    font-size: 0.88rem;
+    line-height: 1.65;
+}
+
+/* Responsive Adaptive Conversions */
+@media (max-width: 991px) {
+    .pipeline-rail-wrap {
+        left: 28px;
+        transform: none;
+        top: 23px;
+        bottom: 23px;
+    }
+    .pipeline-flow-container {
+        padding-left: 15px;
+    }
+    .pipeline-node-row {
+        align-items: flex-start !important;
+    }
+    .step-content-pane {
+        padding-left: 75px !important;
+    }
+    .pipeline-orbit-anchor {
+        width: 46px;
+        height: 46px;
+    }
+    .anchor-icon {
+        font-size: 1rem;
+    }
+    .pipeline-flow-container .col-lg-2 {
+        position: absolute !important;
+        left: 0;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
 /* ==========================================================================
    CINEMATIC CELESTIAL SHOWCASE - ULTIMATE SEAMLESS SPACE BLEND
    ========================================================================== */

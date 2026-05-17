@@ -1,841 +1,879 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>3D Solar System | Portfolio</title>
-      <link rel="icon" type="image/x-icon" href="favicon.svg">
-      <link rel="stylesheet" href="style/main.css">
-      <link rel="stylesheet" href="style/solar-system.css">
-   </head>
-   <body class="bg-dark text-white">
-      <div id="header-placeholder"></div>
-      <main>
-         <!-- 1. Hero Section -->
-         <section class="hero-video" aria-label="Solar System Hero">
-            <div class="container hero-video__content floatup visible">
-               <div class="row align-items-center justify-content-center gy-5">
-                  <div class="col-12 col-lg-6 order-2 order-lg-1 text-center text-lg-start">
-                     <div class="pill mx-lg-0 mx-auto mb-4 d-inline-flex align-items-center">
-                        <span class="pill__dot" aria-hidden="true"></span>
-                        <span class="text-white-50">3D Technical Study</span>
-                        <span class="text-white opacity-25">&bull;</span>
-                        <span class="text-white-50">Solar System</span>
-                     </div>
-                     <h1 class="hero-title fw-bold mb-3 text-gradient">3D Solar System</h1>
-                     <p class="hero-subtitle mb-4 mx-lg-0">
-                        A Blender-powered visual showcase of our solar system. Rendered in full 3D with realistic lighting, procedural orbits, and planetary motion—complemented by interactive celestial data.
-                     </p>
-                  </div>
-                  <div class="col-12 col-lg-6 order-1 order-lg-2 mb-5 mb-lg-0 text-center">
-                     <div class="hero-space-viewport">
-                        <div class="space-nebula"></div>
-                        <div class="solar-system-mini">
-                           <div class="mini-sun" title="The Sun"></div>
-                           <div class="orbit-ring ring-mercury">
-                              <div class="mini-planet planet-mercury" title="Mercury"></div>
-                           </div>
-                           <div class="orbit-ring ring-earth">
-                              <div class="mini-planet planet-earth" title="Earth">
-                                 <div class="mini-moon"></div>
-                              </div>
-                           </div>
-                           <div class="orbit-ring ring-outer">
-                              <div class="mini-planet planet-outer" title="Outer Planet">
-                                 <div class="mini-rings"></div>
-                              </div>
-                           </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>3D Solar System | Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="favicon.svg">
+        <link rel="stylesheet" href="style/main.css">
+        <link rel="stylesheet" href="style/solar-system.css">
+    </head>
+    <body class="bg-dark text-white">
+        <div id="header-placeholder"></div>
+        <main>
+            <!-- 1. Hero Section -->
+            <section class="hero-video" aria-label="Solar System Hero">
+                <div class="container hero-video__content floatup visible">
+                    <div class="row align-items-center justify-content-center gy-5">
+                        <div class="col-12 col-lg-6 order-2 order-lg-1 text-center text-lg-start">
+                            <div class="pill mx-lg-0 mx-auto mb-4 d-inline-flex align-items-center">
+                                <span class="pill__dot" aria-hidden="true"></span>
+                                <span class="text-white-50">3D Technical Study</span>
+                                <span class="text-white opacity-25">&bull;</span>
+                                <span class="text-white-50">Solar System</span>
+                            </div>
+                            <h1 class="hero-title fw-bold mb-3 text-gradient">3D Solar System</h1>
+                            <p class="hero-subtitle mb-4 mx-lg-0">
+                                A Blender-powered visual showcase of our solar system. Rendered in full 3D with realistic lighting, procedural orbits, and planetary motion—complemented by interactive celestial data.
+                            </p>
                         </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <div class="panel-break--right"></div>
-         <!-- 2. Final Output Section (YouTube Embed) -->
-         <section id="final-output" class="section position-relative overflow-hidden" aria-label="Final 3D Render">
-            <div class="container floatup visible">
-               <div class="text-center max-w-2xl mx-auto mb-5">
-                  <div class="pill mx-auto mb-3 d-inline-flex align-items-center">
-                     <span class="pill__dot bg-primary" aria-hidden="true"></span>
-                     <span class="text-white-50">Cinematic Playback</span>
-                  </div>
-                  <h2 class="section-title fw-bold mb-3">Final Render</h2>
-                  <p class="text-white-50">
-                     Experience the completed high-fidelity animation simulation. Rendered with global illumination and physically accurate material textures.
-                  </p>
-               </div>
-               <div class="row justify-content-center">
-                  <div class="col-12 col-xl-10">
-                     <div class="render-video-deck">
-                        <div class="deck-header d-flex align-items-center justify-content-between">
-                           <div class="deck-dots d-flex gap-2">
-                              <span class="dot-red"></span>
-                              <span class="dot-amber"></span>
-                              <span class="dot-green"></span>
-                           </div>
-                           <div class="deck-title text-white-50 small font-monospace">solar_system_final_render.mp4</div>
-                           <div class="deck-badge small font-monospace">4K UHD</div>
+                        <div class="col-12 col-lg-6 order-1 order-lg-2 mb-5 mb-lg-0 text-center">
+                            <div class="hero-space-viewport">
+                                <div class="space-nebula"></div>
+                                <div class="solar-system-mini">
+                                    <div class="mini-sun" title="The Sun"></div>
+                                    <div class="orbit-ring ring-mercury">
+                                        <div class="mini-planet planet-mercury" title="Mercury"></div>
+                                    </div>
+                                    <div class="orbit-ring ring-earth">
+                                        <div class="mini-planet planet-earth" title="Earth">
+                                            <div class="mini-moon"></div>
+                                        </div>
+                                    </div>
+                                    <div class="orbit-ring ring-outer">
+                                        <div class="mini-planet planet-outer" title="Outer Planet">
+                                            <div class="mini-rings"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="ratio ratio-16x9 position-relative">
-                           <video 
-                              class="render-native-player" 
-                              controls 
-                              preload="metadata" 
-                              poster="assets/img/video-thumbnail.jpg">
-                              <source src="downloads/solar-system.mp4" type="video/mp4">
-                              Your browser does not support the video tag.
-                           </video>
+                    </div>
+                </div>
+            </section>
+            <div class="panel-break--right"></div>
+            <!-- 2. Final Output Section (YouTube Embed) -->
+            <section id="final-output" class="section position-relative overflow-hidden" aria-label="Final 3D Render">
+                <div class="container floatup visible">
+                    <div class="text-center max-w-2xl mx-auto mb-5">
+                        <div class="pill mx-auto mb-3 d-inline-flex align-items-center">
+                            <span class="pill__dot bg-primary" aria-hidden="true"></span>
+                            <span class="text-white-50">Cinematic Playback</span>
                         </div>
-                     </div>
-                     <div class="row g-3 mt-2 font-monospace text-white-50 small justify-content-between">
-                        <div class="col-6 col-md-3 d-flex align-items-center gap-2">
-                           <i class="fa-solid fa-clapperboard" style="color: #4da3ff"></i>
-                           <span>Engine: Blender Cycles</span>
-                        </div>
-                        <div class="col-6 col-md-3 d-flex align-items-center gap-2">
-                           <i class="fa-solid fa-microchip" style="color: #4da3ff"></i>
-                           <span>Samples: 2,048 OptiX</span>
-                        </div>
-                        <div class="col-6 col-md-3 d-flex align-items-center gap-2">
-                           <i class="fa-solid fa-clock" style="color: #4da3ff"></i>
-                           <span>Render Time: 14h 32m</span>
-                        </div>
-                        <div class="col-6 col-md-3 d-flex align-items-center gap-2 justify-content-md-end">
-                           <i class="fa-solid fa-expand" style="color: #4da3ff"></i>
-                           <span>60 FPS True Motion</span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-        <div class="asteroid-belt-divider">
-          <span class="asteroid"></span>
-          <span class="asteroid"></span>
-          <span class="asteroid"></span>
-          <span class="asteroid"></span>
-          <span class="asteroid"></span>
-          <span class="asteroid"></span>
-        </div>
-<!-- 3. Process Section -->
-         <section id="process" class="section position-relative" aria-label="Technical Workflow">
-            <div class="container">
-               <div class="text-center mx-auto mb-5" style="max-width: 42rem;">
-                  <div class="pill mx-auto mb-3 d-inline-flex align-items-center">
-                     <span class="pill__dot bg-info" aria-hidden="true"></span>
-                     <span class="text-white-50">Methodology</span>
-                  </div>
-                  <h2 class="section-title fw-bold mb-3">The Scripted Pipeline</h2>
-                  <p class="text-white-50">
-                     Using Blender’s Python API (`bpy`), the solar system was created, textured, and rendered automatically.
-                  </p>
-               </div>
-               <div class="row g-4 justify-content-center">
-                  <div class="col-12 col-md-6 col-lg-4">
-                     <div class="process-step-card floatup visible">
-                        <div class="step-badge">01</div>
-                        <div class="step-icon-box">
-                           <i class="fa-solid fa-earth-americas text-gradient-blue"></i>
-                        </div>
-                        <h3 class="h5 fw-bold text-white mb-2">Texture Synthesis</h3>
-                        <p class="text-white-50 small mb-0">
-                           Sourced high-resolution, spherical map textures for each planet. Configured surface maps to unwrap onto procedural UV spheres without mapping seams or visible coordinate tracking issues.
+                        <h2 class="section-title fw-bold mb-3">Final Render</h2>
+                        <p class="text-white-50">
+                            Experience the completed high-fidelity animation simulation. Rendered with global illumination and physically accurate material textures.
                         </p>
-                     </div>
-                  </div>
-                  <div class="col-12 col-md-6 col-lg-4">
-                     <div class="process-step-card floatup visible" style="transition-delay: 0.1s;">
-                        <div class="step-badge">02</div>
-                        <div class="step-icon-box">
-                           <i class="fa-solid fa-code text-gradient-blue"></i>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-xl-10">
+                            <div class="render-video-deck">
+                                <div class="deck-header d-flex align-items-center justify-content-between">
+                                    <div class="deck-dots d-flex gap-2">
+                                        <span class="dot-red"></span>
+                                        <span class="dot-amber"></span>
+                                        <span class="dot-green"></span>
+                                    </div>
+                                    <div class="deck-title text-white-50 small font-monospace">solar_system_final_render.mp4</div>
+                                    <div class="deck-badge small font-monospace">4K UHD</div>
+                                </div>
+                                <div class="ratio ratio-16x9 position-relative">
+                                    <video 
+                                        class="render-native-player" 
+                                        controls 
+                                        preload="metadata" 
+                                        poster="assets/img/video-thumbnail.jpg">
+                                        <source src="downloads/solar-system.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="row g-3 mt-2 font-monospace text-white-50 small justify-content-between">
+                                <div class="col-6 col-md-3 d-flex align-items-center gap-2">
+                                    <i class="fa-solid fa-clapperboard" style="color: #4da3ff"></i>
+                                    <span>Engine: Blender Cycles</span>
+                                </div>
+                                <div class="col-6 col-md-3 d-flex align-items-center gap-2">
+                                    <i class="fa-solid fa-microchip" style="color: #4da3ff"></i>
+                                    <span>Samples: 2,048 OptiX</span>
+                                </div>
+                                <div class="col-6 col-md-3 d-flex align-items-center gap-2">
+                                    <i class="fa-solid fa-clock" style="color: #4da3ff"></i>
+                                    <span>Render Time: 14h 32m</span>
+                                </div>
+                                <div class="col-6 col-md-3 d-flex align-items-center gap-2 justify-content-md-end">
+                                    <i class="fa-solid fa-expand" style="color: #4da3ff"></i>
+                                    <span>60 FPS True Motion</span>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="h5 fw-bold text-white mb-2">Scripting & Execution</h3>
-                        <p class="text-white-50 small mb-0">
-                           Utilized Blender’s Scripting Tab to write an initialization module. The code handles programmatic asset purging, links dynamic image inputs with texture blending nodes, and calculates matrix keyframe properties.
+                    </div>
+                </div>
+            </section>
+            <div class="asteroid-belt-divider">
+                <span class="asteroid"></span>
+                <span class="asteroid"></span>
+                <span class="asteroid"></span>
+                <span class="asteroid"></span>
+                <span class="asteroid"></span>
+                <span class="asteroid"></span>
+            </div>
+            <!-- 3. Process Section -->
+            <section id="process" class="section position-relative overflow-hidden" aria-label="Technical Workflow">
+                <div class="pipeline-glow-core-left" aria-hidden="true"></div>
+                <div class="pipeline-glow-core-right" aria-hidden="true"></div>
+                <div class="container position-relative z-3">
+                <div class="text-center mx-auto mb-5" style="max-width: 42rem;">
+                    <div class="pill mx-auto mb-3 d-inline-flex align-items-center">
+                        <span class="pill__dot bg-info" aria-hidden="true"></span>
+                        <span class="text-white-50">Methodology</span>
+                    </div>
+                    <h2 class="section-title fw-bold mb-3">The Scripted Process</h2>
+                    <p class="text-white-50">
+                        A simple, step-by-step breakdown of how the automated solar system scene is built and rendered using Blender's Python API.
+                    </p>
+                </div>
+                <div class="pipeline-flow-container position-relative py-4">
+                    <div class="pipeline-rail-wrap" aria-hidden="true">
+                        <div class="pipeline-rail">
+                            <div class="pipeline-rail-pulse"></div>
+                        </div>
+                    </div>
+                    <div class="pipeline-node-row row align-items-center mb-5 pb-lg-4">
+                        <div class="col-12 col-lg-5 order-2 order-lg-1 text-center text-lg-end step-content-pane">
+                            <span class="pipeline-meta font-monospace text-gradient-blue d-block mb-1">STEP 01 // SOURCE</span>
+                            <h3 class="h4 fw-bold text-white mb-3">Download Textures</h3>
+                            <p class="text-white-50 mb-0">
+                                Download high-resolution planetary textures directly from <a href="https://www.solarsystemscope.com/textures/" target="_blank" class="text-info text-decoration-none">Solar System Scope</a> to use as base maps for the spheres.
+                            </p>
+                        </div>
+                        <div class="col-12 col-lg-2 order-1 order-lg-2 d-flex justify-content-center my-3 my-lg-0 position-relative z-3">
+                            <div class="pipeline-orbit-anchor" data-step="01">
+                                <div class="anchor-pulse-core"></div>
+                                <i class="fa-solid fa-download anchor-icon"></i>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-5 order-3 d-none d-lg-block step-visual-pane">
+                            <div class="pipeline-decorative-spec font-monospace text-start ps-4 opacity-25">
+                                <div>&lt;fetch_assets&gt;</div>
+                                <div>// source = solarsystemscope</div>
+                                <div>// maps = high_res_spherical</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pipeline-node-row row align-items-center mb-5 pb-lg-4">
+                        <div class="col-12 col-lg-5 d-none d-lg-block step-visual-pane">
+                            <div class="pipeline-decorative-spec font-monospace text-end pe-4 opacity-25">
+                                <div>&lt;compile_script_modules&gt;</div>
+                                <div>// engine_target = BPY_v4</div>
+                                <div>// execution = run_script</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-2 d-flex justify-content-center my-3 my-lg-0 position-relative z-3">
+                            <div class="pipeline-orbit-anchor" data-step="02">
+                                <div class="anchor-pulse-core"></div>
+                                <i class="fa-solid fa-code anchor-icon"></i>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-5 text-center text-lg-start step-content-pane">
+                            <span class="pipeline-meta font-monospace text-gradient-purple d-block mb-1">STEP 02 // EXECUTE</span>
+                            <h3 class="h4 fw-bold text-white mb-3">Write & Run Code</h3>
+                            <p class="text-white-50 mb-0">
+                                Open Blender's Scripting Tab, paste the Python workflow automation script, and click execute to build the scene programmatically.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pipeline-node-row row align-items-center mb-4">
+                        <div class="col-12 col-lg-5 order-2 order-lg-1 text-center text-lg-end step-content-pane">
+                            <span class="pipeline-meta font-monospace text-gradient-blue d-block mb-1">STEP 03 // OUTPUT</span>
+                            <h3 class="h4 fw-bold text-white mb-3">Render Settings</h3>
+                            <p class="text-white-50 mb-0">
+                                Set Max Samples to 64. Change the media type to video with an MPEG-4 container, use the H.264 codec, and set the output quality to Perceptually Lossless.
+                            </p>
+                        </div>
+                        <div class="col-12 col-lg-2 order-1 order-lg-2 d-flex justify-content-center my-3 my-lg-0 position-relative z-3">
+                            <div class="pipeline-orbit-anchor" data-step="03">
+                                <div class="anchor-pulse-core"></div>
+                                <i class="fa-solid fa-sliders anchor-icon"></i>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-5 order-3 d-none d-lg-block step-visual-pane">
+                            <div class="pipeline-decorative-spec font-monospace text-start ps-4 opacity-25">
+                                <div>&lt;render_output_specs&gt;</div>
+                                <div>// max_samples = 64</div>
+                                <div>// container = MPEG-4</div>
+                                <div>// codec = H.264</div>
+                                <div>// quality = LOSSLESS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5 pt-3 justify-content-center">
+                    <div class="col-12 col-xl-10">
+                        <div class="code-container floatup visible">
+                            <div class="code-header d-flex justify-content-between align-items-center">
+                                <span class="text-white-50 small font-monospace"><i class="fa-brands fa-python me-2 text-warning"></i>script_template.py</span>
+                                <span class="badge bg-dark-subtle text-white-50 border border-secondary-subtle">Blender API v4.x</span>
+                            </div>
+                            <pre class="mb-0 font-monospace text-start"><code class="text-white-50"><span class="text-primary">import</span> bpy
+
+                                 <span class="text-comment"># Programmatic Scene Instantiation & Material Mapping</span>
+                                 <span class="text-primary">def</span> <span class="text-info">setup_scene</span>():
+                                    <span class="text-comment"># 1. Clean Slate (Purge Old Geometry)</span>
+                                    bpy.ops.object.select_all(action=<span class="text-warning">'SELECT'</span>)
+                                    bpy.ops.object.delete()
+
+                                    <span class="text-comment"># 2. Instantiate Parameterized Mesh</span>
+                                    bpy.ops.mesh.primitive_uv_sphere_add(segments=128, ring_count=64, radius=0.75)
+                                    earth = bpy.context.active_object
+                                    earth.name = <span class="text-warning">"Earth"</span>
+                                    bpy.ops.object.shade_smooth()
+
+                                    <span class="text-comment"># 3. Dynamic Node Graph Configurations</span>
+                                    mat = bpy.data.materials.new(name=<span class="text-warning">"EarthMaterial"</span>)
+                                    mat.use_nodes = <span class="text-primary">True</span>
+                                    nodes = mat.node_tree.nodes; nodes.clear()
+                                    
+                                    out = nodes.new(<span class="text-warning">'ShaderNodeOutputMaterial'</span>)
+                                    bsdf = nodes.new(<span class="text-warning">'ShaderNodeBsdfPrincipled'</span>) 
+                                    wave = nodes.new(<span class="text-warning">'ShaderNodeTexWave'</span>)
+                                    bump = nodes.new(<span class="text-warning">'ShaderNodeBump'</span>)
+                                    
+                                    <span class="text-comment"># Inject Linear Rotations & Expression Drivers</span>
+                                    bpy.context.preferences.edit.keyframe_new_interpolation_type = <span class="text-warning">'LINEAR'</span>
+                                    earth.rotation_euler = (0, 0, 0); earth.keyframe_insert(data_path=<span class="text-warning">"rotation_euler"</span>, frame=1)
+                                    earth.rotation_euler = (0, 0, 6.28); earth.keyframe_insert(data_path=<span class="text-warning">"rotation_euler"</span>, frame=250)
+                                    
+                                    driver = wave.inputs[1].driver_add(<span class="text-warning">'default_value'</span>)
+                                    driver.driver.expression = <span class="text-warning">"frame / 25.0"</span>
+
+                                    <span class="text-comment"># 4. 3-Point Studio Lighting Engine Configuration</span>
+                                    bpy.ops.object.light_add(type=<span class="text-warning">'POINT'</span>, location=(3, -5, 2)) <span class="text-comment"># Key Light</span>
+                                    bpy.context.active_object.data.energy = 5000 
+                                    
+                                    bpy.ops.object.light_add(type=<span class="text-warning">'POINT'</span>, location=(-1.5, 2, -0.3)) <span class="text-comment"># Rim Light</span>
+                                    bpy.context.active_object.data.energy = 1000 
+
+                                    <span class="text-comment"># Initialize Camera Constraints & Cycles Hardware Engine</span>
+                                    bpy.ops.object.camera_add(location=(0, -2.3, 0), rotation=(1.57, 0, 0))
+                                    bpy.context.scene.camera = bpy.context.active_object
+                                    bpy.context.scene.render.engine = <span class="text-warning">'CYCLES'</span></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 4. Celestial Showcase Section -->
+            <section id="celestial-bodies" class="celestial-showcase-container" aria-label="Celestial Showcase">
+                <div class="text-center mt-5 pt-5 opacity-75">
+                    <div class="font-monospace small tracking-widest text-uppercase text-white-50">
+                        — Entering Interstellar Space —
+                    </div>
+                    <div class="mx-auto mt-3 bg-white" style="width: 1px; height: 40px; opacity: 0.3;"></div>
+                </div>
+                <div class="showcase-space-canvas">
+                    <div class="cosmic-starfield starfield-dense-back" aria-hidden="true"></div>
+                    <div class="cosmic-starfield starfield-dense-mid" aria-hidden="true"></div>
+                    <div class="cosmic-starfield starfield-dense-front" aria-hidden="true"></div>
+                    <div class="cosmic-starfield starfield-dense-cluster" aria-hidden="true"></div>
+                </div>
+                <div class="container position-relative z-3">
+                    <div class="text-center mb-5 pb-4">
+                        <div class="spacer"></div>
+                        <div class="pill mx-auto mb-3 d-inline-flex align-items-center">
+                            <span class="pill__dot" aria-hidden="true"></span>
+                            <span class="text-white-50">Deep Space Catalog</span>
+                        </div>
+                        <h2 class="section-title fw-bold text-white tracking-tight">The Celestial Systems</h2>
+                        <p class="text-white-50 mx-auto mt-2 mb-0" style="max-width: 65ch;">
+                            A simple guide to the solar system, showing planets, their motion, key features, and how they interact with the Sun and each other across vast distances.
                         </p>
-                     </div>
-                  </div>
-                  <div class="col-12 col-md-6 col-lg-4">
-                     <div class="process-step-card floatup visible" style="transition-delay: 0.2s;">
-                        <div class="step-badge">03</div>
-                        <div class="step-icon-box">
-                           <i class="fa-solid fa-sliders text-gradient-blue"></i>
+                    </div>
+                    <div class="d-flex flex-column gap-5">
+                        <div class="showcase-row row align-items-center gy-4">
+                            <div class="col-12 col-lg-6 media-column">
+                                <div class="showcase-video-wrapper">
+                                    <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
+                                        <source src="assets/videos/sun.webm" type="video/webm">
+                                        <source src="assets/videos/sun.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 info-column">
+                                <div class="showcase-info-card">
+                                    <span class="planet-index-badge">System Core</span>
+                                    <h3 class="planet-title mt-2 mb-3">The Sun <span class="text-gradient-blue font-monospace fs-5 ms-2">G2V Star</span></h3>
+                                    <p class="planet-long-description">
+                                        The heart of our solar system, the Sun is a nearly perfect sphere of hot plasma, heated to incandescence by nuclear fusion reactions in its core. It radiates energy principally as light, ultraviolet, and infrared radiation, providing the driving force behind planetary climates and biological evolution across Earth. Its powerful magnetic field shapes the heliosphere, shielding the entire system from intense interstellar cosmic radiation.
+                                    </p>
+                                    <div class="planet-metrics-grid mt-4">
+                                        <div class="metric-block">
+                                            <span class="metric-label">Core Temp</span>
+                                            <span class="metric-value">~15,000,000 °C</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Mass Equivalence</span>
+                                            <span class="metric-value">333,000 Earths</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Equator Diameter</span>
+                                            <span class="metric-value">1,392,700 km</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="h5 fw-bold text-white mb-2">Cinematic Rendering</h3>
-                        <p class="text-white-50 small mb-0">
-                           Calibrated output parameters within Blender's render queue. Programmed the target engine directly to Cycles tracking, deploying a precise 3-point point-light map structure and 60 FPS video format vectors.
+                        <div class="showcase-row row align-items-center gy-4">
+                            <div class="col-12 col-lg-6 media-column">
+                                <div class="showcase-video-wrapper">
+                                    <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
+                                        <source src="assets/videos/mercury.webm" type="video/webm">
+                                        <source src="assets/videos/mercury.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 info-column">
+                                <div class="showcase-info-card">
+                                    <span class="planet-index-badge">Planet 01</span>
+                                    <h3 class="planet-title mt-2 mb-3">Mercury <span class="text-gradient-blue font-monospace fs-5 ms-2">Terrestrial</span></h3>
+                                    <p class="planet-long-description">
+                                        Mercury is the smallest and innermost planet in the Solar System, orbiting the Sun every 87.97 Earth days. Lacking a substantial atmosphere to trap heat, its crust experiences the most extreme temperature fluctuations in the system, swinging violently from blistering daytime apexes to cryogenic sub-zero environments at night. Its hyper-dense iron core generates a global magnetic field that interacts dynamically with solar wind streams.
+                                    </p>
+                                    <div class="planet-metrics-grid mt-4">
+                                        <div class="metric-block">
+                                            <span class="metric-label">Orbital Velocity</span>
+                                            <span class="metric-value">47.4 km/s</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Mean Surface Temp</span>
+                                            <span class="metric-value">167 °C</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Atmosphere</span>
+                                            <span class="metric-value">Exosphere (Trace)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showcase-row row align-items-center gy-4">
+                            <div class="col-12 col-lg-6 media-column">
+                                <div class="showcase-video-wrapper">
+                                    <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
+                                        <source src="assets/videos/venus.webm" type="video/webm">
+                                        <source src="assets/videos/venus.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 info-column">
+                                <div class="showcase-info-card">
+                                    <span class="planet-index-badge">Planet 02</span>
+                                    <h3 class="planet-title mt-2 mb-3">Venus <span class="text-gradient-blue font-monospace fs-5 ms-2">Greenhouse Void</span></h3>
+                                    <p class="planet-long-description">
+                                        Venus is wrapped in a dense, suffocating blanket of carbon dioxide alongside clouds of sulfuric acid. This creates a runaway greenhouse effect that traps thermal radiation permanently, making its scorched basalt planes hot enough to liquefy lead. Rotating counter to almost every other planet, its retrograde day cycles take longer to complete than its entire annual journey around the Sun.
+                                    </p>
+                                    <div class="planet-metrics-grid mt-4">
+                                        <div class="metric-block">
+                                            <span class="metric-label">Atmospheric Press</span>
+                                            <span class="metric-value">92 Bar (92x Earth)</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Surface Temp</span>
+                                            <span class="metric-value">464 °C Max</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Axial Tilt</span>
+                                            <span class="metric-value">177.3° (Inverted)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showcase-row row align-items-center gy-4">
+                            <div class="col-12 col-lg-6 media-column">
+                                <div class="showcase-video-wrapper">
+                                    <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
+                                        <source src="assets/videos/earth.webm" type="video/webm">
+                                        <source src="assets/videos/earth.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 info-column">
+                                <div class="showcase-info-card">
+                                    <span class="planet-index-badge">Planet 03</span>
+                                    <h3 class="planet-title mt-2 mb-3">Earth <span class="text-gradient-blue font-monospace fs-5 ms-2">Habitable Oasis</span></h3>
+                                    <p class="planet-long-description">
+                                        The only known celestial body supporting an active biosphere. Earth's liquid-water oceans, active plate tectonics, and nitrogen-oxygen atmosphere sustain global ecosystems. Driven internally by a convection-rich nickel-iron core, its magnetosphere consistently deflects dangerous ion particles, enabling long-term evolutionary security across vast, interconnected life cycles.
+                                    </p>
+                                    <div class="planet-metrics-grid mt-4">
+                                        <div class="metric-block">
+                                            <span class="metric-label">Orbital Period</span>
+                                            <span class="metric-value">365.25 Days</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Surface Fluid</span>
+                                            <span class="metric-value">70.8% Water Cover</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Satellites</span>
+                                            <span class="metric-value">1 (The Moon)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showcase-row row align-items-center gy-4">
+                            <div class="col-12 col-lg-6 media-column">
+                                <div class="showcase-video-wrapper">
+                                    <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
+                                        <source src="assets/videos/moon.webm" type="video/webm">
+                                        <source src="assets/videos/moon.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 info-column">
+                                <div class="showcase-info-card">
+                                    <span class="planet-index-badge">Satellite Alpha</span>
+                                    <h3 class="planet-title mt-2 mb-3">The Moon <span class="text-gradient-blue font-monospace fs-5 ms-2">Luna</span></h3>
+                                    <p class="planet-long-description">
+                                        Earth's sole natural satellite, the Moon is a tidally locked body that stabilizes our planet's axial wobble, moderating the long-term climate. Composed primarily of silicates and marked by ancient lunar maria formed by volcanic eruptions, its gravitational pull remains the chief driver behind terrestrial ocean tides. It serves as humanity's primary historical and logistical stepping stone toward deeper solar system exploration.
+                                    </p>
+                                    <div class="planet-metrics-grid mt-4">
+                                        <div class="metric-block">
+                                            <span class="metric-label">Orbital Velocity</span>
+                                            <span class="metric-value">1.022 km/s</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Surface Gravity</span>
+                                            <span class="metric-value">1.62 m/s² (16.6% Earth)</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Mean Diameter</span>
+                                            <span class="metric-value">3,474 km</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showcase-row row align-items-center gy-4">
+                            <div class="col-12 col-lg-6 media-column">
+                                <div class="showcase-video-wrapper">
+                                    <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
+                                        <source src="assets/videos/mars.webm" type="video/webm">
+                                        <source src="assets/videos/mars.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 info-column">
+                                <div class="showcase-info-card">
+                                    <span class="planet-index-badge">Planet 04</span>
+                                    <h3 class="planet-title mt-2 mb-3">Mars <span class="text-gradient-blue font-monospace fs-5 ms-2">Desert Frontier</span></h3>
+                                    <p class="planet-long-description">
+                                        Mars is a cold, dust-covered desert world featuring a highly rarefied carbon-dioxide atmosphere. Marked by giant extinct volcanoes like Olympus Mons and the vast canyon system of Valles Marineris, it holds significant subsurface water ice reserves. Its red iron-oxide surface dust hides an environment that remains a primary target for robotic telemetry exploration and future crewed structural setups.
+                                    </p>
+                                    <div class="planet-metrics-grid mt-4">
+                                        <div class="metric-block">
+                                            <span class="metric-label">Orbital Distance</span>
+                                            <span class="metric-value">227.9 Million km</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Surface Gravity</span>
+                                            <span class="metric-value">3.72 m/s² (0.38g)</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Satellites</span>
+                                            <span class="metric-value">2 (Phobos, Deimos)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showcase-row row align-items-center gy-4">
+                            <div class="col-12 col-lg-6 media-column">
+                                <div class="showcase-video-wrapper">
+                                    <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
+                                        <source src="assets/videos/jupiter.webm" type="video/webm">
+                                        <source src="assets/videos/jupiter.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 info-column">
+                                <div class="showcase-info-card">
+                                    <span class="planet-index-badge">Planet 05</span>
+                                    <h3 class="planet-title mt-2 mb-3">Jupiter <span class="text-gradient-blue font-monospace fs-5 ms-2">Gas Giant</span></h3>
+                                    <p class="planet-long-description">
+                                        The largest planet in our system, Jupiter is a massive gas giant comprised predominantly of hydrogen and helium gas structures. Its dynamic atmosphere is distinctively banded by supersonic jet streams and dominated by the Great Red Spot—a hyper-cyclonic storm system wider than Earth itself. Its immense magnetic footprint accelerates surrounding particles into powerful localized radiation belts.
+                                    </p>
+                                    <div class="planet-metrics-grid mt-4">
+                                        <div class="metric-block">
+                                            <span class="metric-label">Rotation Period</span>
+                                            <span class="metric-value">9h 55m (Fastest)</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Mass Metrics</span>
+                                            <span class="metric-value">317.8 Earth Masses</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Moons Documented</span>
+                                            <span class="metric-value">95 Active Satellites</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showcase-row row align-items-center gy-4">
+                            <div class="col-12 col-lg-6 media-column">
+                                <div class="showcase-video-wrapper">
+                                    <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
+                                        <source src="assets/videos/saturn.webm" type="video/webm">
+                                        <source src="assets/videos/saturn.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 info-column">
+                                <div class="showcase-info-card">
+                                    <span class="planet-index-badge">Planet 06</span>
+                                    <h3 class="planet-title mt-2 mb-3">Saturn <span class="text-gradient-blue font-monospace fs-5 ms-2">Ringed Titan</span></h3>
+                                    <p class="planet-long-description">
+                                        Saturn stands unique with an expansive, highly complex ring architecture consisting of billions of independent ice particles, rocky debris fragments, and cosmic dust. Possessing a low structural density that would float on water, its outer atmosphere triggers violent equatorial storm complexes. Its extensive gravitational pull guides a rich family of scientifically vital moons, including Titan and Enceladus.
+                                    </p>
+                                    <div class="planet-metrics-grid mt-4">
+                                        <div class="metric-block">
+                                            <span class="metric-label">Ring Diameter</span>
+                                            <span class="metric-value">Up to 282,000 km</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Mean Density</span>
+                                            <span class="metric-value">0.687 g/cm³</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Moons Count</span>
+                                            <span class="metric-value">146 Confirmed</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showcase-row row align-items-center gy-4">
+                            <div class="col-12 col-lg-6 media-column">
+                                <div class="showcase-video-wrapper">
+                                    <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
+                                        <source src="assets/videos/uranus.webm" type="video/webm">
+                                        <source src="assets/videos/uranus.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 info-column">
+                                <div class="showcase-info-card">
+                                    <span class="planet-index-badge">Planet 07</span>
+                                    <h3 class="planet-title mt-2 mb-3">Uranus <span class="text-gradient-blue font-monospace fs-5 ms-2">Ice Giant</span></h3>
+                                    <p class="planet-long-description">
+                                        Uranus is an ice giant distinguished by a unique 97.8-degree axial tilt, causing it to roll through its 84-year orbit practically on its side. Its deep mantle layer is rich in water, ammonia, and methane ices, which give the planet its serene blue-green color profile. Orbiting via extreme seasonal cycles, it maintains one of the coldest atmospheres found anywhere within the solar network.
+                                    </p>
+                                    <div class="planet-metrics-grid mt-4">
+                                        <div class="metric-block">
+                                            <span class="metric-label">Axial Tilt</span>
+                                            <span class="metric-value">97.77° (Sideways)</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Atmosphere Base</span>
+                                            <span class="metric-value">Hydrogen, Helium, Methane</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Known Rings</span>
+                                            <span class="metric-value">13 Faint Bands</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showcase-row row align-items-center gy-4">
+                            <div class="col-12 col-lg-6 media-column">
+                                <div class="showcase-video-wrapper">
+                                    <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
+                                        <source src="assets/videos/neptune.webm" type="video/webm">
+                                        <source src="assets/videos/neptune.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 info-column">
+                                <div class="showcase-info-card">
+                                    <span class="planet-index-badge">Planet 08</span>
+                                    <h3 class="planet-title mt-2 mb-3">Neptune <span class="text-gradient-blue font-monospace fs-5 ms-2">Wind Vortex</span></h3>
+                                    <p class="planet-long-description">
+                                        Neptune sits at the edge of our planetary neighborhood, swept by supersonic winds that reach speeds up to 2,100 km/h—the fastest atmospheric currents recorded in the solar system. An ice giant dense with high-pressure fluid interiors, its deep blue cobalt visage hides intense thermodynamic shifts. It remains dynamically bound to Triton, a massive retrograde moon captured out of the Kuiper Belt.
+                                    </p>
+                                    <div class="planet-metrics-grid mt-4">
+                                        <div class="metric-block">
+                                            <span class="metric-label">Orbital Period</span>
+                                            <span class="metric-value">164.8 Earth Years</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Peak Wind Velocity</span>
+                                            <span class="metric-value">~2,100 km/h</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Discovery Vector</span>
+                                            <span class="metric-value">Mathematical Calculus</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="showcase-row row align-items-center gy-4">
+                            <div class="col-12 col-lg-6 media-column">
+                                <div class="showcase-video-wrapper">
+                                    <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
+                                        <source src="assets/videos/pluto.webm" type="video/webm">
+                                        <source src="assets/videos/pluto.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 info-column">
+                                <div class="showcase-info-card">
+                                    <span class="planet-index-badge">Trans-Neptunian</span>
+                                    <h3 class="planet-title mt-2 mb-3">Pluto <span class="text-gradient-blue font-monospace fs-5 ms-2">Dwarf Planet</span></h3>
+                                    <p class="planet-long-description">
+                                        Located within the distant Kuiper Belt, Pluto is a complex world of nitrogen ice plains, mountain ranges of solid water ice, and a thin, variable haze atmosphere. Renowned for its highly eccentric, inclined orbital pathway, it interacts gravitationally with its large companion moon, Charon, creating a unique binary system dynamic that anchors outer telemetry boundaries.
+                                    </p>
+                                    <div class="planet-metrics-grid mt-4">
+                                        <div class="metric-block">
+                                            <span class="metric-label">Orbital Period</span>
+                                            <span class="metric-value">248 Earth Years</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Surface Composition</span>
+                                            <span class="metric-value">98% Nitrogen Ice</span>
+                                        </div>
+                                        <div class="metric-block">
+                                            <span class="metric-label">Mean Radius</span>
+                                            <span class="metric-value">1,188 km</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-5 pt-5 opacity-50">
+                            <div class="font-monospace small tracking-widest text-uppercase text-white-50">
+                                — Departing from Interstellar Space —
+                            </div>
+                            <div class="mx-auto mt-3 bg-white" style="width: 1px; height: 40px; opacity: 0.3;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 5. Planet Age Calculator -->
+            <section id="age-calculator" class="section position-relative overflow-hidden" aria-label="Planetary Age Calculator">
+                <div class="container relative-z floatup visible">
+                    <div class="text-center mx-auto mb-5" style="max-width: 42rem;">
+                        <div class="pill mx-auto mb-3 d-inline-flex align-items-center">
+                            <span class="pill__dot bg-cosmic-secondary" aria-hidden="true"></span>
+                            <span class="text-white-50">Time Dilation</span>
+                        </div>
+                        <h2 class="section-title fw-bold mb-3">Cosmic Age Terminal</h2>
+                        <p class="text-white-50">
+                            Enter your Earth age to compare it to ages on other planets and see how time stretches across the solar system.
                         </p>
-                     </div>
-                  </div>
-               </div>
-               <div class="row mt-5 justify-content-center">
-                  <div class="col-12 col-xl-10">
-                     <div class="code-preview-deck floatup visible">
-                        <div class="code-header d-flex justify-content-between align-items-center">
-                           <span class="text-white-50 small font-monospace"><i class="fa-brands fa-python me-2 text-warning"></i>script_template.py</span>
-                           <span class="badge bg-dark-subtle text-white-50 border border-secondary-subtle">Blender API v4.x</span>
+                    </div>
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-12 col-lg-4">
+                            <div class="terminal-input-card h-100">
+                                <div class="card-header-mono d-flex align-items-center gap-2 mb-4">
+                                    <i class="fa-solid fa-terminal text-cosmic-primary"></i>
+                                    <span>INPUT_PARAMETERS</span>
+                                </div>
+                                <form id="cosmic-form" onsubmit="event.preventDefault(); calculateCosmicAge();">
+                                    <div class="mb-4">
+                                        <label for="user-age" class="form-label-mono text-white-50 small mb-2 d-block">ENTER YOUR EARTH AGE</label>
+                                        <div class="input-group-space">
+                                            <i class="fa-solid fa-user-clock input-icon"></i>
+                                            <input type="number" id="user-age" class="form-control-space font-monospace" placeholder="e.g. 21" min="1" max="120" required>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-terminal w-100 font-monospace">
+                                    <i class="fa-solid fa-satellite-dish me-2"></i>COMPUTE_YEARS
+                                    </button>
+                                </form>
+                                <div id="earth-baseline" class="mt-4 pt-4 border-top border-secondary-subtle font-monospace text-white-50 small d-none">
+                                    <div class="d-flex justify-content-between">
+                                        <span>EARTH AGE BASELINE:</span>
+                                        <span id="total-earth-years" class="text-white fw-bold">0 yrs</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <pre class="mb-0 font-monospace text-start"><code class="text-white-50"><span class="text-primary">import</span> bpy
-
-                        <span class="text-comment"># Programmatic Scene Instantiation & Material Mapping</span>
-                        <span class="text-primary">def</span> <span class="text-info">setup_scene</span>():
-                            <span class="text-comment"># 1. Clean Slate (Purge Old Geometry)</span>
-                            bpy.ops.object.select_all(action=<span class="text-warning">'SELECT'</span>)
-                            bpy.ops.object.delete()
-
-                            <span class="text-comment"># 2. Instantiate Parameterized Mesh</span>
-                            bpy.ops.mesh.primitive_uv_sphere_add(segments=128, ring_count=64, radius=0.75)
-                            earth = bpy.context.active_object
-                            earth.name = <span class="text-warning">"Earth"</span>
-                            bpy.ops.object.shade_smooth()
-
-                            <span class="text-comment"># 3. Dynamic Node Graph Configurations</span>
-                            mat = bpy.data.materials.new(name=<span class="text-warning">"EarthMaterial"</span>)
-                            mat.use_nodes = <span class="text-primary">True</span>
-                            nodes = mat.node_tree.nodes; nodes.clear()
-                            
-                            out = nodes.new(<span class="text-warning">'ShaderNodeOutputMaterial'</span>)
-                            bsdf = nodes.new(<span class="text-warning">'ShaderNodeBsdfPrincipled'</span>) 
-                            wave = nodes.new(<span class="text-warning">'ShaderNodeTexWave'</span>)
-                            bump = nodes.new(<span class="text-warning">'ShaderNodeBump'</span>)
-                            
-                            <span class="text-comment"># Inject Linear Rotations & Expression Drivers</span>
-                            bpy.context.preferences.edit.keyframe_new_interpolation_type = <span class="text-warning">'LINEAR'</span>
-                            earth.rotation_euler = (0, 0, 0); earth.keyframe_insert(data_path=<span class="text-warning">"rotation_euler"</span>, frame=1)
-                            earth.rotation_euler = (0, 0, 6.28); earth.keyframe_insert(data_path=<span class="text-warning">"rotation_euler"</span>, frame=250)
-                            
-                            driver = wave.inputs[1].driver_add(<span class="text-warning">'default_value'</span>)
-                            driver.driver.expression = <span class="text-warning">"frame / 25.0"</span>
-
-                            <span class="text-comment"># 4. 3-Point Studio Lighting Engine Configuration</span>
-                            bpy.ops.object.light_add(type=<span class="text-warning">'POINT'</span>, location=(3, -5, 2)) <span class="text-comment"># Key Light</span>
-                            bpy.context.active_object.data.energy = 5000 
-                            
-                            bpy.ops.object.light_add(type=<span class="text-warning">'POINT'</span>, location=(-1.5, 2, -0.3)) <span class="text-comment"># Rim Light</span>
-                            bpy.context.active_object.data.energy = 1000 
-
-                            <span class="text-comment"># Initialize Camera Constraints & Cycles Hardware Engine</span>
-                            bpy.ops.object.camera_add(location=(0, -2.3, 0), rotation=(1.57, 0, 0))
-                            bpy.context.scene.camera = bpy.context.active_object
-                            bpy.context.scene.render.engine = <span class="text-warning">'CYCLES'</span></code></pre>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-          <!-- 4. Celestial Showcase Section -->
-         <section id="celestial-bodies" class="celestial-showcase-container" aria-label="Celestial Showcase">
-            <div class="text-center mt-5 pt-5 opacity-75">
-              <div class="font-monospace small tracking-widest text-uppercase text-white-50">
-                  — Entering Interstellar Space —
-              </div>
-              <div class="mx-auto mt-3 bg-white" style="width: 1px; height: 40px; opacity: 0.3;"></div>
-            </div>
-            <div class="showcase-space-canvas">
-               <div class="cosmic-starfield starfield-dense-back" aria-hidden="true"></div>
-               <div class="cosmic-starfield starfield-dense-mid" aria-hidden="true"></div>
-               <div class="cosmic-starfield starfield-dense-front" aria-hidden="true"></div>
-               <div class="cosmic-starfield starfield-dense-cluster" aria-hidden="true"></div>
-            </div>
-            <div class="container position-relative z-3">
-               <div class="text-center mb-5 pb-4">
-                <div class="spacer"></div>
-                  <div class="pill mx-auto mb-3 d-inline-flex align-items-center">
-                     <span class="pill__dot" aria-hidden="true"></span>
-                     <span class="text-white-50">Deep Space Catalog</span>
-                  </div>
-                  <h2 class="section-title fw-bold text-white tracking-tight">The Celestial Systems</h2>
-                  <p class="text-white-50 mx-auto mt-2 mb-0" style="max-width: 65ch;">
-                     A simple guide to the solar system, showing planets, their motion, key features, and how they interact with the Sun and each other across vast distances.
-                  </p>
-               </div>
-               <div class="d-flex flex-column gap-5">
-                  <div class="showcase-row row align-items-center gy-4">
-                     <div class="col-12 col-lg-6 media-column">
-                        <div class="showcase-video-wrapper">
-                           <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
-                              <source src="assets/videos/sun.webm" type="video/webm">
-                              <source src="assets/videos/sun.mp4" type="video/mp4">
-                              Your browser does not support the video tag.
-                           </video>
+                        <div class="col-12 col-lg-8">
+                            <div class="terminal-display-deck h-100">
+                                <div class="card-header-mono d-flex align-items-center justify-content-between mb-4">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <i class="fa-solid fa-chart-simple text-cosmic-secondary"></i>
+                                        <span>ORBITAL_PROJECTIONS</span>
+                                    </div>
+                                    <span class="badge-status font-monospace">READY</span>
+                                </div>
+                                <div id="terminal-empty-state" class="text-center py-5">
+                                    <i class="fa-solid fa-gauge-high text-white-10 text-cosmic-primary mb-3" style="font-size: 3rem; opacity: 0.15;"></i>
+                                    <p class="text-white-50 small font-monospace mb-0">Awaiting user age synchronization...</p>
+                                </div>
+                                <div id="terminal-results" class="row g-3 d-none">
+                                    <div class="col-12 col-sm-6 col-md-4">
+                                        <div class="telemetry-output-box">
+                                            <span class="fw-bold text-white small tracking-wide d-block mb-1">MERCURY AGE</span>
+                                            <div class="display-age font-monospace text-cosmic-primary" id="age-mercury">0.00</div>
+                                            <div class="display-unit text-white-25 small font-monospace">0.24 Earth Yrs</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4">
+                                        <div class="telemetry-output-box">
+                                            <span class="fw-bold text-white small tracking-wide d-block mb-1">VENUS AGE</span>
+                                            <div class="display-age font-monospace text-cosmic-primary" id="age-venus">0.00</div>
+                                            <div class="display-unit text-white-25 small font-monospace">0.62 Earth Yrs</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4">
+                                        <div class="telemetry-output-box">
+                                            <span class="fw-bold text-white small tracking-wide d-block mb-1">MARS AGE</span>
+                                            <div class="display-age font-monospace text-cosmic-primary" id="age-mars">0.00</div>
+                                            <div class="display-unit text-white-25 small font-monospace">1.88 Earth Yrs</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4">
+                                        <div class="telemetry-output-box">
+                                            <span class="fw-bold text-white small tracking-wide d-block mb-1">JUPITER AGE</span>
+                                            <div class="display-age font-monospace text-cosmic-primary" id="age-jupiter">0.00</div>
+                                            <div class="display-unit text-white-25 small font-monospace">11.86 Earth Yrs</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4">
+                                        <div class="telemetry-output-box">
+                                            <span class="fw-bold text-white small tracking-wide d-block mb-1">SATURN AGE</span>
+                                            <div class="display-age font-monospace text-cosmic-primary" id="age-saturn">0.00</div>
+                                            <div class="display-unit text-white-25 small font-monospace">29.46 Earth Yrs</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4">
+                                        <div class="telemetry-output-box">
+                                            <span class="fw-bold text-white small tracking-wide d-block mb-1">URANUS AGE</span>
+                                            <div class="display-age font-monospace text-cosmic-primary" id="age-uranus">0.00</div>
+                                            <div class="display-unit text-white-25 small font-monospace">84.01 Earth Yrs</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4">
+                                        <div class="telemetry-output-box">
+                                            <span class="fw-bold text-white small tracking-wide d-block mb-1">NEPTUNE AGE</span>
+                                            <div class="display-age font-monospace text-cosmic-primary" id="age-neptune">0.00</div>
+                                            <div class="display-unit text-white-25 small font-monospace">164.79 Earth Yrs</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-4">
+                                        <div class="telemetry-output-box">
+                                            <span class="fw-bold text-white small tracking-wide d-block mb-1">PLUTO AGE</span>
+                                            <div class="display-age font-monospace text-cosmic-primary" id="age-pluto">0.00</div>
+                                            <div class="display-unit text-white-25 small font-monospace">248.09 Earth Yrs</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                     </div>
-                     <div class="col-12 col-lg-6 info-column">
-                        <div class="showcase-info-card">
-                           <span class="planet-index-badge">System Core</span>
-                           <h3 class="planet-title mt-2 mb-3">The Sun <span class="text-gradient-blue font-monospace fs-5 ms-2">G2V Star</span></h3>
-                           <p class="planet-long-description">
-                              The heart of our solar system, the Sun is a nearly perfect sphere of hot plasma, heated to incandescence by nuclear fusion reactions in its core. It radiates energy principally as light, ultraviolet, and infrared radiation, providing the driving force behind planetary climates and biological evolution across Earth. Its powerful magnetic field shapes the heliosphere, shielding the entire system from intense interstellar cosmic radiation.
-                           </p>
-                           <div class="planet-metrics-grid mt-4">
-                              <div class="metric-block">
-                                 <span class="metric-label">Core Temp</span>
-                                 <span class="metric-value">~15,000,000 °C</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Mass Equivalence</span>
-                                 <span class="metric-value">333,000 Earths</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Equator Diameter</span>
-                                 <span class="metric-value">1,392,700 km</span>
-                              </div>
-                           </div>
+                    </div>
+                </div>
+            </section>
+            <div class="panel-break"></div>
+            <section id="downloadables" class="section position-relative overflow-hidden" aria-label="Project Assets">
+                <div class="container relative-z floatup visible">
+                    <div class="text-center mx-auto mb-5" style="max-width: 42rem;">
+                        <div class="pill mx-auto mb-3 d-inline-flex align-items-center">
+                            <span class="pill__dot bg-cosmic-primary" aria-hidden="true"></span>
+                            <span class="text-white-50">Cloud Repository</span>
                         </div>
-                     </div>
-                  </div>
-                  <div class="showcase-row row align-items-center gy-4">
-                     <div class="col-12 col-lg-6 media-column">
-                        <div class="showcase-video-wrapper">
-                           <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
-                              <source src="assets/videos/mercury.webm" type="video/webm">
-                              <source src="assets/videos/mercury.mp4" type="video/mp4">
-                           </video>
+                        <h2 class="section-title fw-bold mb-3">Project Assets</h2>
+                        <p class="text-white-50">Get the source files directly via Google Drive.</p>
+                    </div>
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="asset-terminal-card h-100 d-flex flex-column justify-content-between">
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <span class="badge-format font-monospace">GDRIVE</span>
+                                        <span class="text-white-25 small font-monospace">.BLEND</span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="asset-icon-frame text-cosmic-secondary">
+                                            <i class="fa-solid fa-cube"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="h6 fw-bold text-white mb-1">Blender Files</h3>
+                                            <p class="text-white-50 small mb-0">3D models and environment scene.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" target="_blank" class="btn btn-asset font-monospace w-100">
+                                <i class="fa-brands fa-google-drive me-2"></i>OPEN_FILES
+                                </a>
+                            </div>
                         </div>
-                     </div>
-                     <div class="col-12 col-lg-6 info-column">
-                        <div class="showcase-info-card">
-                           <span class="planet-index-badge">Planet 01</span>
-                           <h3 class="planet-title mt-2 mb-3">Mercury <span class="text-gradient-blue font-monospace fs-5 ms-2">Terrestrial</span></h3>
-                           <p class="planet-long-description">
-                              Mercury is the smallest and innermost planet in the Solar System, orbiting the Sun every 87.97 Earth days. Lacking a substantial atmosphere to trap heat, its crust experiences the most extreme temperature fluctuations in the system, swinging violently from blistering daytime apexes to cryogenic sub-zero environments at night. Its hyper-dense iron core generates a global magnetic field that interacts dynamically with solar wind streams.
-                           </p>
-                           <div class="planet-metrics-grid mt-4">
-                              <div class="metric-block">
-                                 <span class="metric-label">Orbital Velocity</span>
-                                 <span class="metric-value">47.4 km/s</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Mean Surface Temp</span>
-                                 <span class="metric-value">167 °C</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Atmosphere</span>
-                                 <span class="metric-value">Exosphere (Trace)</span>
-                              </div>
-                           </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="asset-terminal-card h-100 d-flex flex-column justify-content-between">
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <span class="badge-format font-monospace">GDRIVE</span>
+                                        <span class="text-white-25 small font-monospace">.PY</span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="asset-icon-frame text-cosmic-primary">
+                                            <i class="fa-brands fa-python"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="h6 fw-bold text-white mb-1">Python Scripts</h3>
+                                            <p class="text-white-50 small mb-0">Orbital calculations and automation scripts.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" target="_blank" class="btn btn-asset font-monospace w-100">
+                                <i class="fa-brands fa-google-drive me-2"></i>VIEW_SOURCES
+                                </a>
+                            </div>
                         </div>
-                     </div>
-                  </div>
-                  <div class="showcase-row row align-items-center gy-4">
-                     <div class="col-12 col-lg-6 media-column">
-                        <div class="showcase-video-wrapper">
-                           <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
-                              <source src="assets/videos/venus.webm" type="video/webm">
-                              <source src="assets/videos/venus.mp4" type="video/mp4">
-                           </video>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="asset-terminal-card h-100 d-flex flex-column justify-content-between">
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <span class="badge-format font-monospace">GDRIVE</span>
+                                        <span class="text-white-25 small font-monospace">.MP4</span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="asset-icon-frame text-cosmic-secondary">
+                                            <i class="fa-solid fa-file-video"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="h6 fw-bold text-white mb-1">HD Rendered Videos</h3>
+                                            <p class="text-white-50 small mb-0">Final 60fps cinematic render loop.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" target="_blank" class="btn btn-asset font-monospace w-100">
+                                <i class="fa-brands fa-google-drive me-2"></i>DOWNLOAD_VIDEOS
+                                </a>
+                            </div>
                         </div>
-                     </div>
-                     <div class="col-12 col-lg-6 info-column">
-                        <div class="showcase-info-card">
-                           <span class="planet-index-badge">Planet 02</span>
-                           <h3 class="planet-title mt-2 mb-3">Venus <span class="text-gradient-blue font-monospace fs-5 ms-2">Greenhouse Void</span></h3>
-                           <p class="planet-long-description">
-                              Venus is wrapped in a dense, suffocating blanket of carbon dioxide alongside clouds of sulfuric acid. This creates a runaway greenhouse effect that traps thermal radiation permanently, making its scorched basalt planes hot enough to liquefy lead. Rotating counter to almost every other planet, its retrograde day cycles take longer to complete than its entire annual journey around the Sun.
-                           </p>
-                           <div class="planet-metrics-grid mt-4">
-                              <div class="metric-block">
-                                 <span class="metric-label">Atmospheric Press</span>
-                                 <span class="metric-value">92 Bar (92x Earth)</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Surface Temp</span>
-                                 <span class="metric-value">464 °C Max</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Axial Tilt</span>
-                                 <span class="metric-value">177.3° (Inverted)</span>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="showcase-row row align-items-center gy-4">
-                     <div class="col-12 col-lg-6 media-column">
-                        <div class="showcase-video-wrapper">
-                           <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
-                              <source src="assets/videos/earth.webm" type="video/webm">
-                              <source src="assets/videos/earth.mp4" type="video/mp4">
-                           </video>
-                        </div>
-                     </div>
-                     <div class="col-12 col-lg-6 info-column">
-                        <div class="showcase-info-card">
-                           <span class="planet-index-badge">Planet 03</span>
-                           <h3 class="planet-title mt-2 mb-3">Earth <span class="text-gradient-blue font-monospace fs-5 ms-2">Habitable Oasis</span></h3>
-                           <p class="planet-long-description">
-                              The only known celestial body supporting an active biosphere. Earth's liquid-water oceans, active plate tectonics, and nitrogen-oxygen atmosphere sustain global ecosystems. Driven internally by a convection-rich nickel-iron core, its magnetosphere consistently deflects dangerous ion particles, enabling long-term evolutionary security across vast, interconnected life cycles.
-                           </p>
-                           <div class="planet-metrics-grid mt-4">
-                              <div class="metric-block">
-                                 <span class="metric-label">Orbital Period</span>
-                                 <span class="metric-value">365.25 Days</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Surface Fluid</span>
-                                 <span class="metric-value">70.8% Water Cover</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Satellites</span>
-                                 <span class="metric-value">1 (The Moon)</span>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="showcase-row row align-items-center gy-4">
-                     <div class="col-12 col-lg-6 media-column">
-                        <div class="showcase-video-wrapper">
-                           <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
-                              <source src="assets/videos/moon.webm" type="video/webm">
-                              <source src="assets/videos/moon.mp4" type="video/mp4">
-                           </video>
-                        </div>
-                     </div>
-                     <div class="col-12 col-lg-6 info-column">
-                        <div class="showcase-info-card">
-                           <span class="planet-index-badge">Satellite Alpha</span>
-                           <h3 class="planet-title mt-2 mb-3">The Moon <span class="text-gradient-blue font-monospace fs-5 ms-2">Luna</span></h3>
-                           <p class="planet-long-description">
-                              Earth's sole natural satellite, the Moon is a tidally locked body that stabilizes our planet's axial wobble, moderating the long-term climate. Composed primarily of silicates and marked by ancient lunar maria formed by volcanic eruptions, its gravitational pull remains the chief driver behind terrestrial ocean tides. It serves as humanity's primary historical and logistical stepping stone toward deeper solar system exploration.
-                           </p>
-                           <div class="planet-metrics-grid mt-4">
-                              <div class="metric-block">
-                                 <span class="metric-label">Orbital Velocity</span>
-                                 <span class="metric-value">1.022 km/s</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Surface Gravity</span>
-                                 <span class="metric-value">1.62 m/s² (16.6% Earth)</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Mean Diameter</span>
-                                 <span class="metric-value">3,474 km</span>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="showcase-row row align-items-center gy-4">
-                     <div class="col-12 col-lg-6 media-column">
-                        <div class="showcase-video-wrapper">
-                           <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
-                              <source src="assets/videos/mars.webm" type="video/webm">
-                              <source src="assets/videos/mars.mp4" type="video/mp4">
-                           </video>
-                        </div>
-                     </div>
-                     <div class="col-12 col-lg-6 info-column">
-                        <div class="showcase-info-card">
-                           <span class="planet-index-badge">Planet 04</span>
-                           <h3 class="planet-title mt-2 mb-3">Mars <span class="text-gradient-blue font-monospace fs-5 ms-2">Desert Frontier</span></h3>
-                           <p class="planet-long-description">
-                              Mars is a cold, dust-covered desert world featuring a highly rarefied carbon-dioxide atmosphere. Marked by giant extinct volcanoes like Olympus Mons and the vast canyon system of Valles Marineris, it holds significant subsurface water ice reserves. Its red iron-oxide surface dust hides an environment that remains a primary target for robotic telemetry exploration and future crewed structural setups.
-                           </p>
-                           <div class="planet-metrics-grid mt-4">
-                              <div class="metric-block">
-                                 <span class="metric-label">Orbital Distance</span>
-                                 <span class="metric-value">227.9 Million km</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Surface Gravity</span>
-                                 <span class="metric-value">3.72 m/s² (0.38g)</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Satellites</span>
-                                 <span class="metric-value">2 (Phobos, Deimos)</span>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="showcase-row row align-items-center gy-4">
-                     <div class="col-12 col-lg-6 media-column">
-                        <div class="showcase-video-wrapper">
-                           <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
-                              <source src="assets/videos/jupiter.webm" type="video/webm">
-                              <source src="assets/videos/jupiter.mp4" type="video/mp4">
-                           </video>
-                        </div>
-                     </div>
-                     <div class="col-12 col-lg-6 info-column">
-                        <div class="showcase-info-card">
-                           <span class="planet-index-badge">Planet 05</span>
-                           <h3 class="planet-title mt-2 mb-3">Jupiter <span class="text-gradient-blue font-monospace fs-5 ms-2">Gas Giant</span></h3>
-                           <p class="planet-long-description">
-                              The largest planet in our system, Jupiter is a massive gas giant comprised predominantly of hydrogen and helium gas structures. Its dynamic atmosphere is distinctively banded by supersonic jet streams and dominated by the Great Red Spot—a hyper-cyclonic storm system wider than Earth itself. Its immense magnetic footprint accelerates surrounding particles into powerful localized radiation belts.
-                           </p>
-                           <div class="planet-metrics-grid mt-4">
-                              <div class="metric-block">
-                                 <span class="metric-label">Rotation Period</span>
-                                 <span class="metric-value">9h 55m (Fastest)</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Mass Metrics</span>
-                                 <span class="metric-value">317.8 Earth Masses</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Moons Documented</span>
-                                 <span class="metric-value">95 Active Satellites</span>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="showcase-row row align-items-center gy-4">
-                     <div class="col-12 col-lg-6 media-column">
-                        <div class="showcase-video-wrapper">
-                           <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
-                              <source src="assets/videos/saturn.webm" type="video/webm">
-                              <source src="assets/videos/saturn.mp4" type="video/mp4">
-                           </video>
-                        </div>
-                     </div>
-                     <div class="col-12 col-lg-6 info-column">
-                        <div class="showcase-info-card">
-                           <span class="planet-index-badge">Planet 06</span>
-                           <h3 class="planet-title mt-2 mb-3">Saturn <span class="text-gradient-blue font-monospace fs-5 ms-2">Ringed Titan</span></h3>
-                           <p class="planet-long-description">
-                              Saturn stands unique with an expansive, highly complex ring architecture consisting of billions of independent ice particles, rocky debris fragments, and cosmic dust. Possessing a low structural density that would float on water, its outer atmosphere triggers violent equatorial storm complexes. Its extensive gravitational pull guides a rich family of scientifically vital moons, including Titan and Enceladus.
-                           </p>
-                           <div class="planet-metrics-grid mt-4">
-                              <div class="metric-block">
-                                 <span class="metric-label">Ring Diameter</span>
-                                 <span class="metric-value">Up to 282,000 km</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Mean Density</span>
-                                 <span class="metric-value">0.687 g/cm³</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Moons Count</span>
-                                 <span class="metric-value">146 Confirmed</span>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="showcase-row row align-items-center gy-4">
-                     <div class="col-12 col-lg-6 media-column">
-                        <div class="showcase-video-wrapper">
-                           <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
-                              <source src="assets/videos/uranus.webm" type="video/webm">
-                              <source src="assets/videos/uranus.mp4" type="video/mp4">
-                           </video>
-                        </div>
-                     </div>
-                     <div class="col-12 col-lg-6 info-column">
-                        <div class="showcase-info-card">
-                           <span class="planet-index-badge">Planet 07</span>
-                           <h3 class="planet-title mt-2 mb-3">Uranus <span class="text-gradient-blue font-monospace fs-5 ms-2">Ice Giant</span></h3>
-                           <p class="planet-long-description">
-                              Uranus is an ice giant distinguished by a unique 97.8-degree axial tilt, causing it to roll through its 84-year orbit practically on its side. Its deep mantle layer is rich in water, ammonia, and methane ices, which give the planet its serene blue-green color profile. Orbiting via extreme seasonal cycles, it maintains one of the coldest atmospheres found anywhere within the solar network.
-                           </p>
-                           <div class="planet-metrics-grid mt-4">
-                              <div class="metric-block">
-                                 <span class="metric-label">Axial Tilt</span>
-                                 <span class="metric-value">97.77° (Sideways)</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Atmosphere Base</span>
-                                 <span class="metric-value">Hydrogen, Helium, Methane</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Known Rings</span>
-                                 <span class="metric-value">13 Faint Bands</span>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="showcase-row row align-items-center gy-4">
-                     <div class="col-12 col-lg-6 media-column">
-                        <div class="showcase-video-wrapper">
-                           <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
-                              <source src="assets/videos/neptune.webm" type="video/webm">
-                              <source src="assets/videos/neptune.mp4" type="video/mp4">
-                           </video>
-                        </div>
-                     </div>
-                     <div class="col-12 col-lg-6 info-column">
-                        <div class="showcase-info-card">
-                           <span class="planet-index-badge">Planet 08</span>
-                           <h3 class="planet-title mt-2 mb-3">Neptune <span class="text-gradient-blue font-monospace fs-5 ms-2">Wind Vortex</span></h3>
-                           <p class="planet-long-description">
-                              Neptune sits at the edge of our planetary neighborhood, swept by supersonic winds that reach speeds up to 2,100 km/h—the fastest atmospheric currents recorded in the solar system. An ice giant dense with high-pressure fluid interiors, its deep blue cobalt visage hides intense thermodynamic shifts. It remains dynamically bound to Triton, a massive retrograde moon captured out of the Kuiper Belt.
-                           </p>
-                           <div class="planet-metrics-grid mt-4">
-                              <div class="metric-block">
-                                 <span class="metric-label">Orbital Period</span>
-                                 <span class="metric-value">164.8 Earth Years</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Peak Wind Velocity</span>
-                                 <span class="metric-value">~2,100 km/h</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Discovery Vector</span>
-                                 <span class="metric-value">Mathematical Calculus</span>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="showcase-row row align-items-center gy-4">
-                     <div class="col-12 col-lg-6 media-column">
-                        <div class="showcase-video-wrapper">
-                           <video autoplay loop muted playsinline preload="metadata" class="showcase-native-video">
-                              <source src="assets/videos/pluto.webm" type="video/webm">
-                              <source src="assets/videos/pluto.mp4" type="video/mp4">
-                           </video>
-                        </div>
-                     </div>
-                     <div class="col-12 col-lg-6 info-column">
-                        <div class="showcase-info-card">
-                           <span class="planet-index-badge">Trans-Neptunian</span>
-                           <h3 class="planet-title mt-2 mb-3">Pluto <span class="text-gradient-blue font-monospace fs-5 ms-2">Dwarf Planet</span></h3>
-                           <p class="planet-long-description">
-                              Located within the distant Kuiper Belt, Pluto is a complex world of nitrogen ice plains, mountain ranges of solid water ice, and a thin, variable haze atmosphere. Renowned for its highly eccentric, inclined orbital pathway, it interacts gravitationally with its large companion moon, Charon, creating a unique binary system dynamic that anchors outer telemetry boundaries.
-                           </p>
-                           <div class="planet-metrics-grid mt-4">
-                              <div class="metric-block">
-                                 <span class="metric-label">Orbital Period</span>
-                                 <span class="metric-value">248 Earth Years</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Surface Composition</span>
-                                 <span class="metric-value">98% Nitrogen Ice</span>
-                              </div>
-                              <div class="metric-block">
-                                 <span class="metric-label">Mean Radius</span>
-                                 <span class="metric-value">1,188 km</span>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="text-center mt-5 pt-5 opacity-50">
-                     <div class="font-monospace small tracking-widest text-uppercase text-white-50">
-                        — Departing from Interstellar Space —
-                     </div>
-                     <div class="mx-auto mt-3 bg-white" style="width: 1px; height: 40px; opacity: 0.3;"></div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <!-- 5. Planet Age Calculator -->
-         <section id="age-calculator" class="section position-relative overflow-hidden" aria-label="Planetary Age Calculator">
-            <div class="container relative-z floatup visible">
-               <div class="text-center mx-auto mb-5" style="max-width: 42rem;">
-                  <div class="pill mx-auto mb-3 d-inline-flex align-items-center">
-                     <span class="pill__dot bg-cosmic-secondary" aria-hidden="true"></span>
-                     <span class="text-white-50">Time Dilation</span>
-                  </div>
-                  <h2 class="section-title fw-bold mb-3">Cosmic Age Terminal</h2>
-                  <p class="text-white-50">
-                     Enter your Earth age to compare it to ages on other planets and see how time stretches across the solar system.
-                  </p>
-               </div>
-               <div class="row g-4 justify-content-center">
-                  <div class="col-12 col-lg-4">
-                     <div class="terminal-input-card h-100">
-                        <div class="card-header-mono d-flex align-items-center gap-2 mb-4">
-                           <i class="fa-solid fa-terminal text-cosmic-primary"></i>
-                           <span>INPUT_PARAMETERS</span>
-                        </div>
-                        <form id="cosmic-form" onsubmit="event.preventDefault(); calculateCosmicAge();">
-                           <div class="mb-4">
-                              <label for="user-age" class="form-label-mono text-white-50 small mb-2 d-block">ENTER YOUR EARTH AGE</label>
-                              <div class="input-group-space">
-                                 <i class="fa-solid fa-user-clock input-icon"></i>
-                                 <input type="number" id="user-age" class="form-control-space font-monospace" placeholder="e.g. 21" min="1" max="120" required>
-                              </div>
-                           </div>
-                           <button type="submit" class="btn btn-terminal w-100 font-monospace">
-                           <i class="fa-solid fa-satellite-dish me-2"></i>COMPUTE_YEARS
-                           </button>
-                        </form>
-                        <div id="earth-baseline" class="mt-4 pt-4 border-top border-secondary-subtle font-monospace text-white-50 small d-none">
-                           <div class="d-flex justify-content-between">
-                              <span>EARTH AGE BASELINE:</span>
-                              <span id="total-earth-years" class="text-white fw-bold">0 yrs</span>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-12 col-lg-8">
-                     <div class="terminal-display-deck h-100">
-                        <div class="card-header-mono d-flex align-items-center justify-content-between mb-4">
-                           <div class="d-flex align-items-center gap-2">
-                              <i class="fa-solid fa-chart-simple text-cosmic-secondary"></i>
-                              <span>ORBITAL_PROJECTIONS</span>
-                           </div>
-                           <span class="badge-status font-monospace">READY</span>
-                        </div>
-                        <div id="terminal-empty-state" class="text-center py-5">
-                           <i class="fa-solid fa-gauge-high text-white-10 text-cosmic-primary mb-3" style="font-size: 3rem; opacity: 0.15;"></i>
-                           <p class="text-white-50 small font-monospace mb-0">Awaiting user age synchronization...</p>
-                        </div>
-                        <div id="terminal-results" class="row g-3 d-none">
-                           <div class="col-12 col-sm-6 col-md-4">
-                              <div class="telemetry-output-box">
-                                 <span class="fw-bold text-white small tracking-wide d-block mb-1">MERCURY AGE</span>
-                                 <div class="display-age font-monospace text-cosmic-primary" id="age-mercury">0.00</div>
-                                 <div class="display-unit text-white-25 small font-monospace">0.24 Earth Yrs</div>
-                              </div>
-                           </div>
-                           <div class="col-12 col-sm-6 col-md-4">
-                              <div class="telemetry-output-box">
-                                 <span class="fw-bold text-white small tracking-wide d-block mb-1">VENUS AGE</span>
-                                 <div class="display-age font-monospace text-cosmic-primary" id="age-venus">0.00</div>
-                                 <div class="display-unit text-white-25 small font-monospace">0.62 Earth Yrs</div>
-                              </div>
-                           </div>
-                           <div class="col-12 col-sm-6 col-md-4">
-                              <div class="telemetry-output-box">
-                                 <span class="fw-bold text-white small tracking-wide d-block mb-1">MARS AGE</span>
-                                 <div class="display-age font-monospace text-cosmic-primary" id="age-mars">0.00</div>
-                                 <div class="display-unit text-white-25 small font-monospace">1.88 Earth Yrs</div>
-                              </div>
-                           </div>
-                           <div class="col-12 col-sm-6 col-md-4">
-                              <div class="telemetry-output-box">
-                                 <span class="fw-bold text-white small tracking-wide d-block mb-1">JUPITER AGE</span>
-                                 <div class="display-age font-monospace text-cosmic-primary" id="age-jupiter">0.00</div>
-                                 <div class="display-unit text-white-25 small font-monospace">11.86 Earth Yrs</div>
-                              </div>
-                           </div>
-                           <div class="col-12 col-sm-6 col-md-4">
-                              <div class="telemetry-output-box">
-                                 <span class="fw-bold text-white small tracking-wide d-block mb-1">SATURN AGE</span>
-                                 <div class="display-age font-monospace text-cosmic-primary" id="age-saturn">0.00</div>
-                                 <div class="display-unit text-white-25 small font-monospace">29.46 Earth Yrs</div>
-                              </div>
-                           </div>
-                           <div class="col-12 col-sm-6 col-md-4">
-                              <div class="telemetry-output-box">
-                                 <span class="fw-bold text-white small tracking-wide d-block mb-1">URANUS AGE</span>
-                                 <div class="display-age font-monospace text-cosmic-primary" id="age-uranus">0.00</div>
-                                 <div class="display-unit text-white-25 small font-monospace">84.01 Earth Yrs</div>
-                              </div>
-                           </div>
-                           <div class="col-12 col-sm-6 col-md-4">
-                              <div class="telemetry-output-box">
-                                 <span class="fw-bold text-white small tracking-wide d-block mb-1">NEPTUNE AGE</span>
-                                 <div class="display-age font-monospace text-cosmic-primary" id="age-neptune">0.00</div>
-                                 <div class="display-unit text-white-25 small font-monospace">164.79 Earth Yrs</div>
-                              </div>
-                           </div>
-                           <div class="col-12 col-sm-6 col-md-4">
-                              <div class="telemetry-output-box">
-                                 <span class="fw-bold text-white small tracking-wide d-block mb-1">PLUTO AGE</span>
-                                 <div class="display-age font-monospace text-cosmic-primary" id="age-pluto">0.00</div>
-                                 <div class="display-unit text-white-25 small font-monospace">248.09 Earth Yrs</div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <div class="panel-break"></div>
-         <section id="downloadables" class="section position-relative overflow-hidden" aria-label="Project Assets">
-            <div class="container relative-z floatup visible">
-               <div class="text-center mx-auto mb-5" style="max-width: 42rem;">
-                  <div class="pill mx-auto mb-3 d-inline-flex align-items-center">
-                     <span class="pill__dot bg-cosmic-primary" aria-hidden="true"></span>
-                     <span class="text-white-50">Cloud Repository</span>
-                  </div>
-                  <h2 class="section-title fw-bold mb-3">Project Assets</h2>
-                  <p class="text-white-50">Get the source files directly via Google Drive.</p>
-               </div>
-               <div class="row g-4 justify-content-center">
-                  <div class="col-12 col-md-6 col-lg-4">
-                     <div class="asset-terminal-card h-100 d-flex flex-column justify-content-between">
-                        <div class="mb-4">
-                           <div class="d-flex justify-content-between align-items-center mb-3">
-                              <span class="badge-format font-monospace">GDRIVE</span>
-                              <span class="text-white-25 small font-monospace">.BLEND</span>
-                           </div>
-                           <div class="d-flex align-items-center gap-3">
-                              <div class="asset-icon-frame text-cosmic-secondary">
-                                 <i class="fa-solid fa-cube"></i>
-                              </div>
-                              <div>
-                                 <h3 class="h6 fw-bold text-white mb-1">Blender Files</h3>
-                                 <p class="text-white-50 small mb-0">3D models and environment scene.</p>
-                              </div>
-                           </div>
-                        </div>
-                        <a href="#" target="_blank" class="btn btn-asset font-monospace w-100">
-                        <i class="fa-brands fa-google-drive me-2"></i>OPEN_FILES
-                        </a>
-                     </div>
-                  </div>
-                  <div class="col-12 col-md-6 col-lg-4">
-                     <div class="asset-terminal-card h-100 d-flex flex-column justify-content-between">
-                        <div class="mb-4">
-                           <div class="d-flex justify-content-between align-items-center mb-3">
-                              <span class="badge-format font-monospace">GDRIVE</span>
-                              <span class="text-white-25 small font-monospace">.PY</span>
-                           </div>
-                           <div class="d-flex align-items-center gap-3">
-                              <div class="asset-icon-frame text-cosmic-primary">
-                                 <i class="fa-brands fa-python"></i>
-                              </div>
-                              <div>
-                                 <h3 class="h6 fw-bold text-white mb-1">Python Scripts</h3>
-                                 <p class="text-white-50 small mb-0">Orbital calculations and automation scripts.</p>
-                              </div>
-                           </div>
-                        </div>
-                        <a href="#" target="_blank" class="btn btn-asset font-monospace w-100">
-                        <i class="fa-brands fa-google-drive me-2"></i>VIEW_SOURCES
-                        </a>
-                     </div>
-                  </div>
-                  <div class="col-12 col-md-6 col-lg-4">
-                     <div class="asset-terminal-card h-100 d-flex flex-column justify-content-between">
-                        <div class="mb-4">
-                           <div class="d-flex justify-content-between align-items-center mb-3">
-                              <span class="badge-format font-monospace">GDRIVE</span>
-                              <span class="text-white-25 small font-monospace">.MP4</span>
-                           </div>
-                           <div class="d-flex align-items-center gap-3">
-                              <div class="asset-icon-frame text-cosmic-secondary">
-                                 <i class="fa-solid fa-file-video"></i>
-                              </div>
-                              <div>
-                                 <h3 class="h6 fw-bold text-white mb-1">HD Rendered Videos</h3>
-                                 <p class="text-white-50 small mb-0">Final 60fps cinematic render loop.</p>
-                              </div>
-                           </div>
-                        </div>
-                        <a href="#" target="_blank" class="btn btn-asset font-monospace w-100">
-                        <i class="fa-brands fa-google-drive me-2"></i>DOWNLOAD_VIDEOS
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-      </main>
-      <div id="footer-placeholder"></div>
-      <script>
-         var link = document.createElement('link');
-         link.rel = 'stylesheet';
-         link.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css';
-         document.head.appendChild(link);
-         
-         var faLink = document.createElement('link');
-         faLink.rel = 'stylesheet';
-         faLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css';
-         document.head.appendChild(faLink);
-      </script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="scripts/main.js"></script>
-      <script src="scripts/planet-calculator.js"></script>
-   </body>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div id="footer-placeholder"></div>
+        <script>
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css';
+            document.head.appendChild(link);
+            
+            var faLink = document.createElement('link');
+            faLink.rel = 'stylesheet';
+            faLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css';
+            document.head.appendChild(faLink);
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="scripts/main.js"></script>
+        <script src="scripts/planet-calculator.js"></script>
+    </body>
 </html>
