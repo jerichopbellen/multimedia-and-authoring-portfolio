@@ -787,84 +787,98 @@
     );
 }
 
-/* High-Density Starfield Base Layer Configuration */
+/* High-Density Ambient Starfield Base Layer Configuration (For Depth Texture) */
 .cosmic-starfield {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
+    opacity: 0.35;
 }
 
-/* Layer 1: Enhanced Dense Micro-Background Stars */
 .cosmic-starfield.starfield-dense-back {
-    background-image: 
-        radial-gradient(1.5px 1.5px at 10% 12%, #ffffff 100%, transparent),
-        radial-gradient(1px 1px at 25% 35%, rgba(255, 255, 255, 0.9) 100%, transparent),
-        radial-gradient(1.5px 1.5px at 45% 20%, #ffffff 100%, transparent),
-        radial-gradient(1px 1px at 65% 55%, rgba(255, 255, 255, 0.8) 100%, transparent),
-        radial-gradient(2px 2px at 85% 15%, #ffffff 100%, transparent),
-        radial-gradient(1.5px 1.5px at 95% 40%, #ffffff 100%, transparent),
-        radial-gradient(1px 1px at 5% 75%, rgba(255, 255, 255, 0.85) 100%, transparent),
-        radial-gradient(2px 2px at 30% 85%, #ffffff 100%, transparent),
-        radial-gradient(1.5px 1.5px at 55% 70%, #ffffff 100%, transparent),
-        radial-gradient(1px 1px at 75% 90%, rgba(255, 255, 255, 0.9) 100%, transparent);
-    animation: space-twinkle-fast 3s infinite ease-in-out;
+    background-image: radial-gradient(1px 1px at 20px 30px, #fff, transparent), radial-gradient(1.5px 1.5px at 150px 80px, rgba(255,255,255,0.8), transparent);
+    background-size: 300px 300px;
 }
 
-/* Layer 2: Medium High-Contrast Shimmer Stars */
 .cosmic-starfield.starfield-dense-mid {
-    background-image: 
-        radial-gradient(2px 2px at 8% 45%, #ffffff 100%, transparent),
-        radial-gradient(2.5px 2.5px at 20% 70%, #ffffff 100%, transparent),
-        radial-gradient(2px 2px at 40% 10%, #ffffff 100%, transparent),
-        radial-gradient(2.5px 2.5px at 60% 80%, #ffffff 100%, transparent),
-        radial-gradient(2px 2px at 78% 30%, rgba(255, 255, 255, 0.95) 100%, transparent),
-        radial-gradient(2.5px 2.5px at 88% 65%, #ffffff 100%, transparent),
-        radial-gradient(2px 2px at 50% 50%, #ffffff 100%, transparent),
-        radial-gradient(2.5px 2.5px at 92% 90%, #ffffff 100%, transparent);
-    animation: space-twinkle-medium 5.5s infinite ease-in-out alternate;
+    background-image: radial-gradient(1.5px 1.5px at 60px 120px, #4da3ff, transparent), radial-gradient(2px 2px at 250px 210px, rgba(167,139,250,0.6), transparent);
+    background-size: 400px 400px;
+    opacity: 0.25;
 }
 
-/* Layer 3: Sharp High-Visibility Diamond Beacons */
 .cosmic-starfield.starfield-dense-front {
-    background-image: 
-        radial-gradient(3.5px 3.5px at 15% 80%, #ffffff 100%, transparent),
-        radial-gradient(3px 3px at 38% 22%, #ffffff 100%, transparent),
-        radial-gradient(4px 4px at 70% 15%, #ffffff 100%, transparent),
-        radial-gradient(3.5px 3.5px at 82% 75%, #ffffff 100%, transparent),
-        radial-gradient(3px 3px at 52% 92%, #ffffff 100%, transparent),
-        radial-gradient(4px 4px at 90% 10%, #ffffff 100%, transparent);
-    animation: space-twinkle-slow 7.5s infinite ease-in-out;
-    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
+    background-image: radial-gradient(2px 2px at 110px 40px, #fff, transparent);
+    background-size: 500px 500px;
+    opacity: 0.15;
 }
 
-/* Layer 4: Dense Milky Way Star Clusters */
 .cosmic-starfield.starfield-dense-cluster {
-    background-image: 
-        radial-gradient(1px 1px at 18% 65%, #ffffff 100%, transparent),
-        radial-gradient(1.5px 1.5px at 19% 67%, rgba(255,255,255,0.7) 100%, transparent),
-        radial-gradient(1px 1px at 22% 63%, #ffffff 100%, transparent),
-        radial-gradient(2px 2px at 66% 42%, #ffffff 100%, transparent),
-        radial-gradient(1px 1px at 68% 40%, rgba(255,255,255,0.9) 100%, transparent),
-        radial-gradient(1.5px 1.5px at 65% 45%, #ffffff 100%, transparent),
-        radial-gradient(2px 2px at 80% 28%, #ffffff 100%, transparent),
-        radial-gradient(1px 1px at 82% 26%, #ffffff 100%, transparent);
-    animation: space-twinkle-fast 4.5s infinite ease-in-out alternate;
+    background: radial-gradient(circle at 80% 40%, rgba(77, 163, 255, 0.08) 0%, rgba(167, 139, 250, 0.04) 35%, transparent 70%);
+    filter: blur(50px);
 }
 
-/* Vivid Space Twinkle Computations */
-@keyframes space-twinkle-fast {
-    0%, 100% { opacity: 0.25; transform: scale(0.96); }
-    50% { opacity: 1.0; transform: scale(1.04); }
+/* ==========================================================================
+   DYNAMIC HIGH-PERFORMANCE STAR GENERATION (AMPED HIGH VISIBILITY)
+   ========================================================================== */
+
+.star-sparkle-node {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.5);
+    will-change: transform, opacity;
 }
-@keyframes space-twinkle-medium {
-    0%, 100% { opacity: 1.0; transform: scale(1.02); }
-    50% { opacity: 0.15; transform: scale(0.96); }
+
+/* Intensified Neon Bloom Shaders for high contrast visibility */
+.star-sparkle-node.star-variant-white { 
+    background-color: #ffffff; 
+    box-shadow: 0 0 6px 1px rgba(255, 255, 255, 1); 
 }
-@keyframes space-twinkle-slow {
-    0%, 100% { opacity: 0.35; transform: scale(0.98); }
-    50% { opacity: 1.0; transform: scale(1.05); }
+.star-sparkle-node.star-variant-blue { 
+    background-color: #a3d7ff; 
+    box-shadow: 0 0 8px 2px rgba(77, 163, 255, 0.9); 
 }
+.star-sparkle-node.star-variant-amber { 
+    background-color: #fff0c2; 
+    box-shadow: 0 0 7px 1.5px rgba(255, 189, 46, 0.85); 
+}
+
+/* Staggered Twinkle Frequency Maps */
+.star-twinkle-fast {
+    animation: stellar-pulse-fast 2s ease-in-out infinite alternate;
+}
+.star-twinkle-medium {
+    animation: stellar-pulse-medium 3.5s ease-in-out infinite alternate;
+}
+.star-twinkle-slow {
+    animation: stellar-pulse-slow 5s ease-in-out infinite alternate;
+}
+
+/* Upgraded Hardware Animations with much higher opacity floors and peak ceilings */
+@keyframes stellar-pulse-fast {
+    0% { opacity: 0.25; transform: scale(0.7); }
+    50% { opacity: 1.0; transform: scale(1.3); }
+    100% { opacity: 0.35; transform: scale(0.6); }
+}
+
+@keyframes stellar-pulse-medium {
+    0% { opacity: 0.3; transform: scale(0.6); }
+    40% { opacity: 0.4; transform: scale(0.7); }
+    75% { opacity: 1.0; transform: scale(1.4); }
+    100% { opacity: 0.2; transform: scale(0.5); }
+}
+
+@keyframes stellar-pulse-slow {
+    0% { opacity: 0.2; transform: scale(0.5); }
+    50% { opacity: 0.95; transform: scale(1.5); }
+    100% { opacity: 0.3; transform: scale(0.6); }
+}
+
+/* ==========================================================================
+   LAYOUT STRUCTURE & CONTENT CONTAINERS
+   ========================================================================== */
 
 /* Two-Column Alternating Layout Matrix (Desktop Viewports) */
 @media (min-width: 992px) {
@@ -881,7 +895,7 @@
     }
 }
 
-/* Clean Video Wrapper Framework: No borders, no filters, no shadows, complete black blending */
+/* Clean Video Wrapper Framework */
 .showcase-video-wrapper {
     position: relative;
     overflow: hidden;
@@ -898,10 +912,10 @@
     object-fit: cover;
     display: block;
     border: none !important;
-    filter: none !important; /* Removes all video overlays and custom filters */
+    filter: none !important;
 }
 
-/* Text Content Configurations (100% visible and unaffected by edge fades) */
+/* Text Content Configurations */
 .showcase-info-card {
     position: relative;
     z-index: 3;
