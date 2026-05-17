@@ -898,22 +898,22 @@
 .showcase-video-wrapper {
     position: relative;
     overflow: hidden;
-    background: #000000 !important;
     border: none !important;
     box-shadow: none !important;
     outline: none !important;
     aspect-ratio: 16 / 10;
     z-index: 3;
-}
-.showcase-native-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border: none !important;
-    filter: none !important;
+    background: transparent !important;
 }
 
+.showcase-native-video {
+    background: transparent !important;
+    filter: brightness(0.95) contrast(1.2);  
+    display: block;
+    width: 100%;
+    height: 100%;
+    
+}
 /* Text Content Configurations */
 .showcase-info-card {
     position: relative;
