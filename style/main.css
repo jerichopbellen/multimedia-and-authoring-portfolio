@@ -59,10 +59,38 @@ body {
 /* ==========================================================================
    5. FOOTER
    ========================================================================== */
-footer a { transition: all 0.25s ease; }
-footer a:hover { color: #4da3ff !important; opacity: 1 !important; }
-footer .fab { transition: transform 0.25s ease; }
-footer a:hover .fab { transform: translateY(-3px); }
+   .footer-link-item {
+        transition: color 0.2s ease, transform 0.2s ease;
+        display: inline-block;
+    }
+    /* Updated hover color to #4da3ff */
+    .footer-link-item:hover {
+        color: #4da3ff !important;
+        transform: translateX(4px);
+    }
+    @media (max-width: 767.98px) {
+        .footer-link-item:hover {
+            transform: translateY(-2px);
+        }
+    }
+    .footer-social-btn {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    /* Updated social button hover colors to match #4da3ff theme */
+    .footer-social-btn:hover {
+        background: rgba(77, 163, 255, 0.1);
+        border-color: rgba(77, 163, 255, 0.3);
+        color: #4da3ff !important;
+        transform: translateY(-3px);
+    }
 
 /* ==========================================================================
    6. PANELS, BUTTONS & BASIC COMPONENTS
