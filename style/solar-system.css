@@ -36,7 +36,7 @@
 .asteroid {
   display: inline-block;
   width: 16px; height: 16px;
-  background: #4da3ff84 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><ellipse cx="8" cy="8" rx="8" ry="7" fill="gray"/><ellipse cx="5" cy="5" rx="2" ry="1" fill="#ccc"/><ellipse cx="10" cy="12" rx="2" ry="1.5" fill="#bbb"/></svg>');
+  background: #4da3ff2a url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><ellipse cx="8" cy="8" rx="8" ry="7" fill="gray"/><ellipse cx="5" cy="5" rx="2" ry="1" fill="#ccc"/><ellipse cx="10" cy="12" rx="2" ry="1.5" fill="#bbb"/></svg>');
   border-radius: 50%;
   transform: rotate(calc(12deg * var(--i, 1))) scale(calc(0.7 + 0.5 * var(--i, 1)));
   opacity: .82;
@@ -50,6 +50,93 @@
 .asteroid:nth-child(5) { --i: 0.4 }
 .asteroid:nth-child(6) { --i: 1.8 }
 
+/* ==========================================================================
+   SOLID TEXT GRAPHIC HEADERS (TOTAL VARIETY PACK)
+   ========================================================================== */
+/* --------------------------------------------------------------------------
+   VARIANT 2: Corner-Bracket Matrix (The Scripted Process)
+   -------------------------------------------------------------------------- */
+.tech-matrix-header {
+    text-align: center;
+    max-width: 600px;
+}
+.matrix-grid-lines {
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    color: #4da3ff;
+    margin-bottom: 12px;
+}
+.matrix-title-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 14px 36px;
+}
+.tech-title-matrix {
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    font-weight: 800;
+}
+.matrix-corner {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.matrix-corner.top-left     { top: 0; left: 0; border-right: none; border-bottom: none; }
+.matrix-corner.top-right    { top: 0; right: 0; border-left: none; border-bottom: none; }
+.matrix-corner.bottom-left  { bottom: 0; left: 0; border-right: none; border-top: none; }
+.matrix-corner.bottom-right { bottom: 0; right: 0; border-left: none; border-top: none; }
+
+.tech-matrix-header:hover .matrix-corner {
+    width: 16px;
+    height: 16px;
+    border-color: #4da3ff;
+}
+
+/* --------------------------------------------------------------------------
+   VARIANT 3: Geometric Crosshair Strip (Celestial Systems)
+   -------------------------------------------------------------------------- */
+.tech-crosshair-header .crosshair-badge {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.4);
+}
+.crosshair-axis-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.tech-title-crosshair {
+    font-size: 2.25rem;
+    letter-spacing: 0.15em;
+    white-space: nowrap;
+}
+.axis-line {
+    height: 1px;
+    flex-grow: 1;
+    background: rgba(255, 255, 255, 0.15);
+    position: relative;
+}
+.left-axis { background: linear-gradient(90deg, transparent, rgba(77, 163, 255, 0.4)); }
+.right-axis { background: linear-gradient(90deg, rgba(77, 163, 255, 0.4), transparent); }
+
+.axis-line::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    width: 1px;
+    height: 9px;
+    background: #4da3ff;
+}
+.left-axis::after  { right: 0; }
+.right-axis::after { left: 0; }
+
+@media (max-width: 768px) {
+    .tech-title-crosshair { font-size: 1.5rem; letter-spacing: 0.08em; white-space: normal; }
+    .axis-line { display: none; }
+}
 /* ==========================================================================
    SOLAR SYSTEM HERO
    ========================================================================== */
@@ -485,11 +572,13 @@
 }
 .text-gradient-blue {
     background: linear-gradient(135deg, #4da3ff, #60a5fa);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .text-gradient-purple {
     background: linear-gradient(135deg, #a78bfa, #c084fc);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -655,6 +744,13 @@
 /* ==========================================================================
    CINEMATIC CELESTIAL SHOWCASE - ULTIMATE SEAMLESS SPACE BLEND
    ========================================================================== */
+
+.text-gradient-blue {
+    background: linear-gradient(135deg, #4da3ff, #a78bfa);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 /* Outer Canvas Container */
 .celestial-showcase-container {
@@ -872,34 +968,70 @@
     }
 }
 
-
 /* ==========================================================================
-   COSMIC CALCULATOR STYLES (SIMPLIFIED UTILITY PALETTE)
+   COSMIC CALCULATOR STYLES (PURE HIGH-EMISSION LIVE HOLOGRAPHIC ENGINE)
    ========================================================================== */
 
-/* Color Utility Tokens */
-.text-cosmic-primary { color: #4da3ff !important; }
-.text-cosmic-secondary { color: #a78bfa !important; }
-.bg-cosmic-secondary { background-color: #a78bfa !important; }
-
-.terminal-input-card, .terminal-display-deck {
-    background: linear-gradient(145deg, rgba(14, 16, 27, 0.45) 0%, rgba(7, 8, 14, 0.75) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 24px;
-    padding: 30px;
-    backdrop-filter: blur(10px);
+/* Live Text Emission Layer */
+.live-glow-text {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
-.card-header-mono {
-    font-family: 'Space Mono', 'Courier New', monospace;
-    font-size: 0.82rem;
-    letter-spacing: 0.1em;
-    color: rgba(255, 255, 255, 0.4);
+/* Pure Transparent Hologram Base Grid Container */
+.hologram-workspace-deck {
+    background: radial-gradient(circle at 50% 110%, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.02) 80%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    padding: 32px 20px 20px 20px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.05);
+    overflow: hidden;
 }
 
-.form-label-mono {
-    font-family: 'Space Mono', monospace;
-    letter-spacing: 0.05em;
+/* Upper-Left Hologram Subheading Label */
+.hologram-card-tag {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+    z-index: 3;
+}
+
+/* Interstellar Scanline Screen Grid Effect Overlay */
+.hologram-scanlines {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.02));
+    background-size: 100% 4px, 5px 100%;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.5;
+}
+
+/* Moving Laser Sweeper Bar */
+.hologram-laser-sweeper {
+    position: absolute;
+    top: -100px; left: 0; right: 0;
+    height: 12px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.4;
+    animation: laser-sweep 6s infinite linear;
+}
+
+/* Tighter, More Integrated Control Interface Box */
+.terminal-control-bar {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05);
 }
 
 .input-group-space {
@@ -910,159 +1042,259 @@
 
 .input-icon {
     position: absolute;
-    left: 16px;
-    color: rgba(255, 255, 255, 0.3);
+    left: 14px;
+    color: #ffffff;
     pointer-events: none;
-    font-size: 1.05rem;
+    font-size: 0.9rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 .form-control-space {
     width: 100%;
-    padding: 14px 16px 14px 44px;
-    background: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 14px 8px 38px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     color: #ffffff;
-    border-radius: 12px;
+    border-radius: 6px;
     outline: none;
-    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    transition: all 0.25s ease;
 }
 
 .form-control-space:focus {
-    border-color: rgba(77, 163, 255, 0.4);
-    background: rgba(0, 0, 0, 0.6);
-    box-shadow: 0 0 20px rgba(77, 163, 255, 0.08);
+    border-color: #ffffff;
+    background: rgba(0, 0, 0, 0.65);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4), inset 0 0 8px rgba(255, 255, 255, 0.1);
 }
 
-/* Linear Primary Action Processing Button */
+/* Minimal Electric Line Action Trigger */
 .btn-terminal {
-    background: linear-gradient(135deg, #4da3ff 0%, #3388ff 100%);
-    border: none;
-    color: white;
-    padding: 14px;
-    border-radius: 12px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    box-shadow: 0 10px 25px rgba(77, 163, 255, 0.15);
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.btn-terminal:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 30px rgba(77, 163, 255, 0.3);
-    background: linear-gradient(135deg, #66b2ff 0%, #4da3ff 100%);
-}
-
-.badge-status {
-    font-size: 0.72rem;
-    background: rgba(167, 139, 250, 0.1);
-    color: #a78bfa;
-    border: 1px solid rgba(167, 139, 250, 0.2);
-    padding: 3px 10px;
-    border-radius: 6px;
-    font-weight: bold;
-}
-
-/* Unified structural border layout */
-.telemetry-output-box {
-    background: rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    border-left: 3px solid #a78bfa; /* Using secondary color accent uniformly */
-    border-radius: 14px;
-    padding: 20px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.telemetry-output-box:hover {
-    transform: translateX(3px);
-    border-left-color: #4da3ff; /* Switches to primary color on focus hover */
-}
-
-.display-age {
-    font-size: 2.2rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 6px 0 4px 0;
-}
-
-.text-white-10 { color: rgba(255, 255, 255, 0.1); }
-.text-white-25 { color: rgba(255, 255, 255, 0.25); }
-
-@media (max-width: 767px) {
-    .terminal-input-card, .terminal-display-deck {
-        padding: 20px;
-    }
-    .display-age {
-        font-size: 1.8rem;
-    }
-}
-
-/* ==========================================================================
-   PROJECT DOWNLOADABLES MATRIX DESIGNSTYLING (CLEAN CLOUD EDITION)
-   ========================================================================== */
-
-.asset-terminal-card {
-    background: linear-gradient(145deg, rgba(16, 18, 30, 0.5) 0%, rgba(8, 9, 16, 0.8) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 18px;
-    padding: 24px;
-    backdrop-filter: blur(12px);
-    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.asset-terminal-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(77, 163, 255, 0.2);
-    box-shadow: 0 12px 30px rgba(77, 163, 255, 0.04);
-}
-
-.badge-format {
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-    background: rgba(255, 255, 255, 0.04);
-    color: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 3px 8px;
-    border-radius: 6px;
-    font-weight: 600;
-}
-
-.asset-icon-frame {
-    width: 44px;
-    height: 44px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-}
-
-/* Premium Technical Cloud Action Buttons */
-.btn-asset {
     background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: rgba(255, 255, 255, 0.8);
-    padding: 12px;
-    border-radius: 10px;
-    font-size: 0.78rem;
+    border: 1px dashed rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 0.05em;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
+    letter-spacing: 0.12em;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
     transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.btn-asset:hover {
-    background: linear-gradient(135deg, #4da3ff 0%, #3388ff 100%);
-    border-color: transparent;
-    color: #ffffff;
-    box-shadow: 0 8px 20px rgba(77, 163, 255, 0.2);
+.btn-terminal:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 22px rgba(255, 255, 255, 0.4), inset 0 0 8px rgba(255, 255, 255, 0.2);
     transform: translateY(-1px);
 }
 
-.btn-asset:active {
-    transform: translateY(0);
+.badge-status {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 5px;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Empty View Glowing Base Element */
+.empty-state-glow {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+/* Custom Relativistic Holographic Table Configurations */
+.telemetry-meta-header {
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.25);
+    letter-spacing: 0.05em;
+}
+
+.telemetry-matrix-table thead th {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35) !important;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+.telemetry-matrix-table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: transparent !important;
+    transition: all 0.15s ease;
+}
+
+.telemetry-matrix-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.telemetry-matrix-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    box-shadow: inset 3px 0 0 rgba(255, 255, 255, 0.8);
+}
+
+.telemetry-matrix-table td {
+    font-size: 0.88rem;
+    letter-spacing: 0.02em;
+}
+
+/* Precision Planet Ring Markers with Outer Atmospheric Glow */
+.planet-marker {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+    box-shadow: 0 0 10px currentColor, 0 0 4px currentColor;
+}
+.bg-mercury { background-color: #9ca3af; color: #9ca3af; }
+.bg-venus { background-color: #f59e0b; color: #f59e0b; }
+.bg-mars { background-color: #ef4444; color: #ef4444; }
+.bg-jupiter { background-color: #f97316; color: #f97316; }
+.bg-saturn { background-color: #eab308; color: #eab308; }
+.bg-uranus { background-color: #06b6d4; color: #06b6d4; }
+.bg-neptune { background-color: #3b82f6; color: #3b82f6; }
+.bg-pluto { background-color: #a855f7; color: #a855f7; }
+
+/* White Light Projector Upward Flare Component */
+.hologram-projector-flare {
+    position: absolute;
+    bottom: -15px;
+    left: 20%;
+    right: 20%;
+    height: 35px;
+    background: radial-gradient(ellipse at bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(5px);
+    animation: hologram-pulse 3s infinite ease-in-out;
+}
+
+/* Sci-fi Electronic Interfere & Sweep Mechanical Animations */
+@keyframes laser-sweep {
+    0% { top: -100px; }
+    70%, 100% { top: 100%; }
+}
+
+@keyframes hologram-pulse {
+    0%, 100% { opacity: 0.5; transform: scaleX(1); }
+    50% { opacity: 0.9; transform: scaleX(1.04); }
+}
+
+.live-hologram-flicker {
+    animation: live-chassis-jitter 4s infinite linear;
+}
+
+@keyframes live-chassis-jitter {
+    0%, 19.99%, 22%, 62.99%, 64%, 64.99%, 70%, 100% { opacity: 0.99; filter: hue-rotate(0deg); }
+    20%, 21.99% { opacity: 0.88; filter: contrast(1.1); }
+    63%, 63.99% { opacity: 0.92; transform: skewX(0.5deg); }
+    65%, 69.99% { opacity: 0.85; filter: brightness(1.2); }
+}
+
+/* Responsive Structural Overrides */
+@media (max-width: 767px) {
+    .hologram-workspace-deck {
+        padding: 24px 14px 14px 14px;
+    }
+    .telemetry-matrix-table th, 
+    .telemetry-matrix-table td {
+        font-size: 0.78rem;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   PORTAL NETWORKING LINK INTEGRATION (CLOSER REFERENCE HUD)
+   -------------------------------------------------------------------------- */
+.tech-section-closer {
+    padding-top: 5rem !important;
+    padding-bottom: 6rem !important;
+    position: relative;
+}
+
+/* Sharp dashed tech rule to split cleanly from the previous calculator section */
+.closer-divider-axis {
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Subtle, clean code-looking subtitle reference element */
+.closer-reference-tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    color: rgba(255, 255, 255, 0.3) !important;
+    font-weight: 500;
+}
+
+/* Slim interactive anchor buttons */
+.minimal-stream-link {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+    min-width: 250px;
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.mini-logo-vector {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.minimal-link-text {
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+}
+
+.mini-format-tag {
+    font-size: 0.62rem;
+    color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+}
+
+/* Hover Interactive States */
+.minimal-stream-link:hover {
+    background: rgba(77, 163, 255, 0.06);
+    border-color: rgba(77, 163, 255, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.minimal-stream-link:hover .mini-format-tag {
+    color: #4da3ff;
+    background: rgba(77, 163, 255, 0.12);
+}
+
+@media (max-width: 767px) {
+    .tech-section-closer {
+        padding-top: 3.5rem !important;
+        padding-bottom: 4.5rem !important;
+    }
+    .minimal-stream-link {
+        width: 100%;
+        min-width: 0;
+    }
 }

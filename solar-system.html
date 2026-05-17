@@ -51,20 +51,9 @@
                     </div>
                 </div>
             </section>
-            <div class="panel-break--right"></div>
             <!-- 2. Final Output Section (YouTube Embed) -->
             <section id="final-output" class="section position-relative overflow-hidden" aria-label="Final 3D Render">
                 <div class="container floatup visible">
-                    <div class="text-center max-w-2xl mx-auto mb-5">
-                        <div class="pill mx-auto mb-3 d-inline-flex align-items-center">
-                            <span class="pill__dot bg-primary" aria-hidden="true"></span>
-                            <span class="text-white-50">Cinematic Playback</span>
-                        </div>
-                        <h2 class="section-title fw-bold mb-3">Final Render</h2>
-                        <p class="text-white-50">
-                            Experience the completed high-fidelity animation simulation. Rendered with global illumination and physically accurate material textures.
-                        </p>
-                    </div>
                     <div class="row justify-content-center">
                         <div class="col-12 col-xl-10">
                             <div class="render-video-deck">
@@ -123,13 +112,16 @@
                 <div class="pipeline-glow-core-left" aria-hidden="true"></div>
                 <div class="pipeline-glow-core-right" aria-hidden="true"></div>
                 <div class="container position-relative z-3">
-                <div class="text-center mx-auto mb-5" style="max-width: 42rem;">
-                    <div class="pill mx-auto mb-3 d-inline-flex align-items-center">
-                        <span class="pill__dot bg-info" aria-hidden="true"></span>
-                        <span class="text-white-50">Methodology</span>
+                <div class="tech-matrix-header mx-auto mb-5">
+                    <div class="matrix-grid-lines font-monospace">SYS_PIPELINE // RUN_AUTO</div>
+                    <div class="matrix-title-wrapper">
+                        <div class="matrix-corner top-left"></div>
+                        <div class="matrix-corner top-right"></div>
+                        <h2 class="tech-title-matrix fw-bold text-white text-uppercase m-0">The Scripted Process</h2>
+                        <div class="matrix-corner bottom-left"></div>
+                        <div class="matrix-corner bottom-right"></div>
                     </div>
-                    <h2 class="section-title fw-bold mb-3">The Scripted Process</h2>
-                    <p class="text-white-50">
+                    <p class="text-white-50 mt-3 mb-0 mx-auto small" style="max-width: 500px;">
                         A simple, step-by-step breakdown of how the automated solar system scene is built and rendered using Blender's Python API.
                     </p>
                 </div>
@@ -277,14 +269,16 @@
                     <div class="cosmic-starfield starfield-dense-cluster" aria-hidden="true"></div>
                 </div>
                 <div class="container position-relative z-3">
-                    <div class="text-center mb-5 pb-4">
-                        <div class="spacer"></div>
-                        <div class="pill mx-auto mb-3 d-inline-flex align-items-center">
-                            <span class="pill__dot" aria-hidden="true"></span>
-                            <span class="text-white-50">Deep Space Catalog</span>
+                    <div class="tech-crosshair-header text-center mb-5">
+                        <div class="crosshair-badge font-monospace mb-3">DATA ARCHIVE // v1.04</div>
+                        <div class="crosshair-axis-container">
+                            <div class="axis-line left-axis"></div>
+                            <h2 class="tech-title-crosshair fw-light text-white text-uppercase px-4 m-0">
+                                The <span class="fw-bold text-white">Celestial</span> Systems
+                            </h2>
+                            <div class="axis-line right-axis"></div>
                         </div>
-                        <h2 class="section-title fw-bold text-white tracking-tight">The Celestial Systems</h2>
-                        <p class="text-white-50 mx-auto mt-2 mb-0" style="max-width: 65ch;">
+                        <p class="text-white-50 mx-auto mt-3 mb-0" style="max-width: 580px; line-height: 1.6;">
                             A simple guide to the solar system, showing planets, their motion, key features, and how they interact with the Sun and each other across vast distances.
                         </p>
                     </div>
@@ -665,198 +659,130 @@
             <!-- 5. Planet Age Calculator -->
             <section id="age-calculator" class="section position-relative overflow-hidden" aria-label="Planetary Age Calculator">
                 <div class="container relative-z floatup visible">
-                    <div class="text-center mx-auto mb-5" style="max-width: 42rem;">
-                        <div class="pill mx-auto mb-3 d-inline-flex align-items-center">
-                            <span class="pill__dot bg-cosmic-secondary" aria-hidden="true"></span>
-                            <span class="text-white-50">Time Dilation</span>
-                        </div>
-                        <h2 class="section-title fw-bold mb-3">Cosmic Age Terminal</h2>
-                        <p class="text-white-50">
-                            Enter your Earth age to compare it to ages on other planets and see how time stretches across the solar system.
-                        </p>
-                    </div>
-                    <div class="row g-4 justify-content-center">
-                        <div class="col-12 col-lg-4">
-                            <div class="terminal-input-card h-100">
-                                <div class="card-header-mono d-flex align-items-center gap-2 mb-4">
-                                    <i class="fa-solid fa-terminal text-cosmic-primary"></i>
-                                    <span>INPUT_PARAMETERS</span>
-                                </div>
-                                <form id="cosmic-form" onsubmit="event.preventDefault(); calculateCosmicAge();">
-                                    <div class="mb-4">
-                                        <label for="user-age" class="form-label-mono text-white-50 small mb-2 d-block">ENTER YOUR EARTH AGE</label>
-                                        <div class="input-group-space">
-                                            <i class="fa-solid fa-user-clock input-icon"></i>
-                                            <input type="number" id="user-age" class="form-control-space font-monospace" placeholder="e.g. 21" min="1" max="120" required>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-xl-10">
+                            <div class="hologram-workspace-deck live-hologram-flicker position-relative">
+                                <div class="hologram-scanlines" aria-hidden="true"></div>
+                                <div class="hologram-laser-sweeper" aria-hidden="true"></div>
+                                <div class="hologram-card-tag font-monospace">AGE CALCULATOR</div>
+                                <form onsubmit="event.preventDefault(); calculateCosmicAge();" class="terminal-control-bar p-2 mb-3 position-relative z-1">
+                                    <div class="row align-items-center g-2">
+                                        <div class="col-12 col-md-6 col-lg-7">
+                                            <div class="input-group-space">
+                                                <i class="fa-solid fa-user-clock input-icon"></i>
+                                                <input type="number" id="user-age" class="form-control-space font-monospace" placeholder="Enter Earth Age (e.g. 21)" min="1" max="120" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-4 col-lg-3">
+                                            <button type="submit" class="btn btn-terminal w-100 font-monospace">
+                                            <i class="fa-solid fa-satellite-dish me-2"></i>RUN_MATRIX
+                                            </button>
+                                        </div>
+                                        <div class="col-12 col-md-2 col-lg-2 text-md-end">
+                                            <span class="badge-status font-monospace d-inline-block w-100 text-center py-2" id="calc-status-badge">READY</span>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-terminal w-100 font-monospace">
-                                    <i class="fa-solid fa-satellite-dish me-2"></i>COMPUTE_YEARS
-                                    </button>
                                 </form>
-                                <div id="earth-baseline" class="mt-4 pt-4 border-top border-secondary-subtle font-monospace text-white-50 small d-none">
-                                    <div class="d-flex justify-content-between">
-                                        <span>EARTH AGE BASELINE:</span>
-                                        <span id="total-earth-years" class="text-white fw-bold">0 yrs</span>
+                                <div id="terminal-empty-state" class="text-center py-4 my-2 position-relative z-1">
+                                    <div class="empty-state-glow mx-auto mb-2">
+                                        <i class="fa-solid fa-signal text-white live-glow-text" style="font-size: 1.3rem;"></i>
                                     </div>
+                                    <p class="text-white live-glow-text font-monospace mb-0 small tracking-wide opacity-75">SYSTEM_READY // Awaiting input vector...</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-8">
-                            <div class="terminal-display-deck h-100">
-                                <div class="card-header-mono d-flex align-items-center justify-content-between mb-4">
-                                    <div class="d-flex align-items-center gap-2">
-                                        <i class="fa-solid fa-chart-simple text-cosmic-secondary"></i>
-                                        <span>ORBITAL_PROJECTIONS</span>
+                                <div id="terminal-results" class="table-responsive d-none position-relative z-1">
+                                    <div id="earth-baseline" class="font-monospace text-white small mb-2 pb-2 d-flex justify-content-between align-items-center telemetry-meta-header">
+                                        <span class="opacity-70 live-glow-text">SYSTEM BASELINE COORD:</span>
+                                        <span class="fw-medium font-monospace text-white live-glow-text"><i class="fa-solid fa-earth-asia me-2 opacity-75"></i>EARTH: <span id="total-earth-years" class="text-white fw-bold">0</span> YRS</span>
                                     </div>
-                                    <span class="badge-status font-monospace">READY</span>
+                                    <table class="table table-dark table-borderless align-middle font-monospace telemetry-matrix-table mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="pb-2 ps-2">CELESTIAL SYSTEM</th>
+                                                <th scope="col" class="pb-2 text-end">COMPUTED AGE</th>
+                                                <th scope="col" class="pb-2 text-end pe-2">ORBITAL FACTOR</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="py-2 ps-2 text-white fw-medium"><span class="planet-marker bg-mercury"></span>MERCURY</td>
+                                                <td class="py-2 text-end text-white fw-bold fs-6 live-glow-text" id="age-mercury">0.00</td>
+                                                <td class="py-2 text-end text-white opacity-50 pe-2">0.24 Earth Yrs</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-2 ps-2 text-white fw-medium"><span class="planet-marker bg-venus"></span>VENUS</td>
+                                                <td class="py-2 text-end text-white fw-bold fs-6 live-glow-text" id="age-venus">0.00</td>
+                                                <td class="py-2 text-end text-white opacity-50 pe-2">0.62 Earth Yrs</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-2 ps-2 text-white fw-medium"><span class="planet-marker bg-mars"></span>MARS</td>
+                                                <td class="py-2 text-end text-white fw-bold fs-6 live-glow-text" id="age-mars">0.00</td>
+                                                <td class="py-2 text-end text-white opacity-50 pe-2">1.88 Earth Yrs</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-2 ps-2 text-white fw-medium"><span class="planet-marker bg-jupiter"></span>JUPITER</td>
+                                                <td class="py-2 text-end text-white fw-bold fs-6 live-glow-text" id="age-jupiter">0.00</td>
+                                                <td class="py-2 text-end text-white opacity-50 pe-2">11.86 Earth Yrs</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-2 ps-2 text-white fw-medium"><span class="planet-marker bg-saturn"></span>SATURN</td>
+                                                <td class="py-2 text-end text-white fw-bold fs-6 live-glow-text" id="age-saturn">0.00</td>
+                                                <td class="py-2 text-end text-white opacity-50 pe-2">29.46 Earth Yrs</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-2 ps-2 text-white fw-medium"><span class="planet-marker bg-uranus"></span>URANUS</td>
+                                                <td class="py-2 text-end text-white fw-bold fs-6 live-glow-text" id="age-uranus">0.00</td>
+                                                <td class="py-2 text-end text-white opacity-50 pe-2">84.01 Earth Yrs</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-2 ps-2 text-white fw-medium"><span class="planet-marker bg-neptune"></span>NEPTUNE</td>
+                                                <td class="py-2 text-end text-white fw-bold fs-6 live-glow-text" id="age-neptune">0.00</td>
+                                                <td class="py-2 text-end text-white opacity-50 pe-2">164.79 Earth Yrs</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-2 ps-2 text-white fw-medium"><span class="planet-marker bg-pluto"></span>PLUTO</td>
+                                                <td class="py-2 text-end text-white fw-bold fs-6 live-glow-text" id="age-pluto">0.00</td>
+                                                <td class="py-2 text-end text-white opacity-50 pe-2">248.09 Earth Yrs</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <div id="terminal-empty-state" class="text-center py-5">
-                                    <i class="fa-solid fa-gauge-high text-white-10 text-cosmic-primary mb-3" style="font-size: 3rem; opacity: 0.15;"></i>
-                                    <p class="text-white-50 small font-monospace mb-0">Awaiting user age synchronization...</p>
-                                </div>
-                                <div id="terminal-results" class="row g-3 d-none">
-                                    <div class="col-12 col-sm-6 col-md-4">
-                                        <div class="telemetry-output-box">
-                                            <span class="fw-bold text-white small tracking-wide d-block mb-1">MERCURY AGE</span>
-                                            <div class="display-age font-monospace text-cosmic-primary" id="age-mercury">0.00</div>
-                                            <div class="display-unit text-white-25 small font-monospace">0.24 Earth Yrs</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-4">
-                                        <div class="telemetry-output-box">
-                                            <span class="fw-bold text-white small tracking-wide d-block mb-1">VENUS AGE</span>
-                                            <div class="display-age font-monospace text-cosmic-primary" id="age-venus">0.00</div>
-                                            <div class="display-unit text-white-25 small font-monospace">0.62 Earth Yrs</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-4">
-                                        <div class="telemetry-output-box">
-                                            <span class="fw-bold text-white small tracking-wide d-block mb-1">MARS AGE</span>
-                                            <div class="display-age font-monospace text-cosmic-primary" id="age-mars">0.00</div>
-                                            <div class="display-unit text-white-25 small font-monospace">1.88 Earth Yrs</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-4">
-                                        <div class="telemetry-output-box">
-                                            <span class="fw-bold text-white small tracking-wide d-block mb-1">JUPITER AGE</span>
-                                            <div class="display-age font-monospace text-cosmic-primary" id="age-jupiter">0.00</div>
-                                            <div class="display-unit text-white-25 small font-monospace">11.86 Earth Yrs</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-4">
-                                        <div class="telemetry-output-box">
-                                            <span class="fw-bold text-white small tracking-wide d-block mb-1">SATURN AGE</span>
-                                            <div class="display-age font-monospace text-cosmic-primary" id="age-saturn">0.00</div>
-                                            <div class="display-unit text-white-25 small font-monospace">29.46 Earth Yrs</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-4">
-                                        <div class="telemetry-output-box">
-                                            <span class="fw-bold text-white small tracking-wide d-block mb-1">URANUS AGE</span>
-                                            <div class="display-age font-monospace text-cosmic-primary" id="age-uranus">0.00</div>
-                                            <div class="display-unit text-white-25 small font-monospace">84.01 Earth Yrs</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-4">
-                                        <div class="telemetry-output-box">
-                                            <span class="fw-bold text-white small tracking-wide d-block mb-1">NEPTUNE AGE</span>
-                                            <div class="display-age font-monospace text-cosmic-primary" id="age-neptune">0.00</div>
-                                            <div class="display-unit text-white-25 small font-monospace">164.79 Earth Yrs</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-4">
-                                        <div class="telemetry-output-box">
-                                            <span class="fw-bold text-white small tracking-wide d-block mb-1">PLUTO AGE</span>
-                                            <div class="display-age font-monospace text-cosmic-primary" id="age-pluto">0.00</div>
-                                            <div class="display-unit text-white-25 small font-monospace">248.09 Earth Yrs</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="hologram-projector-flare" aria-hidden="true"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
             <div class="panel-break"></div>
-            <section id="downloadables" class="section position-relative overflow-hidden" aria-label="Project Assets">
-                <div class="container relative-z floatup visible">
-                    <div class="text-center mx-auto mb-5" style="max-width: 42rem;">
-                        <div class="pill mx-auto mb-3 d-inline-flex align-items-center">
-                            <span class="pill__dot bg-cosmic-primary" aria-hidden="true"></span>
-                            <span class="text-white-50">Cloud Repository</span>
+            <div class="panel-break--right"></div>
+            <div class="spacer"></div>
+            <section id="downloadables" class="w-100 tech-section-closer" aria-label="Project Quick Downloads">
+                <div class="text-center mb-4">
+                    <span class="closer-reference-tag font-monospace">REFERENCE // DOWNLOADABLES</span>
+                </div>
+                <div class="d-flex flex-column flex-md-row align-items-stretch align-items-md-center justify-content-center gap-3 gap-lg-4">
+                    <a href="YOUR_GDRIVE_BLENDER_LINK_HERE" target="_blank" class="minimal-stream-link d-flex align-items-center justify-content-between justify-content-md-start gap-3 py-2 px-3 text-decoration-none">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/tech-logos/blender.svg" alt="" class="mini-logo-vector" aria-hidden="true" />
+                            <span class="minimal-link-text text-white fw-bold">Blender Workspace</span>
                         </div>
-                        <h2 class="section-title fw-bold mb-3">Project Assets</h2>
-                        <p class="text-white-50">Get the source files directly via Google Drive.</p>
-                    </div>
-                    <div class="row g-4 justify-content-center">
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="asset-terminal-card h-100 d-flex flex-column justify-content-between">
-                                <div class="mb-4">
-                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                        <span class="badge-format font-monospace">GDRIVE</span>
-                                        <span class="text-white-25 small font-monospace">.BLEND</span>
-                                    </div>
-                                    <div class="d-flex align-items-center gap-3">
-                                        <div class="asset-icon-frame text-cosmic-secondary">
-                                            <i class="fa-solid fa-cube"></i>
-                                        </div>
-                                        <div>
-                                            <h3 class="h6 fw-bold text-white mb-1">Blender Files</h3>
-                                            <p class="text-white-50 small mb-0">3D models and environment scene.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" target="_blank" class="btn btn-asset font-monospace w-100">
-                                <i class="fa-brands fa-google-drive me-2"></i>OPEN_FILES
-                                </a>
-                            </div>
+                        <span class="mini-format-tag font-monospace">.BLEND</span>
+                    </a>
+                    <a href="YOUR_GDRIVE_PYTHON_LINK_HERE" target="_blank" class="minimal-stream-link d-flex align-items-center justify-content-between justify-content-md-start gap-3 py-2 px-3 text-decoration-none">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="assets/tech-logos/python.svg" alt="" class="mini-logo-vector" aria-hidden="true" />
+                            <span class="minimal-link-text text-white fw-bold">Automation Scripts</span>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="asset-terminal-card h-100 d-flex flex-column justify-content-between">
-                                <div class="mb-4">
-                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                        <span class="badge-format font-monospace">GDRIVE</span>
-                                        <span class="text-white-25 small font-monospace">.PY</span>
-                                    </div>
-                                    <div class="d-flex align-items-center gap-3">
-                                        <div class="asset-icon-frame text-cosmic-primary">
-                                            <i class="fa-brands fa-python"></i>
-                                        </div>
-                                        <div>
-                                            <h3 class="h6 fw-bold text-white mb-1">Python Scripts</h3>
-                                            <p class="text-white-50 small mb-0">Orbital calculations and automation scripts.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" target="_blank" class="btn btn-asset font-monospace w-100">
-                                <i class="fa-brands fa-google-drive me-2"></i>VIEW_SOURCES
-                                </a>
-                            </div>
+                        <span class="mini-format-tag font-monospace">.PY</span>
+                    </a>
+                    <a href="YOUR_GDRIVE_VIDEO_LINK_HERE" target="_blank" class="minimal-stream-link d-flex align-items-center justify-content-between justify-content-md-start gap-3 py-2 px-3 text-decoration-none">
+                        <div class="d-flex align-items-center gap-3">
+                            <svg class="mini-logo-vector" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M8 5V19L19 12L8 5Z" fill="#4da3ff"/>
+                            </svg>
+                            <span class="minimal-link-text text-white fw-bold">HD Cinematic Loops</span>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4">
-                            <div class="asset-terminal-card h-100 d-flex flex-column justify-content-between">
-                                <div class="mb-4">
-                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                        <span class="badge-format font-monospace">GDRIVE</span>
-                                        <span class="text-white-25 small font-monospace">.MP4</span>
-                                    </div>
-                                    <div class="d-flex align-items-center gap-3">
-                                        <div class="asset-icon-frame text-cosmic-secondary">
-                                            <i class="fa-solid fa-file-video"></i>
-                                        </div>
-                                        <div>
-                                            <h3 class="h6 fw-bold text-white mb-1">HD Rendered Videos</h3>
-                                            <p class="text-white-50 small mb-0">Final 60fps cinematic render loop.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" target="_blank" class="btn btn-asset font-monospace w-100">
-                                <i class="fa-brands fa-google-drive me-2"></i>DOWNLOAD_VIDEOS
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                        <span class="mini-format-tag font-monospace">.MP4</span>
+                    </a>
                 </div>
             </section>
         </main>
