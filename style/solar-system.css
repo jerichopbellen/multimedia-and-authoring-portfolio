@@ -601,6 +601,8 @@
 .pipeline-orbit-anchor[data-step="01"] { border-color: rgba(77, 163, 255, 0.4); box-shadow: 0 0 15px rgba(77, 163, 255, 0.1); }
 .pipeline-orbit-anchor[data-step="02"] { border-color: rgba(167, 139, 250, 0.4); box-shadow: 0 0 15px rgba(167, 139, 250, 0.1); }
 .pipeline-orbit-anchor[data-step="03"] { border-color: rgba(77, 163, 255, 0.4); box-shadow: 0 0 15px rgba(77, 163, 255, 0.1); }
+.pipeline-orbit-anchor[data-step="04"] { border-color: rgba(167, 139, 250, 0.4); box-shadow: 0 0 15px rgba(167, 139, 250, 0.1); }
+.pipeline-orbit-anchor[data-step="05"] { border-color: rgba(77, 163, 255, 0.4); box-shadow: 0 0 15px rgba(77, 163, 255, 0.1); }
 
 .anchor-icon {
     font-size: 1.15rem;
@@ -626,6 +628,9 @@
 .pipeline-node-row:hover .pipeline-orbit-anchor[data-step="01"] { border-color: #4da3ff; box-shadow: 0 0 25px rgba(77, 163, 255, 0.35); }
 .pipeline-node-row:hover .pipeline-orbit-anchor[data-step="02"] { border-color: #a78bfa; box-shadow: 0 0 25px rgba(167, 139, 250, 0.35); }
 .pipeline-node-row:hover .pipeline-orbit-anchor[data-step="03"] { border-color: #4da3ff; box-shadow: 0 0 25px rgba(77, 163, 255, 0.35); }
+.pipeline-node-row:hover .pipeline-orbit-anchor[data-step="04"] { border-color: #a78bfa; box-shadow: 0 0 25px rgba(167, 139, 250, 0.35); }
+.pipeline-node-row:hover .pipeline-orbit-anchor[data-step="05"] { border-color: #4da3ff; box-shadow: 0 0 25px rgba(77, 163, 255, 0.35); }
+
 
 .pipeline-node-row:hover .anchor-icon {
     color: #ffffff;

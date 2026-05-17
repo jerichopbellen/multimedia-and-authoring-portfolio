@@ -11,7 +11,6 @@
 	<body class="bg-dark text-white">
 		<div id="header-placeholder"></div>
 		<main>
-			<!-- 1. Hero Section -->
 			<section class="hero-video" aria-label="Solar System Hero">
 				<div class="container hero-video__content floatup visible">
 					<div class="row align-items-center justify-content-center gy-5">
@@ -51,7 +50,6 @@
 					</div>
 				</div>
 			</section>
-			<!-- 2. Final Output Section (YouTube Embed) -->
 			<section id="final-output" class="section position-relative overflow-hidden" aria-label="Final 3D Render">
 				<div class="container floatup visible">
 					<div class="row justify-content-center">
@@ -108,7 +106,6 @@
 				<span class="asteroid"></span>
 				<span class="asteroid"></span>
 			</div>
-			<!-- 3. Process Section -->
 			<section id="process" class="section position-relative overflow-hidden" aria-label="Technical Workflow">
 				<div class="pipeline-glow-core-left" aria-hidden="true"></div>
 				<div class="pipeline-glow-core-right" aria-hidden="true"></div>
@@ -176,27 +173,70 @@
 							</p>
 						</div>
 					</div>
-					<div class="pipeline-node-row row align-items-center mb-4">
+					<div class="pipeline-node-row row align-items-center mb-5 pb-lg-4">
 						<div class="col-12 col-lg-5 order-2 order-lg-1 text-center text-lg-end step-content-pane">
-							<span class="pipeline-meta font-monospace text-gradient-blue d-block mb-1">STEP 03 // OUTPUT</span>
-							<h3 class="h4 fw-bold text-white mb-3">Render Settings</h3>
+							<span class="pipeline-meta font-monospace text-gradient-blue d-block mb-1">STEP 03 // VIEWPORT</span>
+							<h3 class="h4 fw-bold text-white mb-3">Verify Generation</h3>
 							<p class="text-white-50 mb-0">
-								Set Max Samples to 64. Change the media type to video with an MPEG-4 container, use the H.264 codec, and set the output quality to Perceptually Lossless.
+								Switch to the Layout Tab and change the Viewport Shading model to "Rendered" to actively review the script's visual outcome and lightning configurations.
 							</p>
 						</div>
 						<div class="col-12 col-lg-2 order-1 order-lg-2 d-flex justify-content-center my-3 my-lg-0 position-relative z-3">
 							<div class="pipeline-orbit-anchor" data-step="03">
 								<div class="anchor-pulse-core"></div>
-								<i class="fa-solid fa-sliders anchor-icon"></i>
+								<i class="fa-solid fa-eye anchor-icon"></i>
 							</div>
 						</div>
 						<div class="col-12 col-lg-5 order-3 d-none d-lg-block step-visual-pane">
 							<div class="pipeline-decorative-spec font-monospace text-start ps-4 opacity-25">
+								<div>&lt;viewport_verification&gt;</div>
+								<div>// target_tab = layout</div>
+								<div>// shading_mode = rendered</div>
+							</div>
+						</div>
+					</div>
+					<div class="pipeline-node-row row align-items-center mb-5 pb-lg-4">
+						<div class="col-12 col-lg-5 d-none d-lg-block step-visual-pane">
+							<div class="pipeline-decorative-spec font-monospace text-end pe-4 opacity-25">
 								<div>&lt;render_output_specs&gt;</div>
-								<div>// max_samples = 64</div>
 								<div>// container = MPEG-4</div>
 								<div>// codec = H.264</div>
-								<div>// quality = LOSSLESS</div>
+								<div>// quality = Perceptually Lossless</div>
+							</div>
+						</div>
+						<div class="col-12 col-lg-2 d-flex justify-content-center my-3 my-lg-0 position-relative z-3">
+							<div class="pipeline-orbit-anchor" data-step="04">
+								<div class="anchor-pulse-core"></div>
+								<i class="fa-solid fa-sliders anchor-icon"></i>
+							</div>
+						</div>
+						<div class="col-12 col-lg-5 text-center text-lg-start step-content-pane">
+							<span class="pipeline-meta font-monospace text-gradient-purple d-block mb-1">STEP 04 // CONFIG</span>
+							<h3 class="h4 fw-bold text-white mb-3">Render Settings</h3>
+							<p class="text-white-50 mb-0">
+								In the Output side-tab: Define the output path. Change the media type to video with an MPEG-4 container, use the H.264 codec, and set the output quality to Perceptually Lossless.
+							</p>
+						</div>
+					</div>
+					<div class="pipeline-node-row row align-items-center mb-4">
+						<div class="col-12 col-lg-5 order-2 order-lg-1 text-center text-lg-end step-content-pane">
+							<span class="pipeline-meta font-monospace text-gradient-blue d-block mb-1">STEP 05 // RENDER</span>
+							<h3 class="h4 fw-bold text-white mb-3">Render Animation</h3>
+							<p class="text-white-50 mb-0">
+								Navigate to the Top Header bar, open the Render Tab menu, and select "Render Animation" or deploy the <kbd class="bg-dark text-info border border-secondary">Ctrl + F12</kbd> shortcut matrix to start compilation.
+							</p>
+						</div>
+						<div class="col-12 col-lg-2 order-1 order-lg-2 d-flex justify-content-center my-3 my-lg-0 position-relative z-3">
+							<div class="pipeline-orbit-anchor" data-step="05">
+								<div class="anchor-pulse-core"></div>
+								<i class="fa-solid fa-play anchor-icon"></i>
+							</div>
+						</div>
+						<div class="col-12 col-lg-5 order-3 d-none d-lg-block step-visual-pane">
+							<div class="pipeline-decorative-spec font-monospace text-start ps-4 opacity-25">
+								<div>&lt;compile_scene_sequence&gt;</div>
+								<div>// trigger = ctrl_f12</div>
+								<div>// pipeline_status = processing</div>
 							</div>
 						</div>
 					</div>
@@ -255,7 +295,6 @@
 					</div>
 				</div>
 			</section>
-			<!-- 4. Celestial Showcase Section -->
 			<section id="celestial-bodies" class="celestial-showcase-container" aria-label="Celestial Showcase">
 				<div class="text-center mt-5 pt-5 opacity-75">
 					<div class="font-monospace small tracking-widest text-uppercase text-white-50">
@@ -663,7 +702,6 @@
 					</div>
 				</div>
 			</section>
-			<!-- 5. Planet Age Calculator -->
 			<section id="age-calculator" class="section position-relative overflow-hidden" aria-label="Planetary Age Calculator">
 				<div class="container relative-z floatup visible">
 					<div class="row justify-content-center">
