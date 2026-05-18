@@ -212,197 +212,261 @@
     }
 }
 
-/* ==========================================================================
-   SOLAR SYSTEM HERO ANIMATION STYLES (FRAMELESS/HOLOGRAPHIC)
+/* ========================================================================== 
+   HIGH-DRAMA HERO ROCKET & HYPERSPEED ANIMATION STYLES 
    ========================================================================== */
 
-/* Main Interactive Viewport Wrapper - Now Completely Frameless */
+/* Main Viewport Container configured to perfectly center the asset */
 .hero-space-viewport {
     position: relative;
     width: 100%;
-    max-width: 440px;
-    height: 440px;
-    margin: 0 auto;
+    min-height: 480px;
+    background: transparent;
     display: flex;
-    align-items: center;
     justify-content: center;
-    perspective: 1000px; /* Maintains 3D depth orientation */
-    /* Removed backgrounds, borders, overflow clips, and box-shadows to let planets float freely */
+    align-items: center;
+    overflow: hidden; /* Clips the hyper-speed streaks flawlessly */
 }
 
-/* Seamless Ambient Space Glow behind the Sun */
-.space-nebula {
+/* --- Hyperspeed Streak Effects --- */
+.speed-streaks {
     position: absolute;
-    width: 130%; /* Slightly expanded for a softer blend */
-    height: 130%;
-    background: radial-gradient(circle at 50% 50%, rgba(77, 163, 255, 0.14) 0%, rgba(167, 139, 250, 0.07) 45%, transparent 70%);
-    filter: blur(40px);
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* Master Orbits Wrapper Container */
-.solar-system-mini {
-    position: relative;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotateX(55deg) rotateY(-8deg); /* Isometric perspective tilt */
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Long Cinematic Warp Streaks */
+.streak {
+    position: absolute;
+    width: 2px;
+    height: 90px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transform: rotate(-25deg); /* Aligned to launch trajectory */
+    opacity: 0;
+}
+
+.streak:nth-child(1) { top: -10%; left: 25%; animation: warp-speed 1.0s linear infinite; }
+.streak:nth-child(2) { top: 5%; left: 80%; animation: warp-speed 1.4s linear infinite 0.3s; }
+.streak:nth-child(3) { top: 35%; left: 10%; animation: warp-speed 1.2s linear infinite 0.6s; }
+.streak:nth-child(4) { top: -5%; left: 55%; animation: warp-speed 0.9s linear infinite 0.15s; }
+
+
+/* --- Rocket Container (Angled Flight Positioning) --- */
+.rocket-container {
+    position: relative;
+    width: 120px;
+    height: 240px;
     transform-style: preserve-3d;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Dramatic tilt + hovering physics combo */
+    animation: dramatic-flight 3.5s ease-in-out infinite;
+}
+
+/* --- Rocket Fuselage & High-Contrast Shading --- */
+.rocket-body {
+    position: relative;
+    width: 64px;
+    height: 145px;
+    /* Sharp cybertech metallic contrast split */
+    background: linear-gradient(105deg, #ffffff 45%, #cbd5e1 50%, #94a3b8 100%);
+    border-radius: 50% 50% 25% 25% / 60% 60% 20% 20%;
+    margin: 0 auto;
+    box-shadow: 
+        -15px 15px 40px rgba(0, 0, 0, 0.5),
+        inset -3px -3px 10px rgba(0, 0, 0, 0.3),
+        inset 4px 4px 8px rgba(255, 255, 255, 0.8);
+}
+
+/* Cinematic Nosecone */
+.rocket-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 42px;
+    background: linear-gradient(105deg, #ff4500 0%, #da1b1b 100%);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    box-shadow: inset 2px 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+/* Hyper-Reflective Metallic Specular Line */
+.rocket-hull-shine {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 4px;
+    height: 70%;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 2px;
+    filter: blur(1px);
+}
+
+/* Glowing Scifi Portal Window */
+.rocket-window {
+    position: absolute;
+    top: 52px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    background: radial-gradient(circle at 35% 35%, #e0f2fe 0%, #0ea5e9 60%, #0369a1 100%);
+    border: 3px solid #475569;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 15px rgba(14, 165, 233, 0.6),
+        inset 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* --- Aggressive Angular Wings --- */
+.rocket-fin {
+    position: absolute;
+    bottom: 5px;
+    width: 28px;
+    height: 55px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    z-index: -1;
+    border-top: 2px solid rgba(255,255,255,0.2);
+}
+
+.fin-left {
+    left: -22px;
+    border-radius: 80% 0 15% 30%;
+    transform: rotate(-20deg) skewY(-10deg);
+    box-shadow: -8px 8px 15px rgba(0,0,0,0.4);
+}
+
+.fin-right {
+    right: -22px;
+    border-radius: 0 80% 30% 15%;
+    transform: rotate(20deg) skewY(10deg);
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%); /* Darker shadow-side fin */
+    box-shadow: 4px 8px 12px rgba(0,0,0,0.4);
+}
+
+/* Engine Base Internal Glow Effect */
+.engine-glow {
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 6px;
+    background: #ffaa00;
+    border-radius: 50%;
+    box-shadow: 0 -4px 12px #ff4500, 0 0 20px #ffea00;
+}
+
+/* --- Intense Engine Thruster Column --- */
+.rocket-exhaust {
+    position: relative;
+    top: -8px;
+    display: flex;
+    justify-content: center;
+}
+
+.fire-particle {
+    position: absolute;
+    top: 0;
+    border-radius: 50% 50% 20% 20% / 80% 80% 20% 20%;
+    transform-origin: top center;
+}
+
+/* Blazing White-Hot Core Plasma */
+.fire-particle.core {
+    width: 14px;
+    height: 65px;
+    background: linear-gradient(to bottom, #ffffff, #fff7ed, transparent);
+    box-shadow: 0 0 20px #ffffff;
+    animation: jet-pulsate 0.08s ease-in-out infinite alternate;
+    z-index: 3;
+}
+
+/* Intense Electric Orange Inner Flame */
+.fire-particle.inner {
+    width: 26px;
+    height: 100px;
+    background: linear-gradient(to bottom, #ffaa00, #ff5500, transparent);
+    box-shadow: 0 0 25px rgba(255, 85, 0, 0.8);
+    animation: jet-pulsate 0.12s ease-in-out infinite alternate-reverse;
+    z-index: 2;
+}
+
+/* Deep Red/Purple Expanding Afterburner Veil */
+.fire-particle.outer {
+    width: 42px;
+    height: 140px;
+    background: linear-gradient(to bottom, rgba(239, 68, 68, 0.6), rgba(147, 51, 234, 0.2), transparent);
+    filter: blur(2px);
+    box-shadow: 0 0 35px rgba(239, 68, 68, 0.4);
+    animation: jet-pulsate 0.2s ease-in-out infinite alternate;
     z-index: 1;
 }
 
-/* Central Star Element (The Sun) */
-.mini-sun {
-    position: absolute;
-    width: 38px;
-    height: 38px;
-    background: radial-gradient(circle, #ffffff 20%, #ffaa33 60%, #ff3300 100%);
-    border-radius: 50%;
-    box-shadow: 
-        0 0 25px #ffaa33,
-        0 0 50px rgba(255, 115, 0, 0.5);
-    transform: rotateX(-55deg); /* Counter-tilts to face viewer flatly */
-    animation: sun-pulse 3s ease-in-out infinite alternate;
-}
+/* --- Animation Keyframes --- */
 
-@keyframes sun-pulse {
-    0% { transform: rotateX(-55deg) scale(0.95); box-shadow: 0 0 25px #ffaa33, 0 0 40px rgba(255, 115, 0, 0.4); }
-    100% { transform: rotateX(-55deg) scale(1.05); box-shadow: 0 0 35px #ffaa33, 0 0 65px rgba(255, 115, 0, 0.7); }
-}
-
-/* Base Trajectory Line Framework */
-.orbit-ring {
-    position: absolute;
-    border: 1px dashed rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    transform-style: preserve-3d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Spherical Body Base Layout class */
-.mini-planet {
-    position: absolute;
-    border-radius: 50%;
-    transform-style: preserve-3d;
-}
-
-/* --------------------------------------------------------------------------
-   ORBIT PATHS & ROTATIONS
-   -------------------------------------------------------------------------- */
-
-/* Inner Orbit (Mercury Configuration) */
-.ring-mercury {
-    width: 110px;
-    height: 110px;
-    animation: space-orbit-spin 6s linear infinite;
-}
-.planet-mercury {
-    top: 0;
-    left: 50%;
-    margin-left: -6px;
-    width: 12px;
-    height: 12px;
-    background: radial-gradient(circle at 30% 30%, #a1a1a6, #555559);
-    box-shadow: inset -2px -2px 4px rgba(0,0,0,0.7), 0 0 6px rgba(161,161,166,0.3);
-    transform: rotateX(-55deg);
-}
-
-/* Middle Orbit (Earth with Rotating Satellite Moon) */
-.ring-earth {
-    width: 220px;
-    height: 220px;
-    animation: space-orbit-spin 14s linear infinite;
-}
-.planet-earth {
-    top: 50%;
-    left: 0;
-    margin-top: -9px;
-    margin-left: -9px;
-    width: 18px;
-    height: 18px;
-    background: radial-gradient(circle at 30% 30%, #4da3ff, #0c4385);
-    box-shadow: inset -3px -3px 5px rgba(0,0,0,0.8), 0 0 12px rgba(77,163,255,0.4);
-    transform: rotateX(-55deg);
-}
-.mini-moon {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: #e5e7eb;
-    border-radius: 50%;
-    top: -5px;
-    left: 50%;
-    animation: space-orbit-spin 2.5s linear infinite;
-    transform-origin: 2px 14px;
-}
-
-/* Outer Orbit (Saturn configuration with styled ring array) */
-.ring-outer {
-    width: 340px;
-    height: 340px;
-    animation: space-orbit-spin 24s linear infinite;
-}
-.planet-outer {
-    top: 50%;
-    right: 0;
-    margin-top: -11px;
-    margin-right: -11px;
-    width: 22px;
-    height: 22px;
-    background: radial-gradient(circle at 30% 30%, #e0c3fc, #6b4194);
-    box-shadow: inset -4px -4px 6px rgba(0,0,0,0.8), 0 0 14px rgba(167,139,250,0.3);
-    transform: rotateX(-55deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.mini-rings {
-    position: absolute;
-    width: 36px;
-    height: 10px;
-    border: 3px solid rgba(224, 195, 252, 0.4);
-    border-radius: 50%;
-    transform: rotateX(75deg);
-    pointer-events: none;
-}
-
-/* Global Planetary Spin Mechanism */
-@keyframes space-orbit-spin {
-    100% { transform: rotate(360deg); }
-}
-
-/* --------------------------------------------------------------------------
-   RESPONSIVE LAYOUT RESPONSES
-   -------------------------------------------------------------------------- */
-@media (max-width: 991px) {
-    .hero-space-viewport {
-        width: 340px;
-        height: 340px;
+/* Simulates aggressive rocket flight angle & shaking slightly under engine power */
+@keyframes dramatic-flight {
+    0% { 
+        transform: translateY(0) translateX(0) rotate(24deg); 
     }
-    .ring-mercury { width: 85px; height: 85px; }
-    .ring-earth { width: 170px; height: 170px; }
-    .ring-outer { width: 260px; height: 260px; }
-    .planet-mercury { margin-left: -5px; width: 10px; height: 10px; }
-    .planet-earth { margin-top: -7px; margin-left: -7px; width: 14px; height: 14px; }
-    .planet-outer { margin-top: -9px; margin-right: -9px; width: 18px; height: 18px; }
+    50% { 
+        transform: translateY(-25px) translateX(-10px) rotate(26deg); 
+    }
+    100% { 
+        transform: translateY(0) translateX(0) rotate(24deg); 
+    }
+}
+
+/* High-frequency fire shaking */
+@keyframes jet-pulsate {
+    0% { transform: scaleX(0.9) scaleY(0.9) skewX(-1deg); }
+    100% { transform: scaleX(1.1) scaleY(1.15) skewX(1deg); filter: brightness(1.2); }
+}
+
+/* Massive streak lines slicing past */
+@keyframes warp-speed {
+    0% {
+        transform: translateY(-150px) translateX(70px) rotate(-25deg) scaleY(0.3);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.8;
+    }
+    80% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(500px) translateX(-230px) rotate(-25deg) scaleY(1.8);
+        opacity: 0;
+    }
+}
+
+/* Responsive adjustments to maintain the launch angle safely on mobile screens */
+@media (max-width: 991px) {
+    .rocket-container {
+        transform: scale(0.8) rotate(24deg) !important;
+        animation: dramatic-flight-mobile 3.5s ease-in-out infinite;
+    }
+    @keyframes dramatic-flight-mobile {
+        0% { transform: translateY(0) scale(0.8) rotate(24deg); }
+        50% { transform: translateY(-20px) scale(0.8) rotate(25deg); }
+        100% { transform: translateY(0) scale(0.8) rotate(24deg); }
+    }
 }
 
 @media (max-width: 420px) {
-    .hero-space-viewport {
-        width: 280px;
-        height: 280px;
+    .rocket-container {
+        transform: scale(0.65) rotate(24deg) !important;
     }
-    .ring-mercury { width: 70px; height: 70px; }
-    .ring-earth { width: 140px; height: 140px; }
-    .ring-outer { width: 210px; height: 210px; }
 }
-
-
 /* ==========================================================================
    FINAL RENDER DISPLAY
    ========================================================================== */
