@@ -8,9 +8,8 @@
   background: repeating-linear-gradient(-10deg,#2b3955 0 6px,#20263b 7px 13px,#4da3ff11 14px 23px);
   /* Faked “dots” with SVG overlay */
   mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 160 40' xmlns='http://www.w3.org/2000/svg'><circle cx='30' cy='22' r='6' fill='black'/><circle cx='82' cy='19' r='2' fill='black'/><circle cx='120' cy='16' r='3' fill='black'/></svg>");
-  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 160 40' xmlns='http://www.w3.org/2000/svg'><circle cx='30' cy='22' r='6' fill='black'/><circle cx='82' cy='19' r='2' fill='black'/><circle cx='120' cy='16' r='3' fill='black'/></svg>");
-  mask-size: 260px 50px; mask-repeat: no-repeat;
-  -webkit-mask-size: 260px 50px;
+  mask-size: 260px 50px; 
+  mask-repeat: no-repeat;
 }
 
 /* Right-aligned variant */
@@ -20,9 +19,7 @@
     margin: 0 0 -10px auto; /* push to right */
     background: repeating-linear-gradient(-10deg,#2b3955 0 6px,#20263b 7px 13px,#4da3ff11 14px 23px);
     mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 160 40' xmlns='http://www.w3.org/2000/svg'><circle cx='30' cy='22' r='6' fill='black'/><circle cx='82' cy='19' r='2' fill='black'/><circle cx='120' cy='16' r='3' fill='black'/></svg>");
-    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 160 40' xmlns='http://www.w3.org/2000/svg'><circle cx='30' cy='22' r='6' fill='black'/><circle cx='82' cy='19' r='2' fill='black'/><circle cx='120' cy='16' r='3' fill='black'/></svg>");
     mask-size: 260px 50px; mask-repeat: no-repeat; mask-position: right top;
-    -webkit-mask-size: 260px 50px; -webkit-mask-position: right top;
 }
 
 .asteroid-belt-divider {
@@ -144,9 +141,8 @@
 /* Text Gradient Effect */
 .text-gradient {
     background: linear-gradient(135deg, #ffffff 40%, #4da3ff 70%, #a78bfa 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: transparent;
 }
 
 /* Enhancing standard paragraph styles for hero columns */
@@ -637,14 +633,12 @@
 .text-gradient-blue {
     background: linear-gradient(135deg, #4da3ff, #60a5fa);
     background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent; /* avoid vendor-only property */
 }
 .text-gradient-purple {
     background: linear-gradient(135deg, #a78bfa, #c084fc);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text; /* standard-ish fallback */
+    color: transparent; /* avoid vendor-only property */
 }
 
 /* Floating Orbit Anchors */
@@ -740,37 +734,8 @@
     overflow-x: auto;
     max-height: 500px;
     background: transparent;
-    
-    /* IE and Edge scrollbar hiding rules */
-    -ms-overflow-style: auto;
-    /* Firefox scrollbar styling rules */
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
-}
-
-/* --- Blended Scrollbar Customizations (Chrome, Safari, Brave, Opera) --- */
-
-/* 1. Track space matches the exact dark background color of the box */
-.code-container pre::-webkit-scrollbar {
-    height: 6px; /* Horizontal scrollbar thickness */
-    width: 6px;  /* Vertical scrollbar thickness */
-    background-color: #0d111a;
-}
-
-/* 2. The sliding thumb indicator is invisible by default */
-.code-container pre::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-}
-
-/* 3. Thumb smoothly reveals itself slightly when user hovers over the code window */
-.code-container pre:hover::-webkit-scrollbar-thumb {
-    background-color: rgba(77, 163, 255, 0.2);
-}
-
-.code-container pre::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(77, 163, 255, 0.4);
 }
 
 .code-container pre code {
@@ -817,8 +782,7 @@
 .text-gradient-blue {
     background: linear-gradient(135deg, #4da3ff, #a78bfa);
     background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 /* Outer Canvas Container */
@@ -838,15 +802,6 @@
     background-color: #000000 !important; /* Pure black blocks out global body gradients */
     z-index: 1;
     pointer-events: none;
-
-    /* Webkit Linear masking for background-only fading transitions */
-    -webkit-mask-image: linear-gradient(
-        to bottom,
-        transparent 0%,
-        #000000 15%,
-        #000000 85%,
-        transparent 100%
-    );
     mask-image: linear-gradient(
         to bottom,
         transparent 0%,
@@ -1079,7 +1034,6 @@
     border-radius: 12px;
     padding: 32px 20px 20px 20px;
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 0 40px rgba(255, 255, 255, 0.1), inset 0 0 20px rgba(255, 255, 255, 0.05);
     overflow: hidden;
 }
@@ -1257,14 +1211,14 @@
     vertical-align: middle;
     box-shadow: 0 0 10px currentColor, 0 0 4px currentColor;
 }
-.bg-mercury { background-color: #9ca3af; color: #9ca3af; }
-.bg-venus { background-color: #f59e0b; color: #f59e0b; }
-.bg-mars { background-color: #ef4444; color: #ef4444; }
-.bg-jupiter { background-color: #f97316; color: #f97316; }
-.bg-saturn { background-color: #eab308; color: #eab308; }
-.bg-uranus { background-color: #06b6d4; color: #06b6d4; }
-.bg-neptune { background-color: #3b82f6; color: #3b82f6; }
-.bg-pluto { background-color: #a855f7; color: #a855f7; }
+.bg-mercury { background-color: #868e9b; color: #9ca3af; }
+.bg-venus { background-color: #df910b; color: #f59e0b; }
+.bg-mars { background-color: #d83e3e; color: #ef4444; }
+.bg-jupiter { background-color: #ea6d15; color: #f97316; }
+.bg-saturn { background-color: #cf9d08; color: #eab308; }
+.bg-uranus { background-color: #079cb7; color: #06b6d4; }
+.bg-neptune { background-color: #3471d3; color: #3b82f6; }
+.bg-pluto { background-color: #8d48ce; color: #a855f7; }
 
 /* White Light Projector Upward Flare Component */
 .hologram-projector-flare {

@@ -29,14 +29,12 @@
 						<div class="col-12 col-lg-6 order-1 order-lg-2 mb-5 mb-lg-0 text-center">
 							<div class="hero-space-viewport">
 								<div class="space-nebula"></div>
-								
 								<div class="speed-streaks">
 									<span class="streak"></span>
 									<span class="streak"></span>
 									<span class="streak"></span>
 									<span class="streak"></span>
 								</div>
-
 								<div class="rocket-container">
 									<div class="rocket-body">
 										<div class="rocket-hull-shine"></div>
@@ -75,7 +73,6 @@
 										class="render-native-player position-absolute top-0 start-0 w-100 h-100" 
 										src="https://www.youtube.com/embed/KWoTyfPsqbE?si=aYtCiqle6AtJyjh0&vq=hd1080"                                         
 										title="YouTube video player" 
-										frameborder="0" 
 										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
 										allowfullscreen
 										style="border-radius: 12px; background-color: #040406;">
@@ -116,145 +113,145 @@
 				<div class="pipeline-glow-core-left" aria-hidden="true"></div>
 				<div class="pipeline-glow-core-right" aria-hidden="true"></div>
 				<div class="container position-relative z-3">
-				<div class="tech-matrix-header mx-auto mb-5">
-					<div class="matrix-grid-lines font-monospace">SYS_PIPELINE // RUN_AUTO</div>
-					<div class="matrix-title-wrapper">
-						<div class="matrix-corner top-left"></div>
-						<div class="matrix-corner top-right"></div>
-						<h2 class="tech-title-matrix fw-bold text-white text-uppercase m-0">The Scripted Process</h2>
-						<div class="matrix-corner bottom-left"></div>
-						<div class="matrix-corner bottom-right"></div>
+					<div class="tech-matrix-header mx-auto mb-5">
+						<div class="matrix-grid-lines font-monospace">SYS_PIPELINE // RUN_AUTO</div>
+						<div class="matrix-title-wrapper">
+							<div class="matrix-corner top-left"></div>
+							<div class="matrix-corner top-right"></div>
+							<h2 class="tech-title-matrix fw-bold text-white text-uppercase m-0">The Scripted Process</h2>
+							<div class="matrix-corner bottom-left"></div>
+							<div class="matrix-corner bottom-right"></div>
+						</div>
+						<p class="text-white-50 mt-3 mb-0 mx-auto small" style="max-width: 500px;">
+							A simple, step-by-step breakdown of how the automated solar system scene is built and rendered using Blender's Python API.
+						</p>
 					</div>
-					<p class="text-white-50 mt-3 mb-0 mx-auto small" style="max-width: 500px;">
-						A simple, step-by-step breakdown of how the automated solar system scene is built and rendered using Blender's Python API.
-					</p>
-				</div>
-				<div class="pipeline-flow-container position-relative py-4">
-					<div class="pipeline-rail-wrap" aria-hidden="true">
-						<div class="pipeline-rail">
-							<div class="pipeline-rail-pulse"></div>
-						</div>
-					</div>
-					<div class="pipeline-node-row row align-items-center mb-5 pb-lg-4">
-						<div class="col-12 col-lg-5 order-2 order-lg-1 text-center text-lg-end step-content-pane">
-							<span class="pipeline-meta font-monospace text-gradient-blue d-block mb-1">STEP 01 // SOURCE</span>
-							<h3 class="h4 fw-bold text-white mb-3">Download Textures</h3>
-							<p class="text-white-50 mb-0">
-								Download high-resolution planetary textures directly from <a href="https://www.solarsystemscope.com/textures/" target="_blank" class="text-info text-decoration-none">Solar System Scope</a> to use as base maps for the spheres.
-							</p>
-						</div>
-						<div class="col-12 col-lg-2 order-1 order-lg-2 d-flex justify-content-center my-3 my-lg-0 position-relative z-3">
-							<div class="pipeline-orbit-anchor" data-step="01">
-								<div class="anchor-pulse-core"></div>
-								<i class="fa-solid fa-download anchor-icon"></i>
+					<div class="pipeline-flow-container position-relative py-4">
+						<div class="pipeline-rail-wrap" aria-hidden="true">
+							<div class="pipeline-rail">
+								<div class="pipeline-rail-pulse"></div>
 							</div>
 						</div>
-						<div class="col-12 col-lg-5 order-3 d-none d-lg-block step-visual-pane">
-							<div class="pipeline-decorative-spec font-monospace text-start ps-4 opacity-25">
-								<div>&lt;fetch_assets&gt;</div>
-								<div>// source = solarsystemscope</div>
-								<div>// maps = high_res_spherical</div>
+						<div class="pipeline-node-row row align-items-center mb-5 pb-lg-4">
+							<div class="col-12 col-lg-5 order-2 order-lg-1 text-center text-lg-end step-content-pane">
+								<span class="pipeline-meta font-monospace text-gradient-blue d-block mb-1">STEP 01 // SOURCE</span>
+								<h3 class="h4 fw-bold text-white mb-3">Download Textures</h3>
+								<p class="text-white-50 mb-0">
+									Download high-resolution planetary textures directly from <a href="https://www.solarsystemscope.com/textures/" target="_blank" class="text-info text-decoration-none">Solar System Scope</a> to use as base maps for the spheres.
+								</p>
+							</div>
+							<div class="col-12 col-lg-2 order-1 order-lg-2 d-flex justify-content-center my-3 my-lg-0 position-relative z-3">
+								<div class="pipeline-orbit-anchor" data-step="01">
+									<div class="anchor-pulse-core"></div>
+									<i class="fa-solid fa-download anchor-icon"></i>
+								</div>
+							</div>
+							<div class="col-12 col-lg-5 order-3 d-none d-lg-block step-visual-pane">
+								<div class="pipeline-decorative-spec font-monospace text-start ps-4 opacity-25">
+									<div>&lt;fetch_assets&gt;</div>
+									<div>// source = solarsystemscope</div>
+									<div>// maps = high_res_spherical</div>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="pipeline-node-row row align-items-center mb-5 pb-lg-4">
-						<div class="col-12 col-lg-5 d-none d-lg-block step-visual-pane">
-							<div class="pipeline-decorative-spec font-monospace text-end pe-4 opacity-25">
-								<div>&lt;compile_script_modules&gt;</div>
-								<div>// engine_target = BPY_v4</div>
-								<div>// execution = run_script</div>
+						<div class="pipeline-node-row row align-items-center mb-5 pb-lg-4">
+							<div class="col-12 col-lg-5 d-none d-lg-block step-visual-pane">
+								<div class="pipeline-decorative-spec font-monospace text-end pe-4 opacity-25">
+									<div>&lt;compile_script_modules&gt;</div>
+									<div>// engine_target = BPY_v4</div>
+									<div>// execution = run_script</div>
+								</div>
+							</div>
+							<div class="col-12 col-lg-2 d-flex justify-content-center my-3 my-lg-0 position-relative z-3">
+								<div class="pipeline-orbit-anchor" data-step="02">
+									<div class="anchor-pulse-core"></div>
+									<i class="fa-solid fa-code anchor-icon"></i>
+								</div>
+							</div>
+							<div class="col-12 col-lg-5 text-center text-lg-start step-content-pane">
+								<span class="pipeline-meta font-monospace text-gradient-purple d-block mb-1">STEP 02 // EXECUTE</span>
+								<h3 class="h4 fw-bold text-white mb-3">Write & Run Code</h3>
+								<p class="text-white-50 mb-0">
+									Open Blender's Scripting Tab, paste the Python workflow automation script, and click execute to build the scene programmatically.
+								</p>
 							</div>
 						</div>
-						<div class="col-12 col-lg-2 d-flex justify-content-center my-3 my-lg-0 position-relative z-3">
-							<div class="pipeline-orbit-anchor" data-step="02">
-								<div class="anchor-pulse-core"></div>
-								<i class="fa-solid fa-code anchor-icon"></i>
+						<div class="pipeline-node-row row align-items-center mb-5 pb-lg-4">
+							<div class="col-12 col-lg-5 order-2 order-lg-1 text-center text-lg-end step-content-pane">
+								<span class="pipeline-meta font-monospace text-gradient-blue d-block mb-1">STEP 03 // VIEWPORT</span>
+								<h3 class="h4 fw-bold text-white mb-3">Verify Generation</h3>
+								<p class="text-white-50 mb-0">
+									Switch to the Layout Tab and change the Viewport Shading model to "Rendered" to actively review the script's visual outcome and lightning configurations.
+								</p>
+							</div>
+							<div class="col-12 col-lg-2 order-1 order-lg-2 d-flex justify-content-center my-3 my-lg-0 position-relative z-3">
+								<div class="pipeline-orbit-anchor" data-step="03">
+									<div class="anchor-pulse-core"></div>
+									<i class="fa-solid fa-eye anchor-icon"></i>
+								</div>
+							</div>
+							<div class="col-12 col-lg-5 order-3 d-none d-lg-block step-visual-pane">
+								<div class="pipeline-decorative-spec font-monospace text-start ps-4 opacity-25">
+									<div>&lt;viewport_verification&gt;</div>
+									<div>// target_tab = layout</div>
+									<div>// shading_mode = rendered</div>
+								</div>
 							</div>
 						</div>
-						<div class="col-12 col-lg-5 text-center text-lg-start step-content-pane">
-							<span class="pipeline-meta font-monospace text-gradient-purple d-block mb-1">STEP 02 // EXECUTE</span>
-							<h3 class="h4 fw-bold text-white mb-3">Write & Run Code</h3>
-							<p class="text-white-50 mb-0">
-								Open Blender's Scripting Tab, paste the Python workflow automation script, and click execute to build the scene programmatically.
-							</p>
-						</div>
-					</div>
-					<div class="pipeline-node-row row align-items-center mb-5 pb-lg-4">
-						<div class="col-12 col-lg-5 order-2 order-lg-1 text-center text-lg-end step-content-pane">
-							<span class="pipeline-meta font-monospace text-gradient-blue d-block mb-1">STEP 03 // VIEWPORT</span>
-							<h3 class="h4 fw-bold text-white mb-3">Verify Generation</h3>
-							<p class="text-white-50 mb-0">
-								Switch to the Layout Tab and change the Viewport Shading model to "Rendered" to actively review the script's visual outcome and lightning configurations.
-							</p>
-						</div>
-						<div class="col-12 col-lg-2 order-1 order-lg-2 d-flex justify-content-center my-3 my-lg-0 position-relative z-3">
-							<div class="pipeline-orbit-anchor" data-step="03">
-								<div class="anchor-pulse-core"></div>
-								<i class="fa-solid fa-eye anchor-icon"></i>
+						<div class="pipeline-node-row row align-items-center mb-5 pb-lg-4">
+							<div class="col-12 col-lg-5 d-none d-lg-block step-visual-pane">
+								<div class="pipeline-decorative-spec font-monospace text-end pe-4 opacity-25">
+									<div>&lt;render_output_specs&gt;</div>
+									<div>// container = MPEG-4</div>
+									<div>// codec = H.264</div>
+									<div>// quality = Perceptually Lossless</div>
+								</div>
+							</div>
+							<div class="col-12 col-lg-2 d-flex justify-content-center my-3 my-lg-0 position-relative z-3">
+								<div class="pipeline-orbit-anchor" data-step="04">
+									<div class="anchor-pulse-core"></div>
+									<i class="fa-solid fa-sliders anchor-icon"></i>
+								</div>
+							</div>
+							<div class="col-12 col-lg-5 text-center text-lg-start step-content-pane">
+								<span class="pipeline-meta font-monospace text-gradient-purple d-block mb-1">STEP 04 // CONFIG</span>
+								<h3 class="h4 fw-bold text-white mb-3">Render Settings</h3>
+								<p class="text-white-50 mb-0">
+									In the Output side-tab: Define the output path. Change the media type to video with an MPEG-4 container, use the H.264 codec, and set the output quality to Perceptually Lossless.
+								</p>
 							</div>
 						</div>
-						<div class="col-12 col-lg-5 order-3 d-none d-lg-block step-visual-pane">
-							<div class="pipeline-decorative-spec font-monospace text-start ps-4 opacity-25">
-								<div>&lt;viewport_verification&gt;</div>
-								<div>// target_tab = layout</div>
-								<div>// shading_mode = rendered</div>
+						<div class="pipeline-node-row row align-items-center mb-4">
+							<div class="col-12 col-lg-5 order-2 order-lg-1 text-center text-lg-end step-content-pane">
+								<span class="pipeline-meta font-monospace text-gradient-blue d-block mb-1">STEP 05 // RENDER</span>
+								<h3 class="h4 fw-bold text-white mb-3">Render Animation</h3>
+								<p class="text-white-50 mb-0">
+									Navigate to the Top Header bar, open the Render Tab menu, and select "Render Animation" or deploy the <kbd class="bg-dark text-info border border-secondary">Ctrl + F12</kbd> shortcut matrix to start compilation.
+								</p>
 							</div>
-						</div>
-					</div>
-					<div class="pipeline-node-row row align-items-center mb-5 pb-lg-4">
-						<div class="col-12 col-lg-5 d-none d-lg-block step-visual-pane">
-							<div class="pipeline-decorative-spec font-monospace text-end pe-4 opacity-25">
-								<div>&lt;render_output_specs&gt;</div>
-								<div>// container = MPEG-4</div>
-								<div>// codec = H.264</div>
-								<div>// quality = Perceptually Lossless</div>
+							<div class="col-12 col-lg-2 order-1 order-lg-2 d-flex justify-content-center my-3 my-lg-0 position-relative z-3">
+								<div class="pipeline-orbit-anchor" data-step="05">
+									<div class="anchor-pulse-core"></div>
+									<i class="fa-solid fa-play anchor-icon"></i>
+								</div>
 							</div>
-						</div>
-						<div class="col-12 col-lg-2 d-flex justify-content-center my-3 my-lg-0 position-relative z-3">
-							<div class="pipeline-orbit-anchor" data-step="04">
-								<div class="anchor-pulse-core"></div>
-								<i class="fa-solid fa-sliders anchor-icon"></i>
-							</div>
-						</div>
-						<div class="col-12 col-lg-5 text-center text-lg-start step-content-pane">
-							<span class="pipeline-meta font-monospace text-gradient-purple d-block mb-1">STEP 04 // CONFIG</span>
-							<h3 class="h4 fw-bold text-white mb-3">Render Settings</h3>
-							<p class="text-white-50 mb-0">
-								In the Output side-tab: Define the output path. Change the media type to video with an MPEG-4 container, use the H.264 codec, and set the output quality to Perceptually Lossless.
-							</p>
-						</div>
-					</div>
-					<div class="pipeline-node-row row align-items-center mb-4">
-						<div class="col-12 col-lg-5 order-2 order-lg-1 text-center text-lg-end step-content-pane">
-							<span class="pipeline-meta font-monospace text-gradient-blue d-block mb-1">STEP 05 // RENDER</span>
-							<h3 class="h4 fw-bold text-white mb-3">Render Animation</h3>
-							<p class="text-white-50 mb-0">
-								Navigate to the Top Header bar, open the Render Tab menu, and select "Render Animation" or deploy the <kbd class="bg-dark text-info border border-secondary">Ctrl + F12</kbd> shortcut matrix to start compilation.
-							</p>
-						</div>
-						<div class="col-12 col-lg-2 order-1 order-lg-2 d-flex justify-content-center my-3 my-lg-0 position-relative z-3">
-							<div class="pipeline-orbit-anchor" data-step="05">
-								<div class="anchor-pulse-core"></div>
-								<i class="fa-solid fa-play anchor-icon"></i>
-							</div>
-						</div>
-						<div class="col-12 col-lg-5 order-3 d-none d-lg-block step-visual-pane">
-							<div class="pipeline-decorative-spec font-monospace text-start ps-4 opacity-25">
-								<div>&lt;compile_scene_sequence&gt;</div>
-								<div>// trigger = ctrl_f12</div>
-								<div>// pipeline_status = processing</div>
+							<div class="col-12 col-lg-5 order-3 d-none d-lg-block step-visual-pane">
+								<div class="pipeline-decorative-spec font-monospace text-start ps-4 opacity-25">
+									<div>&lt;compile_scene_sequence&gt;</div>
+									<div>// trigger = ctrl_f12</div>
+									<div>// pipeline_status = processing</div>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row mt-5 pt-3 justify-content-center">
-					<div class="col-12 col-xl-10">
-						<div class="code-container floatup visible">
-							<div class="code-header d-flex justify-content-between align-items-center">
-								<span class="text-white-50 small font-monospace"><i class="fa-brands fa-python me-2 text-warning"></i>script_template.py</span>
-								<span class="badge bg-dark-subtle text-black-50 border border-secondary-subtle">Blender API 4.x</span>
-							</div>
-							<pre class="mb-0 font-monospace text-start"><code class="text-white-50"><span class="text-primary">import</span> bpy
+					<div class="row mt-5 pt-3 justify-content-center">
+						<div class="col-12 col-xl-10">
+							<div class="code-container floatup visible">
+								<div class="code-header d-flex justify-content-between align-items-center">
+									<span class="text-white-50 small font-monospace"><i class="fa-brands fa-python me-2 text-warning"></i>script_template.py</span>
+									<span class="badge bg-dark-subtle text-black-50 border border-secondary-subtle">Blender API 4.x</span>
+								</div>
+								<pre class="mb-0 font-monospace text-start"><code class="text-white-50"><span class="text-primary">import</span> bpy
 
 <span class="text-comment"># Programmatic Scene Instantiation & Material Mapping</span>
 <span class="text-primary">def</span> <span class="text-info">setup_scene</span>():
@@ -297,6 +294,7 @@
     bpy.ops.object.camera_add(location=(0, -2.3, 0), rotation=(1.57, 0, 0))
     bpy.context.scene.camera = bpy.context.active_object
     bpy.context.scene.render.engine = <span class="text-warning">'CYCLES'</span></code></pre>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -813,14 +811,14 @@
 				<div class="d-flex flex-column flex-md-row align-items-stretch align-items-md-center justify-content-center gap-3 gap-lg-4">
 					<a href="https://drive.google.com/drive/folders/1McVDG10ljCZVSc67JtUGPxwLdEvWGCBm?usp=sharing" target="_blank" class="minimal-stream-link d-flex align-items-center justify-content-between justify-content-md-start gap-3 py-2 px-3 text-decoration-none">
 						<div class="d-flex align-items-center gap-3">
-							<img src="assets/tech-logos/blender.svg" alt="" class="mini-logo-vector" aria-hidden="true" />
+							<img src="assets/tech-logos/blender.svg" alt="" class="mini-logo-vector" aria-hidden="true">
 							<span class="minimal-link-text text-white fw-bold">Blender Workspace</span>
 						</div>
 						<span class="mini-format-tag font-monospace">.BLEND</span>
 					</a>
 					<a href="https://drive.google.com/drive/folders/1QiHiCPw06CHMykUseNX3YtmxpTz3YkFw?usp=sharing" target="_blank" class="minimal-stream-link d-flex align-items-center justify-content-between justify-content-md-start gap-3 py-2 px-3 text-decoration-none">
 						<div class="d-flex align-items-center gap-3">
-							<img src="assets/tech-logos/python.svg" alt="" class="mini-logo-vector" aria-hidden="true" />
+							<img src="assets/tech-logos/python.svg" alt="" class="mini-logo-vector" aria-hidden="true">
 							<span class="minimal-link-text text-white fw-bold">Python Source Codes</span>
 						</div>
 						<span class="mini-format-tag font-monospace">.PY</span>
