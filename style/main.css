@@ -1,7 +1,10 @@
 /* ==========================================================================
    1. ROOT VARIABLES, BASE ELEMENTS, GLOBALS
    ========================================================================== */
-html { scroll-behavior: smooth; }
+html { 
+    scroll-behavior: smooth; 
+    scrollbar-width: none;
+}
 body {
     background-color: #07070a;;
     background-image:
