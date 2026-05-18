@@ -138,13 +138,6 @@
    SOLAR SYSTEM HERO
    ========================================================================== */
 
-/* Text Gradient Effect */
-.text-gradient {
-    background: linear-gradient(135deg, #ffffff 40%, #4da3ff 70%, #a78bfa 100%);
-    background-clip: text;
-    color: transparent;
-}
-
 /* Enhancing standard paragraph styles for hero columns */
 .hero-video__content .hero-subtitle {
     font-size: 1.1rem;
@@ -630,16 +623,6 @@
     letter-spacing: 0.18em;
     font-weight: 700;
 }
-.text-gradient-blue {
-    background: linear-gradient(135deg, #4da3ff, #60a5fa);
-    background-clip: text;
-    color: transparent; /* avoid vendor-only property */
-}
-.text-gradient-purple {
-    background: linear-gradient(135deg, #a78bfa, #c084fc);
-    background-clip: text; /* standard-ish fallback */
-    color: transparent; /* avoid vendor-only property */
-}
 
 /* Floating Orbit Anchors */
 .pipeline-orbit-anchor {
@@ -780,9 +763,10 @@
    ========================================================================== */
 
 .text-gradient-blue {
-    background: linear-gradient(135deg, #4da3ff, #a78bfa);
-    background-clip: text;
-    color: transparent;
+    color: #4da3ff;
+}
+.text-gradient-purple {
+    color: #a78bfa;
 }
 
 /* Outer Canvas Container */
