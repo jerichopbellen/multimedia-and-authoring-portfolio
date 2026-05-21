@@ -2,12 +2,19 @@
    1. HERO: MODERN CLAPPERBOARD WITH SUBTLE STRUCTURED GRIDS (NO TEXT)
    ========================================================================== */
 
+.hero-video__content .hero-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.7;
+}
+
 .modern-clapper-perspective-box {
     position: relative;
     width: 100%;
+    min-height: 480px;
     max-width: 440px;
-    height: auto;
     perspective: 1200px;
+    background: transparent;
     display: flex;
     justify-content: center;
     align-items: center;

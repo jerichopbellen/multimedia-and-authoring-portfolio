@@ -110,40 +110,6 @@
     line-height: 1.7;
 }
 
-/* Image Showcase Upgrades */
-.hero-image-wrapper {
-    position: relative;
-    display: inline-block;
-    padding: 10px;
-}
-
-/* Ambient glow beneath the main illustration hero image */
-.hero-image-wrapper::before {
-    content: "";
-    position: absolute;
-    inset: 30px;
-    background: radial-gradient(circle, rgba(77, 163, 255, 0.25) 0%, rgba(167, 139, 250, 0.15) 50%, transparent 100%);
-    filter: blur(40px);
-    z-index: -1;
-    pointer-events: none;
-}
-
-.hero-image {
-    max-height: 380px;
-    object-fit: contain;
-    border-radius: 24px;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.05));
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 
-        0 30px 70px rgba(0, 0, 0, 0.6),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.hero-image-wrapper:hover .hero-image {
-    transform: translateY(-6px) scale(1.02);
-}
-
 /* Handle layout spacing cleanly for standard mobile sizes */
 @media (max-width: 991px) {
     .hero-video {
@@ -157,12 +123,6 @@
     }
     .hero-scroll {
         display: none; /* Hide scroll indicator if viewport height is small */
-    }
-}
-
-@media (max-width: 576px) {
-    .hero-image {
-        max-height: 240px;
     }
 }
 
