@@ -1,17 +1,7 @@
 /* ==========================================================================
    DIVIDERS
    ========================================================================== */
-.panel-break {
-  width: 100%;
-  height: 50px;
-  margin: 0 auto -10px auto;
-  background: repeating-linear-gradient(-10deg,#2b3955 0 6px,#20263b 7px 13px,#4da3ff11 14px 23px);
-  /* Faked “dots” with SVG overlay */
-  mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 160 40' xmlns='http://www.w3.org/2000/svg'><circle cx='30' cy='22' r='6' fill='black'/><circle cx='82' cy='19' r='2' fill='black'/><circle cx='120' cy='16' r='3' fill='black'/></svg>");
-  mask-size: 260px 50px; 
-  mask-repeat: no-repeat;
-}
-
+   
 /* Right-aligned variant */
 .panel-break--right {
     width: 260px; /* match mask-size for clean edges */
@@ -21,31 +11,6 @@
     mask-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 160 40' xmlns='http://www.w3.org/2000/svg'><circle cx='30' cy='22' r='6' fill='black'/><circle cx='82' cy='19' r='2' fill='black'/><circle cx='120' cy='16' r='3' fill='black'/></svg>");
     mask-size: 260px 50px; mask-repeat: no-repeat; mask-position: right top;
 }
-
-.asteroid-belt-divider {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
-  padding: 28px 0 8px 0;
-  pointer-events:none;
-}
-.asteroid {
-  display: inline-block;
-  width: 16px; height: 16px;
-  background: #4da3ff2a url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><ellipse cx="8" cy="8" rx="8" ry="7" fill="gray"/><ellipse cx="5" cy="5" rx="2" ry="1" fill="#ccc"/><ellipse cx="10" cy="12" rx="2" ry="1.5" fill="#bbb"/></svg>');
-  border-radius: 50%;
-  transform: rotate(calc(12deg * var(--i, 1))) scale(calc(0.7 + 0.5 * var(--i, 1)));
-  opacity: .82;
-  filter: grayscale(0.2) drop-shadow(0 1px 6px #20263b77);
-}
-/* Add some variation */
-.asteroid:nth-child(1) { --i: .2 }
-.asteroid:nth-child(2) { --i: .7 }
-.asteroid:nth-child(3) { --i: 1 }
-.asteroid:nth-child(4) { --i: 1.3 }
-.asteroid:nth-child(5) { --i: 0.4 }
-.asteroid:nth-child(6) { --i: 1.8 }
 
 /* ==========================================================================
    SOLID TEXT GRAPHIC HEADERS (TOTAL VARIETY PACK)
