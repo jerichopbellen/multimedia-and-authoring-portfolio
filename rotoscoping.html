@@ -67,29 +67,35 @@
 					<div class="row justify-content-center">
 						<div class="col-12 col-xl-10">
 							<div class="ae-workspace-window shadow-lg">
-								<div class="ae-window-header d-flex justify-content-between align-items-center px-3 py-2">
-									<div class="d-flex gap-2">
-										<div class="ae-dot ae-dot-close"></div>
-										<div class="ae-dot ae-dot-min"></div>
-										<div class="ae-dot ae-dot-max"></div>
-									</div>
-									<div class="ae-window-title font-monospace small text-white-50">Composition - Main_Render_v1.aep</div>
-									<div class="ae-window-menu font-monospace small text-white-50 d-none d-md-block">
-										<span class="text-success"><i class="fa-solid fa-check-circle"></i> Rendered</span> &nbsp;|&nbsp; 0;00;08;00
-									</div>
+							<div class="ae-window-header d-flex justify-content-between align-items-center px-3 py-2">
+								<div class="d-flex gap-2">
+									<div class="ae-dot ae-dot-close"></div>
+									<div class="ae-dot ae-dot-min"></div>
+									<div class="ae-dot ae-dot-max"></div>
 								</div>
+								
+								<div class="ae-window-menu font-monospace small text-white-50 d-flex align-items-center gap-3">
+									<span class="sync-instruction text-white-50 d-none d-sm-inline" style="font-size: 0.68rem; letter-spacing: 0.2px;">
+										<i class="fa-solid fa-circle-info me-1" style="color: #4da3ff;"></i> Due to browser autoplay policies, please manually unmute one of the videos
+									</span>
+									<button id="sync-play-btn" class="btn btn-sm sync-playback-trigger" disabled>
+										<span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true" id="sync-btn-spinner"></span>
+										<span id="sync-btn-text">Connecting APIs...</span>
+									</button>
+								</div>
+							</div>
 								<div class="ae-window-body p-4">
 									<div class="row g-4">
 										<div class="col-12 col-md-6">
 											<div class="text-center text-md-start font-monospace text-info mb-2 small"><i class="fa-solid fa-film"></i> Final Rotoscope</div>
 											<div class="ratio ratio-16x9 position-relative shadow-sm">
-												<iframe src="https://www.youtube.com/embed/cXPu5fSNkUw?si=gNprqkltx4izOFYf" allowfullscreen class="rounded" title="Final Rotoscope" style="background-color: #040406;"></iframe>
+												<iframe id="player-final" src="https://www.youtube.com/embed/cXPu5fSNkUw?enablejsapi=1&si=gNprqkltx4izOFYf&mute=1" allowfullscreen class="rounded" title="Final Rotoscope" style="background-color: #040406;"></iframe>
 											</div>
 										</div>
 										<div class="col-12 col-md-6">
 											<div class="text-center text-md-start font-monospace text-white-50 mb-2 small"><i class="fa-solid fa-video"></i> Reference Video</div>
 											<div class="ratio ratio-16x9 position-relative shadow-sm">
-												<iframe src="https://www.youtube.com/embed/FFHGd9VMPgI" allowfullscreen class="rounded" title="Reference Video" style="background-color: #040406;"></iframe>
+												<iframe id="player-reference" src="https://www.youtube.com/embed/FFHGd9VMPgI?enablejsapi=1&mute=1" allowfullscreen class="rounded" title="Reference Video" style="background-color: #040406;"></iframe>
 											</div>
 										</div>
 									</div>
@@ -99,12 +105,12 @@
 											<span>Roto Brush v3</span>
 										</div>
 										<div class="col-6 col-md-3 d-flex align-items-center gap-2">
-											<i class="fa-solid fa-photo-film" style="color: #4da3ff"></i>
-											<span>60 frames</span>
+											<i class="fa-solid fa-clock" style="color: #4da3ff"></i>
+											<span>60+ seconds</span>
 										</div>
 										<div class="col-6 col-md-3 d-flex align-items-center gap-2">
 											<i class="fa-solid fa-layer-group" style="color: #4da3ff"></i>
-											<span>Capcut BG</span>
+											<span>BG & Lyrics Added</span>
 										</div>
 										<div class="col-6 col-md-3 d-flex align-items-center gap-2 justify-content-md-end">
 											<i class="fa-solid fa-calendar-week" style="color: #4da3ff"></i>
@@ -120,38 +126,199 @@
             <div class="spacer"></div>			
             <div class="spacer"></div>			
             <div class="spacer"></div>
+
 			<section id="process" class="section position-relative overflow-hidden py-5">
 				<div class="container position-relative z-3">
 					<div class="text-center mx-auto mb-5">
 						<h2 class="fw-light text-white text-uppercase m-0">
-							<span class="fw-bold text-white">Creation</span> Process
+							My <span class="fw-bold text-white">Creation</span> Process
 						</h2>
 						<p class="text-white-50 mt-3 mb-0 mx-auto small" style="max-width: 520px;">
-							A breakdown of each stage in producing the final result, from isolation to compositing.
+							A functional video editor sequence UI displaying the execution stages along sequenced media tracks.
 						</p>
 					</div>
-					<div class="ae-timeline-container position-relative py-4 overflow-hidden">
-						<div class="ae-track" aria-hidden="true"></div>
-						<div class="row position-relative z-3 gy-5">
-							<div class="col-12 col-md-3 text-center ae-keyframe-group">
-								<div class="ae-diamond mb-3 mx-auto"></div>
-								<div class="h6 fw-bold text-white">Import & Prep</div>
-								<p class="text-white-50 small mb-0 px-2">Trim and pre-process source clip for maximum contrast.</p>
+
+					<div class="editor-timeline-canvas shadow-lg">
+						
+						<div class="timeline-ruler-bar font-monospace">
+							<div class="ruler-header-space"></div>
+							<div class="ruler-ticks-track">
+								<div class="tick-mark">00:00:00</div>
+								<div class="tick-mark d-none d-md-block">00:00:15</div>
+								<div class="tick-mark">00:00:30</div>
+								<div class="tick-mark d-none d-md-block">00:00:45</div>
+								<div class="tick-mark">00:01:00</div>
 							</div>
-							<div class="col-12 col-md-3 text-center ae-keyframe-group">
-								<div class="ae-diamond mb-3 mx-auto"></div>
-								<div class="h6 fw-bold text-white">Roto Brush</div>
-								<p class="text-white-50 small mb-0 px-2">Paint the subject and propagate selection across all frames.</p>
+							<div class="timeline-playhead-axis" aria-hidden="true">
+								<div class="playhead-needle"></div>
 							</div>
-							<div class="col-12 col-md-3 text-center ae-keyframe-group">
-								<div class="ae-diamond mb-3 mx-auto"></div>
-								<div class="h6 fw-bold text-white">Export Alpha</div>
-								<p class="text-white-50 small mb-0 px-2">Render out as a PNG sequence or mov with transparency.</p>
+						</div>
+
+						<div class="timeline-track-row">
+							<div class="track-controls-block">
+								<div class="track-title text-info font-monospace">Track 01</div>
+								<div class="track-meta-label">Pre-Pro</div>
+								<div class="track-actions-pills font-monospace"><span>M</span><span class="active">S</span></div>
 							</div>
-							<div class="col-12 col-md-3 text-center ae-keyframe-group">
-								<div class="ae-diamond mb-3 mx-auto"></div>
-								<div class="h6 fw-bold text-white">Composite</div>
-								<p class="text-white-50 small mb-0 px-2">Import to Capcut, add digital backgrounds, effects, and text.</p>
+							<div class="track-sequence-lane">
+								<div class="sequence-clip clip-p1 bg-info-opaque border-left-info" style="--clip-start: 5%; --clip-width: 45%;">
+									<div class="clip-inner-content">
+										<div class="clip-header font-monospace">
+											<span class="clip-title text-white fw-bold">01 / Pre-Chopping & Preparing the Video</span>
+											<span class="clip-duration">Step 1</span>
+										</div>
+										<p class="clip-description text-white-50 small mb-0">
+											I started by taking my full 60-second raw video file and splitting it evenly into twelve smaller clips that are minimum 5 seconds each. This made managing the large video much simpler. To stop my editing platform from lagging, I dropped down the preview playback resolution and temporarily boosted the image contrast so the edges of my subject clearly popped out from the scenery.
+										</p>
+										<div class="clip-telemetry font-monospace text-info mt-2">
+											<span>[12 Clips x 5s Each]</span> <span>[Low-Res Proxy Active]</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="timeline-track-row">
+							<div class="track-controls-block">
+								<div class="track-title text-purple font-monospace">Track 02</div>
+								<div class="track-meta-label">Mask Engine</div>
+								<div class="track-actions-pills font-monospace"><span>M</span><span class="active">S</span></div>
+							</div>
+							<div class="track-sequence-lane">
+								<div class="sequence-clip clip-p2 bg-purple-opaque border-left-purple" style="--clip-start: 25%; --clip-width: 55%;">
+									<div class="clip-inner-content">
+										<div class="clip-header font-monospace">
+											<span class="clip-title text-white fw-bold">02 / Painting the Outline Guides</span>
+											<span class="clip-duration">Step 2</span>
+										</div>
+										<p class="clip-description text-white-50 small mb-0">
+											I brought my newly chopped 5-second video pieces into After Effects and loaded up the Roto Brush tool. This tool works like a smart highlighter: I carefully drew green lines directly across the middle of my subject to tell the program exactly what to keep, and used red lines around the outside edges to tell it what parts of the background to delete.
+										</p>
+										<div class="clip-telemetry font-monospace text-purple mt-2">
+											<span>[Green = Keep Subject]</span> <span>[Red = Discard Background]</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="timeline-track-row">
+							<div class="track-controls-block">
+								<div class="track-title text-info font-monospace">Track 03</div>
+								<div class="track-meta-label">Evaluation</div>
+								<div class="track-actions-pills font-monospace"><span>M</span><span class="active">S</span></div>
+							</div>
+							<div class="track-sequence-lane">
+								<div class="sequence-clip clip-p3 bg-info-opaque border-left-info" style="--clip-start: 45%; --clip-width: 50%;">
+									<div class="clip-inner-content">
+										<div class="clip-header font-monospace">
+											<span class="clip-title text-white fw-bold">03 / Automatic Tracking & Manual Fixes</span>
+											<span class="clip-duration">Step 3</span>
+										</div>
+										<p class="clip-description text-white-50 small mb-0">
+											Once my starting frames looked accurate, I prompted the tracking software to analyze forward and backward to automatically follow my subject through the rest of the 5-second interval. Whenever rapid movements caused the automatic lines to wander or lose grip on an arm or clothing fold, I stepped through frame-by-frame and painted quick corrective marks to snap the boundaries back into alignment.
+										</p>
+										<div class="clip-telemetry font-monospace text-info mt-2">
+											<span>[Frame-by-Frame Checks]</span> <span>[Tracking Corrections]</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="timeline-track-row">
+							<div class="track-controls-block">
+								<div class="track-title text-purple font-monospace">Track 04</div>
+								<div class="track-meta-label">Refinement</div>
+								<div class="track-actions-pills font-monospace"><span>M</span><span class="active">S</span></div>
+							</div>
+							<div class="track-sequence-lane">
+								<div class="sequence-clip clip-p4 bg-purple-opaque border-left-purple" style="--clip-start: 15%; --clip-width: 65%;">
+									<div class="clip-inner-content">
+										<div class="clip-header font-monospace">
+											<span class="clip-title text-white fw-bold">04 / Smoothing Out Fine Edges & Freezing</span>
+											<span class="clip-duration">Step 4</span>
+										</div>
+										<p class="clip-description text-white-50 small mb-0">
+											With the main body shape tracked, I switched to a detail blending brush to clean up complex borders like stray hair fibers or loose clothes. I slightly softened the edge paths so the cutout wouldn't look jagged or artificial, and then clicked the "Freeze" button to permanently bake these outlines onto my hard drive so the software wouldn't try to change them later.
+										</p>
+										<div class="clip-telemetry font-monospace text-warning mt-2">
+											<span>[Edges: Softened]</span> <span>[Bake Status: FROZEN]</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="timeline-track-row">
+							<div class="track-controls-block">
+								<div class="track-title text-info font-monospace">Track 05</div>
+								<div class="track-meta-label">Composition</div>
+								<div class="track-actions-pills font-monospace"><span>M</span><span class="active">S</span></div>
+							</div>
+							<div class="track-sequence-lane">
+								<div class="sequence-clip clip-p5 bg-info-opaque border-left-info" style="--clip-start: 35%; --clip-width: 62%;">
+									<div class="clip-inner-content">
+										<div class="clip-header font-monospace">
+											<span class="clip-title text-white fw-bold">05 / Layering Backgrounds & Song Lyrics</span>
+											<span class="clip-duration">Step 5</span>
+										</div>
+										<p class="clip-description text-white-50 small mb-0">
+											Finally, I took my completed cutouts out of After Effects and opened Capcut to assemble everything. First, I imported my new background loop designs. Next, I pasted my isolated 60-second cutout right over the top like a clean sticker. To finish the production, I type-set and synchronized the text lyrics of the song to pop up perfectly in time with the audio tracks, and applied a final color polish across all layers.
+										</p>
+										<div class="clip-telemetry font-monospace text-success mt-2">
+											<span>[BG Loop Added]</span> <span>[Lyric Text Sync: Complete]</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="text-center mx-auto mt-5 pt-5 mb-5">
+						<h3 class="fw-bold text-white text-uppercase m-0">
+							Tactical <span style="color: #4da3ff;">Tips & Tricks</span>
+						</h3>
+						<p class="text-white-50 mt-2 mb-0 mx-auto small" style="max-width: 520px;">
+							A few shortcuts and production workflows I use to save hours of processing time and keep my cutouts looking sharp.
+						</p>
+					</div>
+
+					<div class="row g-4 justify-content-center">
+						<div class="col-12 col-md-6 col-lg-4">
+							<div class="roto-tip-card h-100 p-4 d-flex flex-column">
+								<div class="tip-icon-wrap text-purple mb-3">
+									<i class="fa-solid fa-circle-half-stroke" style="color: #a78bfa;"></i>
+								</div>
+								<h5 class="fw-bold text-white mb-2">Boost Your Contrast First</h5>
+								<p class="text-white-50 small mb-0">
+									Before you start tracing, try making your video extremely bright and high-contrast using an adjustment effect. Making dark colors darker and light colors lighter helps the computer easily figure out where the subject ends and where the background begins. You can simply turn the effect off when you are done!
+								</p>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-6 col-lg-4">
+							<div class="roto-tip-card h-100 p-4 d-flex flex-column">
+								<div class="tip-icon-wrap text-purple mb-3">
+									<i class="fa-solid fa-snowflake"></i>
+								</div>
+								<h5 class="fw-bold text-white mb-2">Lock Down Your Work</h5>
+								<p class="text-white-50 small mb-0">
+									Never forget to click the "Freeze" button at the bottom right corner of your video viewer once your tracking looks perfect. This saves your outlines directly onto your computer's storage drive, preventing the editing software from wasting power recalculating your lines every time you click play.
+								</p>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-6 col-lg-4">
+							<div class="roto-tip-card h-100 p-4 d-flex flex-column">
+								<div class="tip-icon-wrap text-purple mb-3">
+									<i class="fa-solid fa-scissors" style="color: #a78bfa;"></i>
+								</div>
+								<h5 class="fw-bold text-white mb-2">Chop Long Clips Apart</h5>
+								<p class="text-white-50 small mb-0">
+									Don't try to outline a long, continuous video all in one go. Instead, split your video file down into small, manageable pieces of about 2 to 3 seconds each. Working in tiny intervals stops the computer from drifting off course and making mistakes as the video plays forward.
+								</p>
 							</div>
 						</div>
 					</div>
@@ -164,7 +331,7 @@
 				<div class="container-fluid film-reel-container">
 					<div class="text-center mb-5 px-3">
 						<h2 class="fw-light text-white text-uppercase m-0">
-							<span class="fw-bold text-white">Weekly</span> Progress
+							My <span class="fw-bold text-white">Weekly</span> Progress
 						</h2>
 						<p class="text-white-50 mx-auto mt-3 mb-0" style="max-width: 580px;">
 							A breakdown of my journey from the first 5 seconds to a complete sequence over 12 weeks.
@@ -228,5 +395,6 @@
 		</script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="scripts/main.js"></script>
+		<script src="scripts/sync-player.js"></script>
 	</body>
 </html>
