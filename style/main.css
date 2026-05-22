@@ -261,6 +261,21 @@ body {
     50% { transform: translateY(6px); opacity: .55; }
 }
 
+@media (max-width: 991px) {
+    .hero-video {
+        min-height: auto;
+        padding-top: 130px;
+        padding-bottom: 100px;
+    }
+    .hero-video__content .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-scroll {
+        display: none; /* Hide scroll indicator if viewport height is small */
+    }
+}
+
 /* ==========================================================================
    8. STORY DIVIDER
    ========================================================================== */

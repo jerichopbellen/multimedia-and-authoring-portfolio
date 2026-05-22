@@ -110,22 +110,6 @@
     line-height: 1.7;
 }
 
-/* Handle layout spacing cleanly for standard mobile sizes */
-@media (max-width: 991px) {
-    .hero-video {
-        min-height: auto;
-        padding-top: 130px;
-        padding-bottom: 100px;
-    }
-    .hero-video__content .hero-subtitle {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .hero-scroll {
-        display: none; /* Hide scroll indicator if viewport height is small */
-    }
-}
-
 /* ========================================================================== 
    HIGH-DRAMA HERO ROCKET & HYPERSPEED ANIMATION STYLES 
    ========================================================================== */
