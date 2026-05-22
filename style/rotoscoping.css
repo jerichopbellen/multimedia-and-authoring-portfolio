@@ -186,38 +186,277 @@
 
 
 /* ==========================================================================
-   3. PROCESS: PIPELINE TIMELINE MODULES
+   MASTER SYNCHRONIZED CONTROLLER INTERFACE STYLING
    ========================================================================== */
-.ae-timeline-container {
-    padding-top: 40px;
+.sync-playback-trigger {
+    background: #1e202e !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 0.72rem !important;
+    font-weight: 600;
+    padding: 3px 12px !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease-in-out !important;
 }
 
-.ae-track {
-    position: absolute;
-    top: 55px;
-    left: 10%;
-    right: 10%;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.1);
-    z-index: 1;
-}
-
-.ae-diamond {
-    width: 20px;
-    height: 20px;
-    background: #07070a;
-    border: 3px solid #4da3ff;
-    transform: rotate(45deg);
-    position: relative;
-    z-index: 2;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.sync-playback-trigger:hover:not(:disabled) {
+    background: #282a3d !important;
+    border-color: #4da3ff !important;
+    color: #ffffff !important;
     box-shadow: 0 0 10px rgba(77, 163, 255, 0.2);
 }
 
-.ae-keyframe-group:hover .ae-diamond {
-    background: #4da3ff;
-    box-shadow: 0 0 20px rgba(77, 163, 255, 0.8);
-    transform: rotate(45deg) scale(1.3);
+.sync-playback-trigger:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* ==========================================================================
+   CREATIVE LIVE-TIMELINE APPLICATION INTERFACE WORKSPACE
+   ========================================================================== */
+
+/* Core Interface Box Wrapper */
+.editor-timeline-canvas {
+    background: #14151e;
+    border: 1px solid #222432;
+    border-radius: 16px;
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+}
+
+/* Top Time Header Ruler Component */
+.timeline-ruler-bar {
+    display: flex;
+    background: #1b1c28;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    height: 40px;
+    position: relative;
+}
+
+.ruler-header-space {
+    width: 180px;
+    background: #181924;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+}
+
+.ruler-ticks-track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0 4%;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.tick-mark {
+    position: relative;
+}
+
+/* Live Studio Playhead Element */
+.timeline-playhead-axis {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 42%; /* Anchor playhead position vertically */
+    width: 1px;
+    background: #ef4444;
+    z-index: 10;
+}
+
+.playhead-needle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: #ef4444;
+    border-radius: 0 0 4px 4px;
+}
+
+/* Track Lane Architecture */
+.timeline-track-row {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    background: #14151e;
+}
+
+.timeline-track-row:last-child {
+    border-bottom: none;
+}
+
+/* Left Track Info Deck Controls */
+.track-controls-block {
+    width: 180px;
+    background: #161722;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.25rem 1rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+}
+
+.track-title {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.track-meta-label {
+    font-size: 0.82rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.track-actions-pills {
+    display: inline-flex;
+    gap: 4px;
+    margin-top: 6px;
+}
+
+.track-actions-pills span {
+    font-size: 0.65rem;
+    background: #202231;
+    color: rgba(255, 255, 255, 0.4);
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.track-actions-pills span.active {
+    background: #ff9f43;
+    color: #14151e;
+}
+
+/* Right Media Strip Blocks Container */
+.track-sequence-lane {
+    flex-grow: 1;
+    position: relative;
+    padding: 1rem 0;
+    background-image: linear-gradient(to right, rgba(255,255,255,0.01) 1px, transparent 1px);
+    background-size: 10% 100%;
+}
+
+/* Media Block Clips */
+.sequence-clip {
+    position: relative;
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bg-info-opaque { background: #1a2233; }
+.bg-purple-opaque { background: #211e36; }
+
+.border-left-info { border-left: 4px solid #4da3ff; border: 1px solid rgba(77,163,255,0.15); border-left-width: 4px; }
+.border-left-purple { border-left: 4px solid #a78bfa; border: 1px solid rgba(167,139,250,0.15); border-left-width: 4px; }
+
+.sequence-clip:hover {
+    filter: brightness(1.15);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.clip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 4px;
+}
+
+.clip-duration {
+    font-size: 0.7rem;
+    opacity: 0.5;
+}
+
+.clip-description {
+    line-height: 1.5;
+}
+
+.clip-telemetry {
+    display: flex;
+    gap: 8px;
+    font-size: 0.68rem;
+}
+
+/* Responsive Grid Adaptation Layer */
+@media (max-width: 850px) {
+    .timeline-ruler-bar {
+        display: none;
+    }
+    .timeline-track-row {
+        flex-direction: column;
+    }
+    .track-controls-block {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 15px;
+    }
+    .track-actions-pills {
+        margin-top: 0;
+    }
+    .track-sequence-lane {
+        padding: 15px;
+    }
+    .sequence-clip {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+}
+
+/* ==========================================================================
+   TIPS CARDS & BASE RESPONSIVE COMPLEMENTS
+   ========================================================================== */
+
+.roto-tip-card {
+    background: #13141c;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.tip-icon-wrap {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+/* Hover Response Dynamics updated to purple theme */
+.roto-tip-card:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.04) 100%);
+    border-color: rgba(167, 139, 250, 0.25);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 991px) {
+    .roto-tip-card {
+        padding: 1.5rem !important;
+    }
 }
 
 /* ==========================================================================
