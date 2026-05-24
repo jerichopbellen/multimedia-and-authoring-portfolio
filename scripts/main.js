@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '.profile-card--purplefire',
         '.tech-marquee',
         '.contact-transparent-card',
-        '.text-center',
+        '.text-center:not(footer *)',
         '.story-divider'
         // Any other key container for animated float-in
     ];
