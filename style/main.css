@@ -4,6 +4,11 @@
 html { 
     scroll-behavior: smooth; 
     scrollbar-width: none;
+    background-color: #07070a;;
+    background-image:
+        radial-gradient(circle at 20% 10%, rgba(255,255,255,.030) 0px, transparent 55%),
+        radial-gradient(circle at 85% 80%, rgba(255,255,255,.018) 0px, transparent 55%),
+        linear-gradient(180deg,#0c0d12 0%, #07070a 55%, #060608 100%);
 }
 body {
     background-color: #07070a;;
