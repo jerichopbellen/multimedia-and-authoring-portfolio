@@ -1,18 +1,5 @@
 /* jshint esversion: 6 */
 document.addEventListener('DOMContentLoaded', () => {
-    const loadComponent = (id, file) => {
-        fetch(`includes/${file}`)
-            .then(res => res.text())
-            .then(data => {
-                const el = document.getElementById(id);
-                if (!el) return;
-                el.innerHTML = data;
-            })
-            .catch(() => {});
-    };
-
-    loadComponent('header-placeholder', 'header.html');
-    loadComponent('footer-placeholder', 'footer.html');
 
     // tech stack marquee duplication for seamless scrolling
     
@@ -71,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '.profile-card--purplefire',
         '.tech-marquee',
         '.contact-transparent-card',
-        '.text-center',
+        '.text-center:not(footer *)',
         '.story-divider'
         // Any other key container for animated float-in
     ];
